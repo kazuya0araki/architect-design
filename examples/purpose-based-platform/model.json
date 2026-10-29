@@ -1,0 +1,355 @@
+{
+  "schema_version": 2,
+  "id": "purpose-based-platform",
+  "title": "用途別に分離したデータ基盤（架空の提案）",
+  "purpose": "用途別に分離したデータ基盤（架空の提案）",
+  "status": "proposal",
+  "canvas": [
+    1280,
+    800
+  ],
+  "outer_margin": 48,
+  "publication_width": 960,
+  "flow_direction": "left-to-right",
+  "regions": [
+    {
+      "id": "sources",
+      "label": "接続元",
+      "kind": "stage",
+      "geometry": [
+        48,
+        64,
+        208,
+        672
+      ]
+    },
+    {
+      "id": "platform",
+      "label": "用途別のデータ基盤",
+      "kind": "stage",
+      "geometry": [
+        280,
+        64,
+        704,
+        672
+      ]
+    },
+    {
+      "id": "destinations",
+      "label": "利用先",
+      "kind": "stage",
+      "geometry": [
+        1008,
+        64,
+        224,
+        672
+      ]
+    },
+    {
+      "id": "product",
+      "label": "プロダクト用",
+      "kind": "project",
+      "geometry": [
+        296,
+        152,
+        672,
+        248
+      ],
+      "parent_id": "platform"
+    },
+    {
+      "id": "business",
+      "label": "業務分析用",
+      "kind": "project",
+      "geometry": [
+        296,
+        432,
+        672,
+        248
+      ],
+      "parent_id": "platform"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "product_source",
+      "name": "業務システム",
+      "role": "顧客機能用",
+      "geometry": [
+        72,
+        216,
+        160,
+        136
+      ],
+      "region_id": "sources",
+      "stage_id": "sources",
+      "representation": "logical",
+      "display_role": "提供データ"
+    },
+    {
+      "id": "product_ingest",
+      "name": "取り込み",
+      "role": "顧客機能用",
+      "geometry": [
+        320,
+        216,
+        160,
+        136
+      ],
+      "region_id": "product",
+      "stage_id": "platform",
+      "representation": "logical",
+      "display_role": "受領・転送"
+    },
+    {
+      "id": "product_raw",
+      "name": "Raw",
+      "role": "顧客機能用",
+      "geometry": [
+        544,
+        216,
+        160,
+        136
+      ],
+      "region_id": "product",
+      "stage_id": "platform",
+      "representation": "data",
+      "display_role": "未加工データ"
+    },
+    {
+      "id": "product_mart",
+      "name": "Mart",
+      "role": "顧客機能用",
+      "geometry": [
+        768,
+        216,
+        160,
+        136
+      ],
+      "region_id": "product",
+      "stage_id": "platform",
+      "representation": "data",
+      "display_role": "公開指標"
+    },
+    {
+      "id": "product_consumer",
+      "name": "内製サービス",
+      "role": "顧客機能用",
+      "geometry": [
+        1040,
+        216,
+        160,
+        136
+      ],
+      "region_id": "destinations",
+      "stage_id": "destinations",
+      "representation": "logical",
+      "display_role": "顧客向け機能"
+    },
+    {
+      "id": "business_source",
+      "name": "業務システム",
+      "role": "社内指標用",
+      "geometry": [
+        72,
+        496,
+        160,
+        136
+      ],
+      "region_id": "sources",
+      "stage_id": "sources",
+      "representation": "logical",
+      "display_role": "提供データ"
+    },
+    {
+      "id": "business_ingest",
+      "name": "取り込み",
+      "role": "社内指標用",
+      "geometry": [
+        320,
+        496,
+        160,
+        136
+      ],
+      "region_id": "business",
+      "stage_id": "platform",
+      "representation": "logical",
+      "display_role": "受領・転送"
+    },
+    {
+      "id": "business_raw",
+      "name": "Raw",
+      "role": "社内指標用",
+      "geometry": [
+        544,
+        496,
+        160,
+        136
+      ],
+      "region_id": "business",
+      "stage_id": "platform",
+      "representation": "data",
+      "display_role": "未加工データ"
+    },
+    {
+      "id": "business_mart",
+      "name": "Mart",
+      "role": "社内指標用",
+      "geometry": [
+        768,
+        496,
+        160,
+        136
+      ],
+      "region_id": "business",
+      "stage_id": "platform",
+      "representation": "data",
+      "display_role": "公開指標"
+    },
+    {
+      "id": "business_consumer",
+      "name": "BI・分析",
+      "role": "社内指標用",
+      "geometry": [
+        1040,
+        496,
+        160,
+        136
+      ],
+      "region_id": "destinations",
+      "stage_id": "destinations",
+      "representation": "logical",
+      "display_role": "社内分析"
+    }
+  ],
+  "connections": [
+    {
+      "id": "edge_0",
+      "source": "product_source",
+      "target": "product_ingest",
+      "kind": "data",
+      "points": [
+        [
+          232,
+          284
+        ],
+        [
+          320,
+          284
+        ]
+      ]
+    },
+    {
+      "id": "edge_1",
+      "source": "product_ingest",
+      "target": "product_raw",
+      "kind": "data",
+      "points": [
+        [
+          480,
+          284
+        ],
+        [
+          544,
+          284
+        ]
+      ]
+    },
+    {
+      "id": "edge_2",
+      "source": "product_raw",
+      "target": "product_mart",
+      "kind": "data",
+      "points": [
+        [
+          704,
+          284
+        ],
+        [
+          768,
+          284
+        ]
+      ]
+    },
+    {
+      "id": "edge_3",
+      "source": "product_mart",
+      "target": "product_consumer",
+      "kind": "data",
+      "points": [
+        [
+          928,
+          284
+        ],
+        [
+          1040,
+          284
+        ]
+      ]
+    },
+    {
+      "id": "edge_4",
+      "source": "business_source",
+      "target": "business_ingest",
+      "kind": "data",
+      "points": [
+        [
+          232,
+          564
+        ],
+        [
+          320,
+          564
+        ]
+      ]
+    },
+    {
+      "id": "edge_5",
+      "source": "business_ingest",
+      "target": "business_raw",
+      "kind": "data",
+      "points": [
+        [
+          480,
+          564
+        ],
+        [
+          544,
+          564
+        ]
+      ]
+    },
+    {
+      "id": "edge_6",
+      "source": "business_raw",
+      "target": "business_mart",
+      "kind": "data",
+      "points": [
+        [
+          704,
+          564
+        ],
+        [
+          768,
+          564
+        ]
+      ]
+    },
+    {
+      "id": "edge_7",
+      "source": "business_mart",
+      "target": "business_consumer",
+      "kind": "data",
+      "points": [
+        [
+          928,
+          564
+        ],
+        [
+          1040,
+          564
+        ]
+      ]
+    }
+  ]
+}

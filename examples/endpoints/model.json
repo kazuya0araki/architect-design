@@ -1,0 +1,135 @@
+{
+  "title": "接続元・接続先の入力定義例",
+  "status": "proposal",
+  "scope": "基盤と外部の入出力。内部構成は対象外",
+  "nodes": [
+    {
+      "id": "source_system",
+      "name": "基幹システム",
+      "kind": "system",
+      "endpoint_roles": [
+        "source"
+      ],
+      "purpose": "業務データ提供"
+    },
+    {
+      "id": "source_file",
+      "name": "売上CSV（提供元未確認）",
+      "kind": "file",
+      "endpoint_roles": [
+        "source"
+      ],
+      "format": "CSV"
+    },
+    {
+      "id": "platform",
+      "name": "データ基盤",
+      "kind": "system",
+      "purpose": "保存・加工・提供"
+    },
+    {
+      "id": "bi",
+      "name": "BIツール",
+      "kind": "bi",
+      "endpoint_roles": [
+        "destination"
+      ],
+      "purpose": "指標の可視化"
+    },
+    {
+      "id": "excel",
+      "name": "Excel",
+      "kind": "spreadsheet",
+      "endpoint_roles": [
+        "destination"
+      ],
+      "purpose": "集計分析",
+      "product": "Microsoft Excel"
+    },
+    {
+      "id": "sheets",
+      "name": "Google Sheets",
+      "kind": "spreadsheet",
+      "endpoint_roles": [
+        "destination"
+      ],
+      "purpose": "業務共有",
+      "product": "Google Sheets"
+    },
+    {
+      "id": "product",
+      "name": "内製プロダクト",
+      "kind": "system",
+      "endpoint_roles": [
+        "destination"
+      ],
+      "purpose": "プロダクトへのデータ提供"
+    },
+    {
+      "id": "analyst",
+      "name": "アナリスト",
+      "kind": "person",
+      "endpoint_roles": [
+        "destination"
+      ],
+      "purpose": "アドホック分析"
+    }
+  ],
+  "connections": [
+    {
+      "source": "source_system",
+      "target": "platform",
+      "kind": "data",
+      "data": "業務データ"
+    },
+    {
+      "source": "source_file",
+      "target": "platform",
+      "kind": "data",
+      "data": "売上CSV"
+    },
+    {
+      "source": "platform",
+      "target": "bi",
+      "kind": "data",
+      "data": "提供データ"
+    },
+    {
+      "source": "platform",
+      "target": "excel",
+      "kind": "data",
+      "data": "提供データ"
+    },
+    {
+      "source": "platform",
+      "target": "sheets",
+      "kind": "data",
+      "data": "提供データ"
+    },
+    {
+      "source": "platform",
+      "target": "product",
+      "kind": "data",
+      "data": "提供データ"
+    },
+    {
+      "source": "platform",
+      "target": "analyst",
+      "kind": "data",
+      "data": "参照結果"
+    },
+    {
+      "source": "analyst",
+      "target": "platform",
+      "kind": "control",
+      "data": "クエリ実行指示"
+    }
+  ],
+  "unknowns": [
+    "基盤の製品・内部構成",
+    "CSV提供元・受領場所",
+    "BI製品",
+    "各経路の接続方式・頻度・権限・品質要件",
+    "所有者・SQL実行ツール"
+  ]
+}

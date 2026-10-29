@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+
+# 案件ごとに生成したアーキテクチャ図・入力・調査資料
+/architectures/
