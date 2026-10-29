@@ -1,0 +1,251 @@
+{
+  "schema_version": 2,
+  "id": "contract-boundary",
+  "title": "提供インターフェースと責任境界（架空の提案）",
+  "purpose": "提供インターフェースと責任境界（架空の提案）",
+  "status": "proposal",
+  "canvas": [
+    1280,
+    800
+  ],
+  "outer_margin": 48,
+  "publication_width": 960,
+  "flow_direction": "left-to-right",
+  "regions": [
+    {
+      "id": "provider",
+      "label": "提供側チーム",
+      "kind": "team",
+      "geometry": [
+        48,
+        112,
+        480,
+        432
+      ]
+    },
+    {
+      "id": "consumer",
+      "label": "分析側チーム",
+      "kind": "team",
+      "geometry": [
+        552,
+        112,
+        680,
+        432
+      ]
+    },
+    {
+      "id": "contract",
+      "label": "データ契約",
+      "kind": "contract",
+      "parent_id": "provider",
+      "fit": {
+        "members": [
+          "interface"
+        ],
+        "padding": 24
+      }
+    },
+    {
+      "id": "warehouse",
+      "label": "論理データ基盤",
+      "kind": "product",
+      "parent_id": "consumer",
+      "fit": {
+        "members": [
+          "raw",
+          "mart"
+        ],
+        "padding": 24
+      }
+    },
+    {
+      "id": "quality",
+      "label": "横断機能 / 品質検証",
+      "kind": "operations",
+      "geometry": [
+        552,
+        600,
+        680,
+        136
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "source",
+      "name": "業務DB",
+      "role": "提供側で管理",
+      "geometry": [
+        80,
+        288,
+        176,
+        112
+      ],
+      "region_id": "provider",
+      "representation": "logical"
+    },
+    {
+      "id": "interface",
+      "name": "公開データ",
+      "role": "スキーマ・品質",
+      "geometry": [
+        328,
+        288,
+        160,
+        112
+      ],
+      "region_id": "contract",
+      "representation": "logical",
+      "display_role": "スキーマ\n品質"
+    },
+    {
+      "id": "raw",
+      "name": "Raw",
+      "role": "契約から受領",
+      "geometry": [
+        592,
+        288,
+        144,
+        112
+      ],
+      "region_id": "warehouse",
+      "representation": "data",
+      "display_role": "契約データ"
+    },
+    {
+      "id": "mart",
+      "name": "Mart",
+      "role": "指標データ",
+      "geometry": [
+        784,
+        288,
+        144,
+        112
+      ],
+      "region_id": "warehouse",
+      "representation": "data"
+    },
+    {
+      "id": "bi",
+      "name": "BI",
+      "role": "業務で活用",
+      "geometry": [
+        1040,
+        288,
+        160,
+        112
+      ],
+      "region_id": "consumer",
+      "representation": "logical"
+    },
+    {
+      "id": "checks",
+      "name": "契約の検証",
+      "role": "品質条件を確認",
+      "geometry": [
+        816,
+        664,
+        384,
+        56
+      ],
+      "region_id": "quality",
+      "representation": "logical"
+    }
+  ],
+  "connections": [
+    {
+      "id": "edge_0",
+      "source": "source",
+      "target": "interface",
+      "kind": "data",
+      "points": [
+        [
+          256,
+          344
+        ],
+        [
+          328,
+          344
+        ]
+      ]
+    },
+    {
+      "id": "edge_1",
+      "source": "interface",
+      "target": "raw",
+      "kind": "data",
+      "points": [
+        [
+          488,
+          344
+        ],
+        [
+          592,
+          344
+        ]
+      ]
+    },
+    {
+      "id": "edge_2",
+      "source": "raw",
+      "target": "mart",
+      "kind": "data",
+      "points": [
+        [
+          736,
+          344
+        ],
+        [
+          784,
+          344
+        ]
+      ]
+    },
+    {
+      "id": "edge_3",
+      "source": "mart",
+      "target": "bi",
+      "kind": "data",
+      "points": [
+        [
+          928,
+          344
+        ],
+        [
+          1040,
+          344
+        ]
+      ]
+    },
+    {
+      "id": "edge_4",
+      "source": "checks",
+      "target": "interface",
+      "kind": "control",
+      "points": [
+        [
+          816,
+          692
+        ],
+        [
+          536,
+          692
+        ],
+        [
+          536,
+          432
+        ],
+        [
+          408,
+          432
+        ],
+        [
+          408,
+          400
+        ]
+      ],
+      "purpose": "validate"
+    }
+  ]
+}

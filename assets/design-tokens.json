@@ -1,0 +1,15 @@
+{
+  "color": {"canvas": "#FFFFFF", "surface": "#FFFFFF", "region": "#F5F6F7", "heading": "#EEF1F4", "text": "#202124", "secondary": "#5F6368", "border": "#AEB8C4", "inner_border": "#D0D6DD", "connector": "#5F6368", "accent": "#3569A8"},
+  "font": {"family": "Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif", "heading": 24, "region": 22, "name": 24, "role": 22},
+  "spacing": {"outer": 48, "padding": 24, "header": 48, "icon": 56, "line_gap": 6},
+  "region_styles": {
+    "stage": {"fill": "surface", "stroke": "border", "header": "bar"},
+    "functional": {"fill": "surface", "stroke": "inner_border", "header": "plain"},
+    "cloud": {"fill": "region", "stroke": "inner_border", "header": "plain"},
+    "project": {"fill": "region", "stroke": "none", "header": "plain"},
+    "team": {"fill": "surface", "stroke": "border", "header": "plain", "dash": "6 4"},
+    "product": {"fill": "surface", "stroke": "inner_border", "header": "plain"},
+    "operations": {"fill": "region", "stroke": "border", "header": "plain"},
+    "contract": {"fill": "surface", "stroke": "accent", "header": "plain", "dash": "6 4"}
+  }
+}

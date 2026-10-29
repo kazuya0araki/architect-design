@@ -1,0 +1,40 @@
+flowchart LR
+    subgraph sources["接続元"]
+        source_system["基幹システム / 業務データ提供"]
+        source_file["売上CSV（提供元未確認） / 提供元未確認"]
+    end
+    subgraph ingestion["取り込み"]
+        ingest["Cloud Run / 取り込み処理"]
+    end
+    subgraph platform["保存"]
+        objects["Cloud Storage / ファイル・受領データ"]
+    end
+    subgraph warehouse["BigQuery"]
+        raw["Raw / 受領テーブル"]
+        mart["Mart / 業務指標"]
+    end
+    subgraph operations["横断機能"]
+        jobs["ジョブ管理 / 加工の実行管理"]
+    end
+    subgraph destinations["提供・活用"]
+        bi["Looker / 指標の可視化"]
+        excel["Excel / 集計分析"]
+        sheets["Google Sheets / 業務共有"]
+        product["内製プロダクト / プロダクトへのデータ提供"]
+        analyst["アナリスト / アドホック分析"]
+    end
+    source_system -->|業務データ| ingest
+    source_file -->|売上CSV| ingest
+    ingest -->|受領データ| objects
+    objects -->|ロード| raw
+    raw -->|SQL変換| mart
+    mart -->|分析データ| bi
+    mart -->|提供データ| excel
+    mart -->|提供データ| sheets
+    mart -->|プロダクト用データ| product
+    mart -->|参照結果| analyst
+    jobs -.->|実行指示| mart
+    analyst -.->|クエリ実行指示| mart
+    classDef neutral fill:#FFFFFF,stroke:#DADCE0,color:#202124
+    class source_system,source_file,bi,excel,sheets,product,analyst,ingest,objects,raw,mart,jobs neutral
+    linkStyle default stroke:#5F6368

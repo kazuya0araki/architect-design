@@ -1,0 +1,386 @@
+{
+  "schema_version": 2,
+  "id": "data-ai-platform",
+  "title": "共通データからBI・AI・業務活用へ（架空の提案）",
+  "purpose": "共通データからBI・AI・業務活用へ（架空の提案）",
+  "status": "proposal",
+  "canvas": [
+    1280,
+    864
+  ],
+  "outer_margin": 48,
+  "publication_width": 960,
+  "flow_direction": "left-to-right",
+  "regions": [
+    {
+      "id": "sources",
+      "label": "接続元",
+      "kind": "stage",
+      "geometry": [
+        48,
+        64,
+        208,
+        640
+      ]
+    },
+    {
+      "id": "platform",
+      "label": "共通データ基盤",
+      "kind": "stage",
+      "geometry": [
+        280,
+        64,
+        704,
+        640
+      ]
+    },
+    {
+      "id": "destinations",
+      "label": "提供・活用",
+      "kind": "stage",
+      "geometry": [
+        1008,
+        64,
+        224,
+        640
+      ]
+    },
+    {
+      "id": "warehouse",
+      "label": "BigQuery",
+      "kind": "product",
+      "geometry": [
+        512,
+        176,
+        448,
+        328
+      ],
+      "parent_id": "platform",
+      "asset": "assets/icons/google-cloud/core/Unique Icons/BigQuery/SVG/BigQuery-512-color.svg"
+    },
+    {
+      "id": "operations",
+      "label": "横断機能 / 変換実行",
+      "kind": "operations",
+      "geometry": [
+        280,
+        728,
+        704,
+        88
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "app_source",
+      "name": "業務アプリ",
+      "role": "業務データ",
+      "geometry": [
+        72,
+        312,
+        160,
+        160
+      ],
+      "region_id": "sources",
+      "stage_id": "sources",
+      "icons": [
+        {
+          "asset": "assets/icons/material-symbols/domain.svg"
+        }
+      ],
+      "representation": "icon",
+      "entity_id": "business_app",
+      "endpoint_roles": [
+        "source"
+      ]
+    },
+    {
+      "id": "ingest",
+      "name": "Cloud Run",
+      "role": "取り込み",
+      "geometry": [
+        304,
+        312,
+        160,
+        160
+      ],
+      "region_id": "platform",
+      "stage_id": "platform",
+      "icons": [
+        {
+          "asset": "assets/icons/google-cloud/core/Unique Icons/Cloud Run/SVG/CloudRun-512-color-rgb.svg"
+        }
+      ],
+      "representation": "icon"
+    },
+    {
+      "id": "raw",
+      "name": "Raw",
+      "role": "受領データ",
+      "geometry": [
+        536,
+        312,
+        160,
+        112
+      ],
+      "region_id": "warehouse",
+      "stage_id": "platform",
+      "representation": "data"
+    },
+    {
+      "id": "mart",
+      "name": "Mart",
+      "role": "公開データ",
+      "geometry": [
+        768,
+        312,
+        160,
+        112
+      ],
+      "region_id": "warehouse",
+      "stage_id": "platform",
+      "representation": "data"
+    },
+    {
+      "id": "bi",
+      "name": "Data Studio",
+      "role": "指標の可視化",
+      "geometry": [
+        1040,
+        168,
+        160,
+        160
+      ],
+      "region_id": "destinations",
+      "stage_id": "destinations",
+      "icons": [
+        {
+          "asset": "assets/icons/google-data-studio/data-studio.svg"
+        }
+      ],
+      "representation": "icon"
+    },
+    {
+      "id": "ai",
+      "name": "AI・分析",
+      "role": "モデルで活用",
+      "geometry": [
+        1040,
+        360,
+        160,
+        112
+      ],
+      "region_id": "destinations",
+      "stage_id": "destinations",
+      "representation": "logical"
+    },
+    {
+      "id": "app_destination",
+      "name": "業務アプリ",
+      "role": "施策へ反映",
+      "geometry": [
+        1040,
+        528,
+        160,
+        160
+      ],
+      "region_id": "destinations",
+      "stage_id": "destinations",
+      "icons": [
+        {
+          "asset": "assets/icons/material-symbols/domain.svg"
+        }
+      ],
+      "representation": "icon",
+      "entity_id": "business_app",
+      "endpoint_roles": [
+        "destination"
+      ]
+    },
+    {
+      "id": "transform",
+      "name": "変換実行",
+      "role": "Cloud Run / dbt",
+      "geometry": [
+        544,
+        748,
+        416,
+        60
+      ],
+      "region_id": "operations",
+      "icons": [
+        {
+          "asset": "assets/icons/google-cloud/core/Unique Icons/Cloud Run/SVG/CloudRun-512-color-rgb.svg"
+        },
+        {
+          "asset": "assets/icons/dbt/dbt-bit.svg"
+        }
+      ],
+      "representation": "horizontal",
+      "name_size": 22,
+      "role_size": 20,
+      "icon_size": 48
+    }
+  ],
+  "connections": [
+    {
+      "id": "edge_0",
+      "source": "app_source",
+      "target": "ingest",
+      "kind": "data",
+      "points": [
+        [
+          232,
+          340
+        ],
+        [
+          304,
+          340
+        ]
+      ]
+    },
+    {
+      "id": "edge_1",
+      "source": "ingest",
+      "target": "raw",
+      "kind": "data",
+      "points": [
+        [
+          464,
+          340
+        ],
+        [
+          500,
+          340
+        ],
+        [
+          500,
+          368
+        ],
+        [
+          536,
+          368
+        ]
+      ]
+    },
+    {
+      "id": "edge_2",
+      "source": "raw",
+      "target": "mart",
+      "kind": "data",
+      "points": [
+        [
+          696,
+          368
+        ],
+        [
+          768,
+          368
+        ]
+      ]
+    },
+    {
+      "id": "edge_3",
+      "source": "mart",
+      "target": "bi",
+      "kind": "data",
+      "points": [
+        [
+          928,
+          368
+        ],
+        [
+          992,
+          368
+        ],
+        [
+          992,
+          196
+        ],
+        [
+          1040,
+          196
+        ]
+      ],
+      "purpose": "query"
+    },
+    {
+      "id": "edge_4",
+      "source": "mart",
+      "target": "ai",
+      "kind": "data",
+      "points": [
+        [
+          928,
+          368
+        ],
+        [
+          992,
+          368
+        ],
+        [
+          992,
+          416
+        ],
+        [
+          1040,
+          416
+        ]
+      ],
+      "purpose": "analyze",
+      "junctions": [
+        [
+          992,
+          368
+        ],
+        [
+          992,
+          416
+        ]
+      ]
+    },
+    {
+      "id": "edge_5",
+      "source": "mart",
+      "target": "app_destination",
+      "kind": "data",
+      "points": [
+        [
+          928,
+          368
+        ],
+        [
+          992,
+          368
+        ],
+        [
+          992,
+          556
+        ],
+        [
+          1040,
+          556
+        ]
+      ],
+      "purpose": "reverse_etl"
+    },
+    {
+      "id": "edge_6",
+      "source": "operations",
+      "target": "warehouse",
+      "kind": "control",
+      "points": [
+        [
+          736,
+          728
+        ],
+        [
+          736,
+          504
+        ]
+      ],
+      "purpose": "orchestrate"
+    }
+  ],
+  "brand_notice": "This diagram is not affiliated with or endorsed by dbt Labs."
+}

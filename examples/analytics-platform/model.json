@@ -1,0 +1,591 @@
+{
+  "schema_version": 2,
+  "id": "analytics-platform",
+  "title": "業務分析基盤 — 論理構成",
+  "purpose": "業務データと売上CSVを取り込み、業務指標を各利用先へ提供する",
+  "status": "proposal",
+  "canvas": [
+    1760,
+    1080
+  ],
+  "outer_margin": 48,
+  "publication_width": 960,
+  "flow_direction": "left-to-right",
+  "regions": [
+    {
+      "id": "sources",
+      "label": "接続元",
+      "kind": "stage",
+      "geometry": [
+        48,
+        64,
+        208,
+        808
+      ]
+    },
+    {
+      "id": "platform",
+      "label": "データ基盤",
+      "kind": "stage",
+      "geometry": [
+        280,
+        64,
+        968,
+        808
+      ]
+    },
+    {
+      "id": "destinations",
+      "label": "提供・活用",
+      "kind": "stage",
+      "geometry": [
+        1280,
+        64,
+        432,
+        808
+      ]
+    },
+    {
+      "id": "ownership",
+      "label": "分析基盤の機能範囲",
+      "kind": "functional",
+      "geometry": [
+        296,
+        144,
+        936,
+        704
+      ],
+      "parent_id": "platform"
+    },
+    {
+      "id": "warehouse",
+      "label": "分析用データストア",
+      "kind": "product",
+      "geometry": [
+        736,
+        232,
+        480,
+        288
+      ],
+      "parent_id": "ownership"
+    },
+    {
+      "id": "operations",
+      "label": "横断機能 / 実行管理",
+      "kind": "operations",
+      "geometry": [
+        280,
+        896,
+        968,
+        136
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "source_system",
+      "name": "基幹システム",
+      "role": "業務データ提供",
+      "geometry": [
+        72,
+        208,
+        160,
+        160
+      ],
+      "region_id": "sources",
+      "stage_id": "sources",
+      "representation": "logical",
+      "display_name": "基幹システム",
+      "kind": "system",
+      "endpoint_roles": [
+        "source"
+      ],
+      "display_role": "業務データ"
+    },
+    {
+      "id": "source_file",
+      "name": "売上CSV（提供元未確認）",
+      "role": "提供元未確認",
+      "geometry": [
+        72,
+        464,
+        160,
+        160
+      ],
+      "region_id": "sources",
+      "stage_id": "sources",
+      "representation": "logical",
+      "display_name": "売上CSV",
+      "kind": "file",
+      "endpoint_roles": [
+        "source"
+      ],
+      "format": "CSV"
+    },
+    {
+      "id": "ingest",
+      "name": "データ転送",
+      "role": "取り込み処理",
+      "geometry": [
+        304,
+        320,
+        160,
+        192
+      ],
+      "region_id": "ownership",
+      "stage_id": "platform",
+      "representation": "logical",
+      "display_role": "データ転送",
+      "kind": "system"
+    },
+    {
+      "id": "objects",
+      "name": "受領ストレージ",
+      "role": "ファイル・受領データ",
+      "geometry": [
+        512,
+        320,
+        160,
+        192
+      ],
+      "region_id": "ownership",
+      "stage_id": "platform",
+      "representation": "logical",
+      "display_role": "受領ファイル",
+      "kind": "storage"
+    },
+    {
+      "id": "raw",
+      "name": "Raw",
+      "role": "受領テーブル",
+      "geometry": [
+        760,
+        344,
+        176,
+        128
+      ],
+      "region_id": "warehouse",
+      "stage_id": "platform",
+      "representation": "data",
+      "display_role": "受領データ",
+      "kind": "database"
+    },
+    {
+      "id": "mart",
+      "name": "Mart",
+      "role": "業務指標",
+      "geometry": [
+        1024,
+        344,
+        176,
+        128
+      ],
+      "region_id": "warehouse",
+      "stage_id": "platform",
+      "representation": "data",
+      "display_role": "業務指標",
+      "kind": "database"
+    },
+    {
+      "id": "bi",
+      "name": "BIツール",
+      "role": "指標の可視化",
+      "geometry": [
+        1304,
+        144,
+        384,
+        104
+      ],
+      "region_id": "destinations",
+      "stage_id": "destinations",
+      "representation": "logical",
+      "kind": "bi",
+      "endpoint_roles": [
+        "destination"
+      ]
+    },
+    {
+      "id": "excel",
+      "name": "表計算ツールA",
+      "role": "集計分析",
+      "geometry": [
+        1304,
+        280,
+        384,
+        104
+      ],
+      "region_id": "destinations",
+      "stage_id": "destinations",
+      "representation": "logical",
+      "kind": "spreadsheet",
+      "endpoint_roles": [
+        "destination"
+      ]
+    },
+    {
+      "id": "sheets",
+      "name": "表計算ツールB",
+      "role": "業務共有",
+      "geometry": [
+        1304,
+        416,
+        384,
+        104
+      ],
+      "region_id": "destinations",
+      "stage_id": "destinations",
+      "representation": "logical",
+      "kind": "spreadsheet",
+      "endpoint_roles": [
+        "destination"
+      ]
+    },
+    {
+      "id": "product",
+      "name": "内製プロダクト",
+      "role": "プロダクトへのデータ提供",
+      "geometry": [
+        1304,
+        552,
+        384,
+        104
+      ],
+      "region_id": "destinations",
+      "stage_id": "destinations",
+      "representation": "logical",
+      "kind": "system",
+      "endpoint_roles": [
+        "destination"
+      ]
+    },
+    {
+      "id": "analyst",
+      "name": "アナリスト",
+      "role": "アドホック分析",
+      "geometry": [
+        1304,
+        688,
+        384,
+        104
+      ],
+      "region_id": "destinations",
+      "stage_id": "destinations",
+      "icons": [
+        {
+          "asset": "assets/icons/material-symbols/person.svg"
+        }
+      ],
+      "representation": "horizontal",
+      "kind": "person",
+      "endpoint_roles": [
+        "destination"
+      ]
+    },
+    {
+      "id": "jobs",
+      "name": "ジョブ管理",
+      "role": "加工実行の制御",
+      "geometry": [
+        600,
+        952,
+        400,
+        64
+      ],
+      "region_id": "operations",
+      "representation": "logical",
+      "kind": "system"
+    }
+  ],
+  "connections": [
+    {
+      "id": "edge_0",
+      "source": "source_system",
+      "target": "ingest",
+      "kind": "data",
+      "points": [
+        [
+          232,
+          288
+        ],
+        [
+          264,
+          288
+        ],
+        [
+          264,
+          348
+        ],
+        [
+          304,
+          348
+        ]
+      ],
+      "purpose": "ingest"
+    },
+    {
+      "id": "edge_1",
+      "source": "source_file",
+      "target": "ingest",
+      "kind": "data",
+      "points": [
+        [
+          232,
+          544
+        ],
+        [
+          264,
+          544
+        ],
+        [
+          264,
+          400
+        ],
+        [
+          304,
+          400
+        ]
+      ],
+      "purpose": "ingest"
+    },
+    {
+      "id": "edge_2",
+      "source": "ingest",
+      "target": "objects",
+      "kind": "data",
+      "points": [
+        [
+          464,
+          348
+        ],
+        [
+          512,
+          348
+        ]
+      ],
+      "purpose": "publish"
+    },
+    {
+      "id": "edge_3",
+      "source": "objects",
+      "target": "raw",
+      "kind": "data",
+      "points": [
+        [
+          672,
+          348
+        ],
+        [
+          712,
+          348
+        ],
+        [
+          712,
+          408
+        ],
+        [
+          760,
+          408
+        ]
+      ],
+      "purpose": "publish"
+    },
+    {
+      "id": "edge_4",
+      "source": "raw",
+      "target": "mart",
+      "kind": "data",
+      "points": [
+        [
+          936,
+          408
+        ],
+        [
+          1024,
+          408
+        ]
+      ],
+      "purpose": "publish"
+    },
+    {
+      "id": "edge_5",
+      "source": "mart",
+      "target": "bi",
+      "kind": "data",
+      "points": [
+        [
+          1200,
+          408
+        ],
+        [
+          1256,
+          408
+        ],
+        [
+          1256,
+          196
+        ],
+        [
+          1304,
+          196
+        ]
+      ],
+      "purpose": "publish"
+    },
+    {
+      "id": "edge_6",
+      "source": "mart",
+      "target": "excel",
+      "kind": "data",
+      "points": [
+        [
+          1200,
+          408
+        ],
+        [
+          1256,
+          408
+        ],
+        [
+          1256,
+          332
+        ],
+        [
+          1304,
+          332
+        ]
+      ],
+      "purpose": "publish"
+    },
+    {
+      "id": "edge_7",
+      "source": "mart",
+      "target": "sheets",
+      "kind": "data",
+      "points": [
+        [
+          1200,
+          408
+        ],
+        [
+          1256,
+          408
+        ],
+        [
+          1256,
+          468
+        ],
+        [
+          1304,
+          468
+        ]
+      ],
+      "purpose": "publish"
+    },
+    {
+      "id": "edge_8",
+      "source": "mart",
+      "target": "product",
+      "kind": "data",
+      "points": [
+        [
+          1200,
+          408
+        ],
+        [
+          1256,
+          408
+        ],
+        [
+          1256,
+          604
+        ],
+        [
+          1304,
+          604
+        ]
+      ],
+      "purpose": "publish"
+    },
+    {
+      "id": "edge_9",
+      "source": "mart",
+      "target": "analyst",
+      "kind": "data",
+      "points": [
+        [
+          1200,
+          408
+        ],
+        [
+          1256,
+          408
+        ],
+        [
+          1256,
+          740
+        ],
+        [
+          1304,
+          740
+        ]
+      ],
+      "purpose": "publish"
+    },
+    {
+      "id": "edge_10",
+      "source": "jobs",
+      "target": "mart",
+      "kind": "control",
+      "points": [
+        [
+          800,
+          952
+        ],
+        [
+          800,
+          888
+        ],
+        [
+          1240,
+          888
+        ],
+        [
+          1240,
+          472
+        ],
+        [
+          1112,
+          472
+        ]
+      ],
+      "purpose": "orchestrate"
+    },
+    {
+      "id": "edge_11",
+      "source": "analyst",
+      "target": "mart",
+      "kind": "control",
+      "points": [
+        [
+          1304,
+          768
+        ],
+        [
+          1264,
+          768
+        ],
+        [
+          1264,
+          448
+        ],
+        [
+          1200,
+          448
+        ]
+      ],
+      "purpose": "query"
+    }
+  ],
+  "scope": "接続元、取り込み、保存・加工、提供先と加工実行管理",
+  "assumptions": []
+}

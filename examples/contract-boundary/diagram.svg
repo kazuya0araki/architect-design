@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-labelledby="title description" data-schema-version="2">
+  <title id="title">提供インターフェースと責任境界（架空の提案）</title>
+  <desc id="description">提供インターフェースと責任境界（架空の提案） </desc>
+  <metadata id="model_metadata">{"id": "contract-boundary", "status": "proposal", "source": null, "omitted": []}</metadata>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
+    </marker>
+  </defs>
+  <style>text{font-family:Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif;fill:#202124}</style>
+  <rect width="1280" height="800" fill="#FFFFFF" />
+  <g id="regions">
+    <rect id="provider" data-region-kind="team" data-parent="" data-geometry="[48, 112, 480, 432]" x="48" y="112" width="480" height="432" fill="#FFFFFF" stroke="#AEB8C4" stroke-width="1" rx="4" stroke-dasharray="6 4" />
+    <rect id="consumer" data-region-kind="team" data-parent="" data-geometry="[552, 112, 680, 432]" x="552" y="112" width="680" height="432" fill="#FFFFFF" stroke="#AEB8C4" stroke-width="1" rx="4" stroke-dasharray="6 4" />
+    <rect id="quality" data-region-kind="operations" data-parent="" data-geometry="[552, 600, 680, 136]" x="552" y="600" width="680" height="136" fill="#F5F6F7" stroke="#AEB8C4" stroke-width="1" rx="4" />
+    <rect id="contract" data-region-kind="contract" data-parent="provider" data-geometry="[304, 216, 208, 208]" x="304" y="216" width="208" height="208" fill="#FFFFFF" stroke="#3569A8" stroke-width="1" rx="4" stroke-dasharray="6 4" />
+    <rect id="warehouse" data-region-kind="product" data-parent="consumer" data-geometry="[568, 216, 384, 208]" x="568" y="216" width="384" height="208" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
+  </g>
+  <g id="connections">
+    <g id="edge_0" data-source="source" data-target="interface" data-kind="data" data-purpose="">
+      <path d="M256 344 L328 344" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
+    </g>
+    <g id="edge_1" data-source="interface" data-target="raw" data-kind="data" data-purpose="">
+      <path d="M488 344 L592 344" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
+    </g>
+    <g id="edge_2" data-source="raw" data-target="mart" data-kind="data" data-purpose="">
+      <path d="M736 344 L784 344" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
+    </g>
+    <g id="edge_3" data-source="mart" data-target="bi" data-kind="data" data-purpose="">
+      <path d="M928 344 L1040 344" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
+    </g>
+    <g id="edge_4" data-source="checks" data-target="interface" data-kind="control" data-purpose="validate">
+      <path d="M816 692 L536 692 L536 432 L408 432 L408 400" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="6 5" />
+    </g>
+  </g>
+  <g id="nodes">
+    <g id="source" data-kind="node" data-region="provider" data-stage="" data-geometry="[80, 288, 176, 112]" data-basis="proposal">
+      <title>業務DB / 提供側で管理</title>
+      <rect x="80" y="288" width="176" height="112" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="interface" data-kind="node" data-region="contract" data-stage="" data-geometry="[328, 288, 160, 112]" data-basis="proposal">
+      <title>公開データ / スキーマ・品質</title>
+      <rect x="328" y="288" width="160" height="112" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="raw" data-kind="node" data-region="warehouse" data-stage="" data-geometry="[592, 288, 144, 112]" data-basis="proposal">
+      <title>Raw / 契約から受領</title>
+      <path d="M592 300C592 284 736 284 736 300V388C736 404 592 404 592 388Z M592 300C592 316 736 316 736 300" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
+    </g>
+    <g id="mart" data-kind="node" data-region="warehouse" data-stage="" data-geometry="[784, 288, 144, 112]" data-basis="proposal">
+      <title>Mart / 指標データ</title>
+      <path d="M784 300C784 284 928 284 928 300V388C928 404 784 404 784 388Z M784 300C784 316 928 316 928 300" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
+    </g>
+    <g id="bi" data-kind="node" data-region="consumer" data-stage="" data-geometry="[1040, 288, 160, 112]" data-basis="proposal">
+      <title>BI / 業務で活用</title>
+      <rect x="1040" y="288" width="160" height="112" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="checks" data-kind="node" data-region="quality" data-stage="" data-geometry="[816, 664, 384, 56]" data-basis="proposal">
+      <title>契約の検証 / 品質条件を確認</title>
+      <rect x="816" y="664" width="384" height="56" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+  </g>
+  <g id="labels">
+    <text id="provider_label_0" x="64" y="144" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 122, 132, 24]">提供側チーム</text>
+    <text id="consumer_label_0" x="568" y="144" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[568, 122, 132, 24]">分析側チーム</text>
+    <text id="quality_label_0" x="568" y="632" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[568, 610, 212.29999999999995, 24]">横断機能 / 品質検証</text>
+    <text id="contract_label_0" x="320" y="248" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[320, 226, 110, 24]">データ契約</text>
+    <text id="warehouse_label_0" x="584" y="248" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[584, 226, 154, 24]">論理データ基盤</text>
+    <text id="source_name_0" x="168.0" y="339.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[130.8, 315.0, 74.39999999999999, 26]">業務DB</text>
+    <text id="source_role_0" x="168.0" y="371.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[102.0, 349.0, 132, 24]">提供側で管理</text>
+    <text id="interface_name_0" x="408.0" y="325.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[348.0, 301.0, 120, 26]">公開データ</text>
+    <text id="interface_role_0" x="408.0" y="357.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[364.0, 335.0, 88, 24]">スキーマ</text>
+    <text id="interface_role_1" x="408.0" y="385.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[386.0, 363.0, 44, 24]">品質</text>
+    <text id="raw_name_0" x="664.0" y="339.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[644.2, 315.0, 39.6, 26]">Raw</text>
+    <text id="raw_role_0" x="664.0" y="371.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[609.0, 349.0, 110, 24]">契約データ</text>
+    <text id="mart_name_0" x="856.0" y="339.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[829.6, 315.0, 52.800000000000004, 26]">Mart</text>
+    <text id="mart_role_0" x="856.0" y="371.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[801.0, 349.0, 110, 24]">指標データ</text>
+    <text id="bi_name_0" x="1120.0" y="339.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1106.8, 315.0, 26.400000000000002, 26]">BI</text>
+    <text id="bi_role_0" x="1120.0" y="371.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1065.0, 349.0, 110, 24]">業務で活用</text>
+    <text id="checks_name_0" x="1008.0" y="687.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[948.0, 663.0, 120, 26]">契約の検証</text>
+    <text id="checks_role_0" x="1008.0" y="719.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[931.0, 697.0, 154, 24]">品質条件を確認</text>
+  </g>
+</svg>
