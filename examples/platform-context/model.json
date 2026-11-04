@@ -1,0 +1,103 @@
+{
+  "schema_version": 2,
+  "id": "platform-context",
+  "title": "データ基盤の全体像",
+  "purpose": "データ基盤の全体像を説明する架空の提案",
+  "status": "proposal",
+  "canvas": [
+    1280,
+    544
+  ],
+  "outer_margin": 48,
+  "publication_width": 960,
+  "flow_direction": "left-to-right",
+  "view_level": "context",
+  "diagram_type": "context",
+  "regions": [
+    {
+      "id": "scope",
+      "label": "対象：データ基盤",
+      "kind": "functional",
+      "geometry": [
+        480,
+        128,
+        320,
+        304
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "source",
+      "name": "業務システム",
+      "role": "データを提供",
+      "geometry": [
+        80,
+        216,
+        256,
+        128
+      ],
+      "representation": "logical"
+    },
+    {
+      "id": "platform",
+      "name": "データ基盤",
+      "role": "収集・加工・提供",
+      "geometry": [
+        512,
+        216,
+        256,
+        128
+      ],
+      "representation": "logical"
+    },
+    {
+      "id": "consumer",
+      "name": "利用者・業務アプリ",
+      "role": "データを活用",
+      "geometry": [
+        944,
+        216,
+        256,
+        128
+      ],
+      "representation": "logical"
+    }
+  ],
+  "connections": [
+    {
+      "id": "input",
+      "source": "source",
+      "target": "platform",
+      "kind": "data",
+      "points": [
+        [
+          336,
+          280
+        ],
+        [
+          512,
+          280
+        ]
+      ],
+      "interaction": "transfer"
+    },
+    {
+      "id": "output",
+      "source": "platform",
+      "target": "consumer",
+      "kind": "data",
+      "points": [
+        [
+          768,
+          280
+        ],
+        [
+          944,
+          280
+        ]
+      ],
+      "interaction": "transfer"
+    }
+  ]
+}

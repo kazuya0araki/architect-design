@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="672" viewBox="0 0 1280 672" role="img" aria-labelledby="title description" data-schema-version="2">
+  <title id="title">所属とネットワーク配置の区別</title>
+  <desc id="description">所属とネットワーク配置の区別を説明する架空の提案 </desc>
+  <metadata id="model_metadata">{"id": "deployment-boundary", "status": "proposal", "source": null, "omitted": [], "view_level": "detail", "diagram_type": "deployment"}</metadata>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
+    </marker>
+  </defs>
+  <style>text{font-family:Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif;fill:#202124}</style>
+  <rect width="1280" height="672" fill="#FFFFFF" />
+  <g id="regions">
+    <rect id="project" data-region-kind="project" data-parent="" data-geometry="[48, 64, 1184, 544]" x="48" y="64" width="1184" height="544" fill="#F5F6F7" stroke="none" stroke-width="1" rx="4" />
+    <rect id="network" data-region-kind="network" data-parent="project" data-geometry="[80, 144, 512, 384]" x="80" y="144" width="512" height="384" fill="#FFFFFF" stroke="#AEB8C4" stroke-width="1" rx="4" data-scope="提案上のプライベートネットワーク。実ネットワークIDは未確定" stroke-dasharray="3 3" />
+  </g>
+  <g id="connections">
+    <g id="worker_endpoint" data-source="worker" data-target="endpoint" data-kind="data" data-purpose="" data-interaction="transfer" data-transfer-mode="">
+      <path d="M352 320 L392 320" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
+    </g>
+    <g id="endpoint_service" data-source="endpoint" data-target="service" data-kind="data" data-purpose="" data-interaction="transfer" data-transfer-mode="">
+      <path d="M560 320 L864 320" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
+    </g>
+  </g>
+  <g id="nodes">
+    <g id="worker" data-kind="node" data-region="network" data-stage="" data-geometry="[112, 264, 240, 112]" data-basis="proposal">
+      <title>取り込みワーカー / ネットワーク内に配置</title>
+      <rect x="112" y="264" width="240" height="112" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="endpoint" data-kind="node" data-region="network" data-stage="" data-geometry="[392, 264, 168, 112]" data-basis="proposal">
+      <title>Private endpoint / 接続口</title>
+      <rect x="392" y="264" width="168" height="112" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="service" data-kind="node" data-region="project" data-stage="" data-geometry="[864, 264, 304, 112]" data-basis="proposal">
+      <title>マネージド保存先 / ネットワークの外部</title>
+      <rect x="864" y="264" width="304" height="112" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+  </g>
+  <g id="labels">
+    <text id="project_label_0" x="64" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 74, 308, 24]">クラウドプロジェクト（所属）</text>
+    <text id="network_label_0" x="96" y="176" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[96, 154, 264, 24]">プライベートネットワーク</text>
+    <rect x="620.0" y="280" width="184" height="28" fill="#FFFFFF" />
+    <text id="endpoint_service_label_0" x="712" y="304" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[624.0, 282, 176, 24]">プライベート接続</text>
+    <text id="worker_name_0" x="232.0" y="315.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[136.0, 291.0, 192, 26]">取り込みワーカー</text>
+    <text id="worker_role_0" x="232.0" y="347.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[122.0, 325.0, 220, 24]">ネットワーク内に配置</text>
+    <text id="endpoint_name_0" x="476.0" y="300.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[429.8, 276.0, 92.39999999999999, 26]">Private</text>
+    <text id="endpoint_name_1" x="476.0" y="330.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[423.2, 306.0, 105.6, 26]">endpoint</text>
+    <text id="endpoint_role_0" x="476.0" y="362.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[443.0, 340.0, 66, 24]">接続口</text>
+    <text id="service_name_0" x="1016.0" y="315.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[920.0, 291.0, 192, 26]">マネージド保存先</text>
+    <text id="service_role_0" x="1016.0" y="347.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[917.0, 325.0, 198, 24]">ネットワークの外部</text>
+  </g>
+</svg>

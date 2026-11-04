@@ -21,3 +21,11 @@
 - [データ・AI基盤](data-ai-platform.md)
 
 横断機能の詳細は[共通部品](../components/cross-cutting.md)を参照する。各パターンは[実行できるSVG例](../../examples/README.md)を持ち、描画後の配置・接続も検証する。
+
+## 方式・部品による補助パターン
+
+- [再利用する部品群](reusable-fragments.md)：確認済みの小構成をID・座標を分けて組み立てる。
+- [バッチ・ストリーミング・CDC](ingestion-modes.md)：方式と頻度を区別する。
+- [コピーを伴わない外部照会](federated-query.md)：クエリ要求と参照結果を分ける。
+
+最初に[図のレベル](../guides/view-levels.md)を選び、配置の説明は[境界](../components/boundary.md)と[配置の例](../../examples/deployment-boundary/README.md)を使う。

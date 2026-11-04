@@ -39,6 +39,19 @@ def audit_svg(model,path):
     actual_edges = {(e.get('id'),e.get('data-source'),e.get('data-target'),e.get('data-kind')) for e in elements if e.get('data-source')}
     expected_edges = {(c['id'],c['source'],c['target'],c['kind']) for c in model.get('connections',[])}
     if actual_edges!=expected_edges:errors.append('SVG connections differ from model')
+    edge_elements = {e.get('id'): e for e in elements if e.get('data-source')}
+    for connection in model.get('connections', []):
+        element = edge_elements.get(connection['id'])
+        if element is not None:
+            for key in ('interaction', 'transfer_mode'):
+                if key in connection and element.get('data-' + key.replace('_', '-')) != connection[key]:
+                    errors.append('SVG connection semantics differ from model: ' + connection['id'])
+    region_elements = {e.get('id'): e for e in elements if e.get('data-region-kind')}
+    for region in model.get('regions', []):
+        element = region_elements.get(region['id'])
+        if region['kind'] == 'network' and element is not None and element.get('data-scope') != region['scope']:
+            errors.append('SVG network scope differs from model: ' + region['id'])
+
     actual_regions = {e.get('id') for e in elements if e.get('data-region-kind')}
     if actual_regions!=set(regions):errors.append('SVG regions differ from model')
     labels = []

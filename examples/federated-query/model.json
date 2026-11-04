@@ -1,0 +1,183 @@
+{
+  "schema_version": 2,
+  "id": "federated-query",
+  "title": "コピーを伴わない外部照会",
+  "purpose": "コピーを伴わない外部照会を説明する架空の提案",
+  "status": "proposal",
+  "canvas": [
+    1280,
+    448
+  ],
+  "outer_margin": 48,
+  "publication_width": 960,
+  "flow_direction": "left-to-right",
+  "view_level": "pipeline",
+  "diagram_type": "data_flow",
+  "regions": [
+    {
+      "id": "source_scope",
+      "label": "外部システム",
+      "kind": "functional",
+      "geometry": [
+        48,
+        64,
+        320,
+        320
+      ]
+    },
+    {
+      "id": "platform_scope",
+      "label": "分析基盤（保存層は省略）",
+      "kind": "functional",
+      "geometry": [
+        480,
+        64,
+        320,
+        320
+      ]
+    },
+    {
+      "id": "use_scope",
+      "label": "利用者",
+      "kind": "functional",
+      "geometry": [
+        912,
+        64,
+        320,
+        320
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "external",
+      "name": "外部データソース",
+      "role": "データを保持",
+      "geometry": [
+        80,
+        152,
+        256,
+        160
+      ],
+      "representation": "logical"
+    },
+    {
+      "id": "engine",
+      "name": "クエリエンジン",
+      "role": "外部データを参照",
+      "geometry": [
+        512,
+        152,
+        256,
+        160
+      ],
+      "representation": "logical"
+    },
+    {
+      "id": "analyst",
+      "name": "アナリスト",
+      "role": "手動SQL",
+      "geometry": [
+        944,
+        152,
+        256,
+        160
+      ],
+      "representation": "logical"
+    }
+  ],
+  "connections": [
+    {
+      "id": "sql_request",
+      "source": "analyst",
+      "target": "engine",
+      "kind": "control",
+      "points": [
+        [
+          944,
+          184
+        ],
+        [
+          768,
+          184
+        ]
+      ],
+      "label": "SQL実行",
+      "label_position": [
+        856,
+        168
+      ],
+      "label_width": 192,
+      "interaction": "query"
+    },
+    {
+      "id": "pushdown",
+      "source": "engine",
+      "target": "external",
+      "kind": "control",
+      "points": [
+        [
+          512,
+          184
+        ],
+        [
+          336,
+          184
+        ]
+      ],
+      "label": "外部へのクエリ",
+      "label_position": [
+        424,
+        168
+      ],
+      "label_width": 192,
+      "interaction": "query"
+    },
+    {
+      "id": "external_result",
+      "source": "external",
+      "target": "engine",
+      "kind": "data",
+      "points": [
+        [
+          336,
+          280
+        ],
+        [
+          512,
+          280
+        ]
+      ],
+      "label": "参照結果",
+      "label_position": [
+        424,
+        264
+      ],
+      "label_width": 192,
+      "interaction": "result"
+    },
+    {
+      "id": "query_result",
+      "source": "engine",
+      "target": "analyst",
+      "kind": "data",
+      "points": [
+        [
+          768,
+          280
+        ],
+        [
+          944,
+          280
+        ]
+      ],
+      "label": "参照結果",
+      "label_position": [
+        856,
+        264
+      ],
+      "label_width": 192,
+      "interaction": "result"
+    }
+  ]
+}

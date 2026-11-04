@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-labelledby="title description" data-schema-version="2">
   <title id="title">提供インターフェースと責任境界（架空の提案）</title>
   <desc id="description">提供インターフェースと責任境界（架空の提案） </desc>
-  <metadata id="model_metadata">{"id": "contract-boundary", "status": "proposal", "source": null, "omitted": []}</metadata>
+  <metadata id="model_metadata">{"id": "contract-boundary", "status": "proposal", "source": null, "omitted": [], "view_level": "pipeline", "diagram_type": "data_flow"}</metadata>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
@@ -18,19 +18,19 @@
     <rect id="warehouse" data-region-kind="product" data-parent="consumer" data-geometry="[568, 216, 384, 208]" x="568" y="216" width="384" height="208" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
   </g>
   <g id="connections">
-    <g id="edge_0" data-source="source" data-target="interface" data-kind="data" data-purpose="">
+    <g id="edge_0" data-source="source" data-target="interface" data-kind="data" data-purpose="" data-interaction="" data-transfer-mode="">
       <path d="M256 344 L328 344" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_1" data-source="interface" data-target="raw" data-kind="data" data-purpose="">
+    <g id="edge_1" data-source="interface" data-target="raw" data-kind="data" data-purpose="" data-interaction="" data-transfer-mode="">
       <path d="M488 344 L592 344" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_2" data-source="raw" data-target="mart" data-kind="data" data-purpose="">
+    <g id="edge_2" data-source="raw" data-target="mart" data-kind="data" data-purpose="" data-interaction="" data-transfer-mode="">
       <path d="M736 344 L784 344" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_3" data-source="mart" data-target="bi" data-kind="data" data-purpose="">
+    <g id="edge_3" data-source="mart" data-target="bi" data-kind="data" data-purpose="" data-interaction="" data-transfer-mode="">
       <path d="M928 344 L1040 344" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_4" data-source="checks" data-target="interface" data-kind="control" data-purpose="validate">
+    <g id="edge_4" data-source="checks" data-target="interface" data-kind="control" data-purpose="validate" data-interaction="" data-transfer-mode="">
       <path d="M816 692 L536 692 L536 432 L408 432 L408 400" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="6 5" />
     </g>
   </g>

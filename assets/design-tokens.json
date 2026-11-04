@@ -10,6 +10,7 @@
     "team": {"fill": "surface", "stroke": "border", "header": "plain", "dash": "6 4"},
     "product": {"fill": "surface", "stroke": "inner_border", "header": "plain"},
     "operations": {"fill": "region", "stroke": "border", "header": "plain"},
-    "contract": {"fill": "surface", "stroke": "accent", "header": "plain", "dash": "6 4"}
+    "contract": {"fill": "surface", "stroke": "accent", "header": "plain", "dash": "6 4"},
+    "network": {"fill": "surface", "stroke": "border", "header": "plain", "dash": "3 3"}
   }
 }

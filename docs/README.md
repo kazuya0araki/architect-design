@@ -16,12 +16,15 @@
 
 - [色](foundations/color.md)
 - [文字・掲載幅での可読性](foundations/typography.md)
+- [用語集・表記の使い分け](foundations/glossary.md)
 - [余白とレイアウト](foundations/spacing.md)
 - [アイコンの選択と配置](foundations/iconography.md)
 
 ## 作図部品
 
 - [製品・処理ノード](components/node.md)
+- [実行基盤と併用ソフトウェア](components/runtime-software.md)
+- [部品の仕様と見本](components/specimens.md)
 - [接続元](components/source.md)
 - [接続先](components/destination.md)
 - [論理層](components/logical-layer.md)
@@ -37,11 +40,15 @@
 - [用途別の基盤](patterns/purpose-based-platform.md)
 - [契約による境界](patterns/contract-boundary.md)
 - [データ・AI基盤](patterns/data-ai-platform.md)
+- [再利用する部品群](patterns/reusable-fragments.md)
+- [取り込み方式](patterns/ingestion-modes.md)
+- [コピーを伴わない外部照会](patterns/federated-query.md)
 
 ## 作成ガイド
 
 - [入力の情報モデル](guides/input-model.md)
 - [構成図の生成](guides/generation.md)
+- [図の表示レベルと種類](guides/view-levels.md)
 - [レビュー](guides/review.md)
 - [編集形式と画像出力](guides/export.md)
 

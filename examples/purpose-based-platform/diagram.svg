@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-labelledby="title description" data-schema-version="2">
   <title id="title">用途別に分離したデータ基盤（架空の提案）</title>
   <desc id="description">用途別に分離したデータ基盤（架空の提案） </desc>
-  <metadata id="model_metadata">{"id": "purpose-based-platform", "status": "proposal", "source": null, "omitted": []}</metadata>
+  <metadata id="model_metadata">{"id": "purpose-based-platform", "status": "proposal", "source": null, "omitted": [], "view_level": "pipeline", "diagram_type": "data_flow"}</metadata>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
@@ -24,28 +24,28 @@
     <rect id="business" data-region-kind="project" data-parent="platform" data-geometry="[296, 432, 672, 248]" x="296" y="432" width="672" height="248" fill="#F5F6F7" stroke="none" stroke-width="1" rx="4" />
   </g>
   <g id="connections">
-    <g id="edge_0" data-source="product_source" data-target="product_ingest" data-kind="data" data-purpose="">
+    <g id="edge_0" data-source="product_source" data-target="product_ingest" data-kind="data" data-purpose="" data-interaction="" data-transfer-mode="">
       <path d="M232 284 L320 284" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_1" data-source="product_ingest" data-target="product_raw" data-kind="data" data-purpose="">
+    <g id="edge_1" data-source="product_ingest" data-target="product_raw" data-kind="data" data-purpose="" data-interaction="" data-transfer-mode="">
       <path d="M480 284 L544 284" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_2" data-source="product_raw" data-target="product_mart" data-kind="data" data-purpose="">
+    <g id="edge_2" data-source="product_raw" data-target="product_mart" data-kind="data" data-purpose="" data-interaction="" data-transfer-mode="">
       <path d="M704 284 L768 284" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_3" data-source="product_mart" data-target="product_consumer" data-kind="data" data-purpose="">
+    <g id="edge_3" data-source="product_mart" data-target="product_consumer" data-kind="data" data-purpose="" data-interaction="" data-transfer-mode="">
       <path d="M928 284 L1040 284" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_4" data-source="business_source" data-target="business_ingest" data-kind="data" data-purpose="">
+    <g id="edge_4" data-source="business_source" data-target="business_ingest" data-kind="data" data-purpose="" data-interaction="" data-transfer-mode="">
       <path d="M232 564 L320 564" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_5" data-source="business_ingest" data-target="business_raw" data-kind="data" data-purpose="">
+    <g id="edge_5" data-source="business_ingest" data-target="business_raw" data-kind="data" data-purpose="" data-interaction="" data-transfer-mode="">
       <path d="M480 564 L544 564" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_6" data-source="business_raw" data-target="business_mart" data-kind="data" data-purpose="">
+    <g id="edge_6" data-source="business_raw" data-target="business_mart" data-kind="data" data-purpose="" data-interaction="" data-transfer-mode="">
       <path d="M704 564 L768 564" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_7" data-source="business_mart" data-target="business_consumer" data-kind="data" data-purpose="">
+    <g id="edge_7" data-source="business_mart" data-target="business_consumer" data-kind="data" data-purpose="" data-interaction="" data-transfer-mode="">
       <path d="M928 564 L1040 564" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
   </g>

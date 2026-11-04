@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="448" viewBox="0 0 1280 448" role="img" aria-labelledby="title description" data-schema-version="2">
+  <title id="title">コピーを伴わない外部照会</title>
+  <desc id="description">コピーを伴わない外部照会を説明する架空の提案 </desc>
+  <metadata id="model_metadata">{"id": "federated-query", "status": "proposal", "source": null, "omitted": [], "view_level": "pipeline", "diagram_type": "data_flow"}</metadata>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
+    </marker>
+  </defs>
+  <style>text{font-family:Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif;fill:#202124}</style>
+  <rect width="1280" height="448" fill="#FFFFFF" />
+  <g id="regions">
+    <rect id="source_scope" data-region-kind="functional" data-parent="" data-geometry="[48, 64, 320, 320]" x="48" y="64" width="320" height="320" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
+    <rect id="platform_scope" data-region-kind="functional" data-parent="" data-geometry="[480, 64, 320, 320]" x="480" y="64" width="320" height="320" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
+    <rect id="use_scope" data-region-kind="functional" data-parent="" data-geometry="[912, 64, 320, 320]" x="912" y="64" width="320" height="320" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
+  </g>
+  <g id="connections">
+    <g id="sql_request" data-source="analyst" data-target="engine" data-kind="control" data-purpose="" data-interaction="query" data-transfer-mode="">
+      <path d="M944 184 L768 184" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="6 5" />
+    </g>
+    <g id="pushdown" data-source="engine" data-target="external" data-kind="control" data-purpose="" data-interaction="query" data-transfer-mode="">
+      <path d="M512 184 L336 184" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="6 5" />
+    </g>
+    <g id="external_result" data-source="external" data-target="engine" data-kind="data" data-purpose="" data-interaction="result" data-transfer-mode="">
+      <path d="M336 280 L512 280" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
+    </g>
+    <g id="query_result" data-source="engine" data-target="analyst" data-kind="data" data-purpose="" data-interaction="result" data-transfer-mode="">
+      <path d="M768 280 L944 280" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
+    </g>
+  </g>
+  <g id="nodes">
+    <g id="external" data-kind="node" data-region="" data-stage="" data-geometry="[80, 152, 256, 160]" data-basis="proposal">
+      <title>外部データソース / データを保持</title>
+      <rect x="80" y="152" width="256" height="160" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="engine" data-kind="node" data-region="" data-stage="" data-geometry="[512, 152, 256, 160]" data-basis="proposal">
+      <title>クエリエンジン / 外部データを参照</title>
+      <rect x="512" y="152" width="256" height="160" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="analyst" data-kind="node" data-region="" data-stage="" data-geometry="[944, 152, 256, 160]" data-basis="proposal">
+      <title>アナリスト / 手動SQL</title>
+      <rect x="944" y="152" width="256" height="160" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+  </g>
+  <g id="labels">
+    <text id="source_scope_label_0" x="64" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 74, 132, 24]">外部システム</text>
+    <text id="platform_scope_label_0" x="496" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[496, 74, 264, 24]">分析基盤（保存層は省略）</text>
+    <text id="use_scope_label_0" x="928" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[928, 74, 66, 24]">利用者</text>
+    <rect x="811.85" y="144" width="88.30000000000001" height="28" fill="#FFFFFF" />
+    <text id="sql_request_label_0" x="856" y="168" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[815.85, 146, 80.30000000000001, 24]">SQL実行</text>
+    <rect x="343.0" y="144" width="162" height="28" fill="#FFFFFF" />
+    <text id="pushdown_label_0" x="424" y="168" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[347.0, 146, 154, 24]">外部へのクエリ</text>
+    <rect x="376.0" y="240" width="96" height="28" fill="#FFFFFF" />
+    <text id="external_result_label_0" x="424" y="264" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[380.0, 242, 88, 24]">参照結果</text>
+    <rect x="808.0" y="240" width="96" height="28" fill="#FFFFFF" />
+    <text id="query_result_label_0" x="856" y="264" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[812.0, 242, 88, 24]">参照結果</text>
+    <text id="external_name_0" x="208.0" y="227.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[112.0, 203.0, 192, 26]">外部データソース</text>
+    <text id="external_role_0" x="208.0" y="259.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[142.0, 237.0, 132, 24]">データを保持</text>
+    <text id="engine_name_0" x="640.0" y="227.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[556.0, 203.0, 168, 26]">クエリエンジン</text>
+    <text id="engine_role_0" x="640.0" y="259.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[552.0, 237.0, 176, 24]">外部データを参照</text>
+    <text id="analyst_name_0" x="1072.0" y="227.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1012.0, 203.0, 120, 26]">アナリスト</text>
+    <text id="analyst_role_0" x="1072.0" y="259.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1031.85, 237.0, 80.29999999999998, 24]">手動SQL</text>
+  </g>
+</svg>

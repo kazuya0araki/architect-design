@@ -36,3 +36,13 @@ Google Cloudは現行のCore・カテゴリの2セットを保管し、Legacyと
 ## 整合性の確認
 
 リポジトリのルートで`python3 scripts/validate_assets.py`を実行する。manifestと実ファイルの過不足、重複、SHA-256、SVG構文、現行コレクションの件数、サンプルの素材参照と埋め込みを確認する。オンラインの最新版確認は別途必要。
+
+## 個別製品の選択
+
+- Data Studio：本システムでは既存の`assets/icons/google-cloud/categories/Category Icons/Data Analytics/SVG/DataAnalytics-512-color.svg`へ統一する。公式に専用ロゴがあることと、このシステムで採用する素材は分けて扱う。独立素材は追加しない。
+- Apache Airflow・Iceberg・Beam：各プロジェクトの公式サイトまたは公式の配布リポジトリから取得し、`assets/icons/apache/<project>/`へ保存する。商標の扱いはApacheの公式ポリシーに従う。
+- Microsoft Office / Microsoft 365：公式の製品ページが参照する現行SVGを`assets/icons/microsoft-office/`へ保存する。Azureのアイコンや第三者のOfficeアイコン集で代替しない。
+
+取得元・取得日・確認日・ハッシュ・利用条件は既存manifestの形式で記録する。ツールがサービスに内包される場合の表示は[実行基盤と併用ソフトウェア](../components/runtime-software.md)に従う。
+
+公式の文字なしアイコンがPNGのみの場合は、そのPNGを元のバイト列のまま採用できる。文字付きSVGからの切り抜きや独自のベクター化は行わない。manifestで形式と取得先を識別し、SVGへの埋め込みでは`image/png`を使う。Icebergはこの条件で文字なしPNGを採用する。

@@ -11,6 +11,20 @@
 | [BI・AI・業務活用](data-ai-platform/README.md) | 共通データからの分岐、業務アプリへの結果提供 | [JSON](data-ai-platform/model.json)・[SVG](data-ai-platform/diagram.svg) |
 | [接続元・接続先の入力](endpoints/README.md) | 方式・形式等を記述する入力専用例 | [JSON](endpoints/model.json) |
 
+## 表示レベル・部品・接続方式の見本
+
+| 例 | 適用先 |
+| --- | --- |
+| [全体像](platform-context/README.md) | context。基盤内部を展開しない |
+| [部品の状態](node-specimens/README.md) | 標準・長文・アイコンなし・横並び・入れ子 |
+| [再利用部品の組み合わせ](component-catalog/README.md) | 部品JSONから同じ描画ルールで組み立てる |
+| [取り込み方式](ingestion-modes/README.md) | バッチ・ストリーミング・CDCを区別する |
+| [外部照会](federated-query/README.md) | データをコピーせず照会し、要求と結果を分ける |
+| [ネットワーク配置](deployment-boundary/README.md) | detail/deployment。所属と実配置を分ける |
+| [実行基盤と併用ソフトウェア](runtime-software/README.md) | Airflow・Beam・dbt・Icebergの役割を併記する |
+
+再利用する部品は[fragments](fragments/README.md)。これらは説明用の架空の構成であり、案件に存在しない要素を追加するための必須構成ではない。
+
 ## 再生成と検証
 
 ```sh

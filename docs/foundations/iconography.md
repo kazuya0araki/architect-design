@@ -6,7 +6,7 @@
 
 人・組織・汎用データベース等の概念には[Google Fonts Material Symbols](https://fonts.google.com/icons)を使う。Outlined、FILL=0、weight=400を基本に、公式SVGを`assets/icons/material-symbols/`へ保存し、取得元・ハッシュ・ライセンスを記録する。製品が特定できる場合は汎用記号より公式製品アイコンを優先する。
 
-製品名が似ていても、別製品のロゴを流用しない。例えばData Studio（旧Looker Studio）とLookerは区別し、Data Studio公式サイトの専用素材を使う。クラウドのカテゴリ指定と製品ブランドの対応が曖昧な場合は、対象製品の公式素材を確認する。
+製品名が似ていても、別製品のロゴを流用しない。例えばData StudioとLookerは区別する。Data Studioは本システムの選択ルールとして既存の`assets/icons/google-cloud/categories/Category Icons/Data Analytics/SVG/DataAnalytics-512-color.svg`を使い、製品名を併記する。独立した素材や互換コピーは追加しない。クラウドのカテゴリ指定と製品ブランドの対応が曖昧な場合は、対象製品の公式素材を確認する。
 
 ## 描画時の扱い
 

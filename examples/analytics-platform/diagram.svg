@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1760" height="1080" viewBox="0 0 1760 1080" role="img" aria-labelledby="title description" data-schema-version="2">
   <title id="title">業務分析基盤 — 論理構成</title>
   <desc id="description">業務データと売上CSVを取り込み、業務指標を各利用先へ提供する </desc>
-  <metadata id="model_metadata">{"id": "analytics-platform", "status": "proposal", "source": null, "omitted": []}</metadata>
+  <metadata id="model_metadata">{"id": "analytics-platform", "status": "proposal", "source": null, "omitted": [], "view_level": "pipeline", "diagram_type": "data_flow"}</metadata>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
@@ -25,40 +25,40 @@
     <rect id="warehouse" data-region-kind="product" data-parent="ownership" data-geometry="[736, 232, 480, 288]" x="736" y="232" width="480" height="288" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
   </g>
   <g id="connections">
-    <g id="edge_0" data-source="source_system" data-target="ingest" data-kind="data" data-purpose="ingest">
+    <g id="edge_0" data-source="source_system" data-target="ingest" data-kind="data" data-purpose="ingest" data-interaction="" data-transfer-mode="">
       <path d="M232 288 L264 288 L264 348 L304 348" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_1" data-source="source_file" data-target="ingest" data-kind="data" data-purpose="ingest">
+    <g id="edge_1" data-source="source_file" data-target="ingest" data-kind="data" data-purpose="ingest" data-interaction="" data-transfer-mode="">
       <path d="M232 544 L264 544 L264 400 L304 400" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_2" data-source="ingest" data-target="objects" data-kind="data" data-purpose="publish">
+    <g id="edge_2" data-source="ingest" data-target="objects" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M464 348 L512 348" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_3" data-source="objects" data-target="raw" data-kind="data" data-purpose="publish">
+    <g id="edge_3" data-source="objects" data-target="raw" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M672 348 L712 348 L712 408 L760 408" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_4" data-source="raw" data-target="mart" data-kind="data" data-purpose="publish">
+    <g id="edge_4" data-source="raw" data-target="mart" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M936 408 L1024 408" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_5" data-source="mart" data-target="bi" data-kind="data" data-purpose="publish">
+    <g id="edge_5" data-source="mart" data-target="bi" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M1200 408 L1256 408 L1256 196 L1304 196" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_6" data-source="mart" data-target="excel" data-kind="data" data-purpose="publish">
+    <g id="edge_6" data-source="mart" data-target="excel" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M1200 408 L1256 408 L1256 332 L1304 332" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_7" data-source="mart" data-target="sheets" data-kind="data" data-purpose="publish">
+    <g id="edge_7" data-source="mart" data-target="sheets" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M1200 408 L1256 408 L1256 468 L1304 468" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_8" data-source="mart" data-target="product" data-kind="data" data-purpose="publish">
+    <g id="edge_8" data-source="mart" data-target="product" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M1200 408 L1256 408 L1256 604 L1304 604" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_9" data-source="mart" data-target="analyst" data-kind="data" data-purpose="publish">
+    <g id="edge_9" data-source="mart" data-target="analyst" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M1200 408 L1256 408 L1256 740 L1304 740" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_10" data-source="jobs" data-target="mart" data-kind="control" data-purpose="orchestrate">
+    <g id="edge_10" data-source="jobs" data-target="mart" data-kind="control" data-purpose="orchestrate" data-interaction="" data-transfer-mode="">
       <path d="M800 952 L800 888 L1240 888 L1240 472 L1112 472" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="6 5" />
     </g>
-    <g id="edge_11" data-source="analyst" data-target="mart" data-kind="control" data-purpose="query">
+    <g id="edge_11" data-source="analyst" data-target="mart" data-kind="control" data-purpose="query" data-interaction="" data-transfer-mode="">
       <path d="M1304 768 L1264 768 L1264 448 L1200 448" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="6 5" />
     </g>
   </g>

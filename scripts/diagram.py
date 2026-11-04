@@ -118,6 +118,16 @@ def validate(model):
     errors = []
     if model.get('schema_version') != 2:
         errors.append('expected SVG model schema_version 2')
+    level = model.get('view_level')
+    diagram_type = model.get('diagram_type')
+    if level is not None and level not in ('context', 'pipeline', 'detail'):
+        errors.append('invalid view_level')
+    if diagram_type is not None and diagram_type not in ('context', 'data_flow', 'deployment', 'component_catalog'):
+        errors.append('invalid diagram_type')
+    if diagram_type == 'context' and level not in (None, 'context'):
+        errors.append('context diagram requires context view_level')
+    if diagram_type == 'deployment' and level not in (None, 'detail'):
+        errors.append('deployment diagram requires detail view_level')
     regions, nodes = model.get('regions', []), model.get('nodes', [])
     ids = [x['id'] for x in regions+nodes]
     if len(ids) != len(set(ids)):
@@ -148,6 +158,11 @@ def validate(model):
                 errors.append(f'outside stage: {id} -> {stage}')
         if item in regions and item['kind'] not in TOKENS['region_styles']:
             errors.append(f'unknown region kind: {id}')
+        if item in regions and item['kind'] == 'network':
+            if diagram_type != 'deployment':
+                errors.append(f'network boundary requires deployment diagram: {id}')
+            if not isinstance(item.get('scope'), str) or not item['scope'].strip():
+                errors.append(f'network boundary requires explicit scope: {id}')
         if item in nodes and item.get('representation','logical') not in ('icon','horizontal','logical','data'):
             errors.append(f'unknown representation: {id}')
     connections = model.get('connections', [])
@@ -160,6 +175,16 @@ def validate(model):
             continue
         if c['kind'] not in ('data','control'):
             errors.append(f'invalid connection kind: {c["id"]}')
+        interaction = c.get('interaction')
+        if interaction is not None and interaction not in ('transfer', 'query', 'result', 'metadata'):
+            errors.append(f'invalid interaction: {c["id"]}')
+        if interaction == 'query' and c['kind'] != 'control':
+            errors.append(f'query must be control: {c["id"]}')
+        if interaction in ('transfer', 'result', 'metadata') and c['kind'] != 'data':
+            errors.append(f'{interaction} must be data: {c["id"]}')
+        if c.get('transfer_mode') is not None:
+            if interaction != 'transfer' or c['transfer_mode'] not in ('batch', 'streaming', 'cdc'):
+                errors.append(f'transfer_mode requires transfer and batch/streaming/cdc: {c["id"]}')
         points = c.get('points', [])
         if len(points) < 2:
             errors.append(f'missing path: {c["id"]}')
@@ -199,7 +224,7 @@ def render(model, destination):
         return e
     element(root,'title',{'id':'title'},model['title'])
     element(root,'desc',{'id':'description'},model.get('purpose','')+' '+model.get('brand_notice',''))
-    element(root,'metadata',{'id':'model_metadata'},json.dumps({'id':model['id'],'status':model.get('status'),'source':model.get('source'),'omitted':model.get('omitted',[])},ensure_ascii=False))
+    element(root,'metadata',{'id':'model_metadata'},json.dumps({'id':model['id'],'status':model.get('status'),'source':model.get('source'),'omitted':model.get('omitted',[]),'view_level':model.get('view_level'),'diagram_type':model.get('diagram_type')},ensure_ascii=False))
     defs = element(root,'defs')
     marker = element(defs,'marker',{'id':'arrow','viewBox':'0 0 10 10','refX':9,'refY':5,'markerWidth':6,'markerHeight':6,'orient':'auto'})
     element(marker,'path',{'d':'M0 0L10 5L0 10Z','fill':colors['connector']})
@@ -224,7 +249,8 @@ def render(model, destination):
 
     def icon(parent, id, asset, x, y, size):
         data = base64.b64encode((ROOT/asset).read_bytes()).decode()
-        element(parent,'image',{'id':id,'x':x,'y':y,'width':size,'height':size,'preserveAspectRatio':'xMidYMid meet','href':'data:image/svg+xml;base64,'+data,'data-asset':asset})
+        mime = 'image/png' if Path(asset).suffix.lower() == '.png' else 'image/svg+xml'
+        element(parent,'image',{'id':id,'x':x,'y':y,'width':size,'height':size,'preserveAspectRatio':'xMidYMid meet','href':'data:'+mime+';base64,'+data,'data-asset':asset})
 
     regions = {r['id']:r for r in model.get('regions',[])}
     def depth(r):
@@ -234,6 +260,7 @@ def render(model, destination):
         x,y,rw,rh = r['geometry']
         header = r.get('header_height',spacing['header'])
         attrs = {'id':r['id'],'data-region-kind':r['kind'],'data-parent':r.get('parent_id',''),'data-geometry':json.dumps(r['geometry']),'x':x,'y':y,'width':rw,'height':rh,'fill':colors.get(style['fill'],style['fill']),'stroke':colors.get(style['stroke'],style['stroke']),'stroke-width':1,'rx':4}
+        if r['kind'] == 'network':attrs['data-scope']=r['scope']
         if style.get('dash'):attrs['stroke-dasharray']=style['dash']
         element(frames,'rect',attrs)
         if style['header']=='bar':
@@ -245,7 +272,7 @@ def render(model, destination):
             tx = x+60
         text(labels,r['id']+'_label',tx,y+32,r['label'],r.get('label_size',font['heading'] if r['kind']=='stage' else font['region']),rw-(tx-x)-12,bold=r['kind']=='stage')
     for c in model.get('connections',[]):
-        g = element(edges,'g',{'id':c['id'],'data-source':c['source'],'data-target':c['target'],'data-kind':c['kind'],'data-purpose':c.get('purpose','')})
+        g = element(edges,'g',{'id':c['id'],'data-source':c['source'],'data-target':c['target'],'data-kind':c['kind'],'data-purpose':c.get('purpose',''),'data-interaction':c.get('interaction',''),'data-transfer-mode':c.get('transfer_mode','')})
         attrs = {'d':'M'+' L'.join(f'{x} {y}' for x,y in c['points']),'fill':'none','stroke':colors['connector'],'stroke-width':1.5,'marker-end':'url(#arrow)'}
         if c['kind']=='control':attrs['stroke-dasharray']='6 5'
         element(g,'path',attrs)

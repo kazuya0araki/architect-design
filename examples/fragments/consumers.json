@@ -1,0 +1,47 @@
+{
+  "regions": [],
+  "nodes": [
+    {
+      "id": "bi",
+      "name": "BIツール",
+      "role": "可視化",
+      "geometry": [
+        0,
+        0,
+        256,
+        96
+      ],
+      "representation": "logical"
+    },
+    {
+      "id": "sheet",
+      "name": "表計算",
+      "role": "業務共有",
+      "geometry": [
+        0,
+        128,
+        256,
+        96
+      ],
+      "representation": "logical"
+    },
+    {
+      "id": "person",
+      "name": "アナリスト",
+      "role": "手動SQL",
+      "geometry": [
+        0,
+        256,
+        256,
+        96
+      ],
+      "representation": "logical"
+    }
+  ],
+  "connections": [],
+  "ports": {
+    "bi": "bi",
+    "spreadsheet": "sheet",
+    "analyst": "person"
+  }
+}

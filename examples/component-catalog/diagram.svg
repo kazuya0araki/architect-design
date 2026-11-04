@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="656" viewBox="0 0 1280 656" role="img" aria-labelledby="title description" data-schema-version="2">
+  <title id="title">再利用部品の見本</title>
+  <desc id="description">再利用部品の見本を説明する架空の提案 </desc>
+  <metadata id="model_metadata">{"id": "component-catalog", "status": "proposal", "source": null, "omitted": [], "view_level": "pipeline", "diagram_type": "component_catalog"}</metadata>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
+    </marker>
+  </defs>
+  <style>text{font-family:Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif;fill:#202124}</style>
+  <rect width="1280" height="656" fill="#FFFFFF" />
+  <g id="regions">
+    <rect id="receipt_group" data-region-kind="functional" data-parent="" data-geometry="[48, 64, 800, 240]" x="48" y="64" width="800" height="240" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
+    <rect id="consumers_group" data-region-kind="functional" data-parent="" data-geometry="[928, 64, 304, 416]" x="928" y="64" width="304" height="416" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
+    <rect id="warehouse_store" data-region-kind="product" data-parent="" data-geometry="[64, 352, 768, 240]" x="64" y="352" width="768" height="240" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
+  </g>
+  <g id="connections">
+    <g id="receipt_receive" data-source="receipt_file" data-target="receipt_receipt" data-kind="data" data-purpose="" data-interaction="transfer" data-transfer-mode="batch">
+      <path d="M256 224 L352 224" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
+    </g>
+    <g id="receipt_save" data-source="receipt_receipt" data-target="receipt_storage" data-kind="data" data-purpose="" data-interaction="transfer" data-transfer-mode="batch">
+      <path d="M544 224 L640 224" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
+    </g>
+    <g id="warehouse_transform" data-source="warehouse_raw" data-target="warehouse_mart" data-kind="data" data-purpose="transform" data-interaction="transfer" data-transfer-mode="">
+      <path d="M320 488 L576 488" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
+    </g>
+  </g>
+  <g id="nodes">
+    <g id="receipt_file" data-kind="node" data-region="" data-stage="" data-geometry="[64, 176, 192, 96]" data-basis="proposal">
+      <title>受領ファイル / CSV等の入力</title>
+      <rect x="64" y="176" width="192" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="receipt_receipt" data-kind="node" data-region="" data-stage="" data-geometry="[352, 176, 192, 96]" data-basis="proposal">
+      <title>受領処理 / 内容と形式を確認</title>
+      <rect x="352" y="176" width="192" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="receipt_storage" data-kind="node" data-region="" data-stage="" data-geometry="[640, 176, 192, 96]" data-basis="proposal">
+      <title>受領ストレージ / 受領データを保存</title>
+      <rect x="640" y="176" width="192" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="warehouse_raw" data-kind="node" data-region="warehouse_store" data-stage="" data-geometry="[96, 432, 224, 112]" data-basis="proposal">
+      <title>Raw / 受領データ</title>
+      <path d="M96 444C96 428 320 428 320 444V532C320 548 96 548 96 532Z M96 444C96 460 320 460 320 444" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
+    </g>
+    <g id="warehouse_mart" data-kind="node" data-region="warehouse_store" data-stage="" data-geometry="[576, 432, 224, 112]" data-basis="proposal">
+      <title>Mart / 業務指標</title>
+      <path d="M576 444C576 428 800 428 800 444V532C800 548 576 548 576 532Z M576 444C576 460 800 460 800 444" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
+    </g>
+    <g id="use_bi" data-kind="node" data-region="" data-stage="" data-geometry="[944, 112, 256, 96]" data-basis="proposal">
+      <title>BIツール / 可視化</title>
+      <rect x="944" y="112" width="256" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="use_sheet" data-kind="node" data-region="" data-stage="" data-geometry="[944, 240, 256, 96]" data-basis="proposal">
+      <title>表計算 / 業務共有</title>
+      <rect x="944" y="240" width="256" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="use_person" data-kind="node" data-region="" data-stage="" data-geometry="[944, 368, 256, 96]" data-basis="proposal">
+      <title>アナリスト / 手動SQL</title>
+      <rect x="944" y="368" width="256" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+  </g>
+  <g id="labels">
+    <text id="receipt_group_label_0" x="64" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 74, 132, 24]">ファイル受領</text>
+    <text id="consumers_group_label_0" x="944" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[944, 74, 198, 24]">提供先の組み合わせ</text>
+    <text id="warehouse_store_label_0" x="80" y="384" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[80, 362, 198, 24]">分析用データストア</text>
+    <text id="receipt_file_name_0" x="160.0" y="219.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[88.0, 195.0, 144, 26]">受領ファイル</text>
+    <text id="receipt_file_role_0" x="160.0" y="251.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[97.85, 229.0, 124.30000000000001, 24]">CSV等の入力</text>
+    <text id="receipt_receipt_name_0" x="448.0" y="219.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[400.0, 195.0, 96, 26]">受領処理</text>
+    <text id="receipt_receipt_role_0" x="448.0" y="251.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[360.0, 229.0, 176, 24]">内容と形式を確認</text>
+    <text id="receipt_storage_name_0" x="736.0" y="219.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[652.0, 195.0, 168, 26]">受領ストレージ</text>
+    <text id="receipt_storage_role_0" x="736.0" y="251.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[648.0, 229.0, 176, 24]">受領データを保存</text>
+    <text id="warehouse_raw_name_0" x="208.0" y="483.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[188.2, 459.0, 39.6, 26]">Raw</text>
+    <text id="warehouse_raw_role_0" x="208.0" y="515.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[153.0, 493.0, 110, 24]">受領データ</text>
+    <text id="warehouse_mart_name_0" x="688.0" y="483.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[661.6, 459.0, 52.800000000000004, 26]">Mart</text>
+    <text id="warehouse_mart_role_0" x="688.0" y="515.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[644.0, 493.0, 88, 24]">業務指標</text>
+    <text id="use_bi_name_0" x="1072.0" y="155.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1022.8, 131.0, 98.39999999999999, 26]">BIツール</text>
+    <text id="use_bi_role_0" x="1072.0" y="187.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1039.0, 165.0, 66, 24]">可視化</text>
+    <text id="use_sheet_name_0" x="1072.0" y="283.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1036.0, 259.0, 72, 26]">表計算</text>
+    <text id="use_sheet_role_0" x="1072.0" y="315.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1028.0, 293.0, 88, 24]">業務共有</text>
+    <text id="use_person_name_0" x="1072.0" y="411.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1012.0, 387.0, 120, 26]">アナリスト</text>
+    <text id="use_person_role_0" x="1072.0" y="443.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1031.85, 421.0, 80.29999999999998, 24]">手動SQL</text>
+  </g>
+</svg>

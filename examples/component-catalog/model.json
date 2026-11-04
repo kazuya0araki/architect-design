@@ -1,0 +1,207 @@
+{
+  "schema_version": 2,
+  "id": "component-catalog",
+  "title": "再利用部品の見本",
+  "purpose": "再利用部品の見本を説明する架空の提案",
+  "status": "proposal",
+  "canvas": [
+    1280,
+    656
+  ],
+  "outer_margin": 48,
+  "publication_width": 960,
+  "flow_direction": "left-to-right",
+  "view_level": "pipeline",
+  "diagram_type": "component_catalog",
+  "regions": [
+    {
+      "id": "receipt_group",
+      "label": "ファイル受領",
+      "kind": "functional",
+      "geometry": [
+        48,
+        64,
+        800,
+        240
+      ]
+    },
+    {
+      "id": "consumers_group",
+      "label": "提供先の組み合わせ",
+      "kind": "functional",
+      "geometry": [
+        928,
+        64,
+        304,
+        416
+      ]
+    },
+    {
+      "id": "warehouse_store",
+      "label": "分析用データストア",
+      "kind": "product",
+      "geometry": [
+        64,
+        352,
+        768,
+        240
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "receipt_file",
+      "name": "受領ファイル",
+      "role": "CSV等の入力",
+      "geometry": [
+        64,
+        176,
+        192,
+        96
+      ],
+      "representation": "logical"
+    },
+    {
+      "id": "receipt_receipt",
+      "name": "受領処理",
+      "role": "内容と形式を確認",
+      "geometry": [
+        352,
+        176,
+        192,
+        96
+      ],
+      "representation": "logical"
+    },
+    {
+      "id": "receipt_storage",
+      "name": "受領ストレージ",
+      "role": "受領データを保存",
+      "geometry": [
+        640,
+        176,
+        192,
+        96
+      ],
+      "representation": "logical"
+    },
+    {
+      "id": "warehouse_raw",
+      "name": "Raw",
+      "role": "受領データ",
+      "geometry": [
+        96,
+        432,
+        224,
+        112
+      ],
+      "representation": "data",
+      "region_id": "warehouse_store"
+    },
+    {
+      "id": "warehouse_mart",
+      "name": "Mart",
+      "role": "業務指標",
+      "geometry": [
+        576,
+        432,
+        224,
+        112
+      ],
+      "representation": "data",
+      "region_id": "warehouse_store"
+    },
+    {
+      "id": "use_bi",
+      "name": "BIツール",
+      "role": "可視化",
+      "geometry": [
+        944,
+        112,
+        256,
+        96
+      ],
+      "representation": "logical"
+    },
+    {
+      "id": "use_sheet",
+      "name": "表計算",
+      "role": "業務共有",
+      "geometry": [
+        944,
+        240,
+        256,
+        96
+      ],
+      "representation": "logical"
+    },
+    {
+      "id": "use_person",
+      "name": "アナリスト",
+      "role": "手動SQL",
+      "geometry": [
+        944,
+        368,
+        256,
+        96
+      ],
+      "representation": "logical"
+    }
+  ],
+  "connections": [
+    {
+      "id": "receipt_receive",
+      "source": "receipt_file",
+      "target": "receipt_receipt",
+      "kind": "data",
+      "points": [
+        [
+          256,
+          224
+        ],
+        [
+          352,
+          224
+        ]
+      ],
+      "interaction": "transfer",
+      "transfer_mode": "batch"
+    },
+    {
+      "id": "receipt_save",
+      "source": "receipt_receipt",
+      "target": "receipt_storage",
+      "kind": "data",
+      "points": [
+        [
+          544,
+          224
+        ],
+        [
+          640,
+          224
+        ]
+      ],
+      "interaction": "transfer",
+      "transfer_mode": "batch"
+    },
+    {
+      "id": "warehouse_transform",
+      "source": "warehouse_raw",
+      "target": "warehouse_mart",
+      "kind": "data",
+      "points": [
+        [
+          320,
+          488
+        ],
+        [
+          576,
+          488
+        ]
+      ],
+      "purpose": "transform",
+      "interaction": "transfer"
+    }
+  ]
+}

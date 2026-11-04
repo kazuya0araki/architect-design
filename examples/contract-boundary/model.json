@@ -247,5 +247,7 @@
       ],
       "purpose": "validate"
     }
-  ]
+  ],
+  "view_level": "pipeline",
+  "diagram_type": "data_flow"
 }

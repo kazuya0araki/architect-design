@@ -84,6 +84,16 @@ class DiagramTests(unittest.TestCase):
             self.assertEqual(image.get('data-asset'),asset)
         self.assertEqual(hashlib.sha256(p.read_bytes()).digest(),before)
 
+    def test_official_png_is_embedded_without_conversion(self):
+        import base64
+        m=fixture();asset='assets/icons/apache/iceberg/iceberg-logo-icon.png'
+        m['nodes'][0].update(icons=[{'asset':asset}],representation='horizontal')
+        with tempfile.TemporaryDirectory() as directory:
+            root=render(m,Path(directory)/'diagram.svg')
+            image=next(e for e in root.iter() if e.tag=='{'+NS+'}image')
+            self.assertTrue(image.get('href').startswith('data:image/png;base64,'))
+            self.assertEqual(base64.b64decode(image.get('href').split(',',1)[1]),(ROOT/asset).read_bytes())
+
     def test_connection_metadata_is_displayed_without_inventing_values(self):
         m=fixture();m['connections'][0].update(method='API',frequency='日次')
         with self.assertRaisesRegex(ValueError,'label_position'):validate(m)
@@ -94,6 +104,47 @@ class DiagramTests(unittest.TestCase):
             self.assertIn('API / 日次',text)
         m['connections'][0]['junctions']=[[700,400]]
         with self.assertRaisesRegex(ValueError,'junction outside'):validate(m)
+
+    def test_view_levels_and_network_boundaries(self):
+        m=fixture();m.update(view_level='pipeline',diagram_type='context')
+        with self.assertRaisesRegex(ValueError,'context diagram'):validate(m)
+        m.update(view_level='detail',diagram_type='deployment')
+        m['regions'][0]['kind']='network'
+        # Nodes in this fixture are also classified by stage; remove that axis.
+        for n in m['nodes']:n.pop('stage_id',None)
+        with self.assertRaisesRegex(ValueError,'explicit scope'):validate(m)
+        m['regions'][0]['scope']='Proposed private network'
+        validate(m)
+        m['diagram_type']='data_flow'
+        with self.assertRaisesRegex(ValueError,'requires deployment'):validate(m)
+        m=fixture();m['view_level']='unknown'
+        with self.assertRaisesRegex(ValueError,'invalid view_level'):validate(m)
+
+    def test_query_result_and_transfer_mode_semantics(self):
+        m=fixture();c=m['connections'][0]
+        c.update(interaction='query')
+        with self.assertRaisesRegex(ValueError,'query must be control'):validate(m)
+        c['kind']='control';validate(m)
+        c['transfer_mode']='batch'
+        with self.assertRaisesRegex(ValueError,'transfer_mode requires'):validate(m)
+        c.update(kind='data',interaction='transfer',transfer_mode='cdc');validate(m)
+        c['transfer_mode']='unknown'
+        with self.assertRaisesRegex(ValueError,'transfer_mode requires'):validate(m)
+        c.pop('transfer_mode');c.update(interaction='result',kind='control')
+        with self.assertRaisesRegex(ValueError,'result must be data'):validate(m)
+        c.update(kind='data');validate(m)
+
+    def test_svg_connection_semantics_cannot_go_stale(self):
+        m=fixture();m['connections'][0].update(interaction='transfer',transfer_mode='cdc')
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'diagram.svg'
+            root=render(m,path)
+            audit_svg(resolve(m),path)
+            edge=next(e for e in root.iter() if e.get('id')=='ab')
+            edge.set('data-transfer-mode','batch')
+            ET.ElementTree(root).write(path)
+            with self.assertRaisesRegex(ValueError,'semantics differ'):
+                audit_svg(resolve(m),path)
 
     def test_word_wrap_preserves_product_words_and_explicit_lines(self):
         self.assertEqual(wrap_text('Great Expectations',176,22),['Great','Expectations'])

@@ -38,3 +38,14 @@
 原則は一実体一ノード。左右に複製する場合は一意な`id`と共通の`entity_id`を与える。見た目のグループ化と実体の統合を混同しない。既存の[入力だけの例](../../examples/endpoints/README.md)は描画を目的としないためv2への移行は必須ではない。
 
 接続の`label`を省略した場合、指定済みの`data`・`method`・`frequency`を順に連結して表示する。空の`label`は表示を抑制する明示指定。表示する文字がある場合は、通路上の`label_position`も指定する。未指定の頻度や方式を自動生成しない。
+
+## 表示レベル・配置・接続方式の追加項目
+
+- 図の任意項目：`view_level`（`context`・`pipeline`・`detail`）、`diagram_type`（`context`・`data_flow`・`deployment`・`component_catalog`）。選択基準は[図の表示レベル](view-levels.md)。新規モデルでは両方を記載する。
+- 領域の追加種別：`network`。`diagram_type: deployment`の場合にのみ使い、`scope`で対象を記録する。[境界](../components/boundary.md)に従う。
+- 接続の任意項目：`interaction`（`transfer`・`query`・`result`・`metadata`）、`transfer_mode`（`batch`・`streaming`・`cdc`）。`transfer_mode`は`interaction: transfer`の場合のみ使う。
+- `query`は`kind: control`、`transfer`・`result`・`metadata`は`kind: data`。未知の値や矛盾は検証エラーとする。未指定の旧v2はそのまま扱い、値を推定しない。
+
+追加項目は非表示のSVGメタデータ・経路属性に保持する。図への見出し・説明の追加指示にはならない。方式等を表示する場合は既存の`label`・`method`・`frequency`を使う。
+
+部品群を組み立てる場合は[再利用部品](../patterns/reusable-fragments.md)でモデルの一部を作成できる。展開後は同じv2モデルとして検証する。

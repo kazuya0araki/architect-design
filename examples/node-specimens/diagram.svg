@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-labelledby="title description" data-schema-version="2">
+  <title id="title">ノードの状態別見本</title>
+  <desc id="description">標準・長文・アイコンなし・横並び・入れ子の作図見本 </desc>
+  <metadata id="model_metadata">{"id": "node-specimens", "status": "proposal", "source": null, "omitted": [], "view_level": "pipeline", "diagram_type": "component_catalog"}</metadata>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
+    </marker>
+  </defs>
+  <style>text{font-family:Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif;fill:#202124}</style>
+  <rect width="1280" height="800" fill="#FFFFFF" />
+  <g id="regions">
+    <rect id="standard" data-region-kind="functional" data-parent="" data-geometry="[48, 64, 544, 240]" x="48" y="64" width="544" height="240" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
+    <rect id="long" data-region-kind="functional" data-parent="" data-geometry="[624, 64, 608, 240]" x="624" y="64" width="608" height="240" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
+    <rect id="horizontal" data-region-kind="functional" data-parent="" data-geometry="[48, 352, 544, 336]" x="48" y="352" width="544" height="336" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
+    <rect id="product" data-region-kind="product" data-parent="" data-geometry="[624, 352, 608, 336]" x="624" y="352" width="608" height="336" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
+  </g>
+  <g id="connections" />
+  <g id="nodes">
+    <g id="plain" data-kind="node" data-region="standard" data-stage="" data-geometry="[80, 144, 240, 112]" data-basis="proposal">
+      <title>集計処理 / 指標を作成</title>
+      <rect x="80" y="144" width="240" height="112" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="long_name" data-kind="node" data-region="long" data-stage="" data-geometry="[656, 144, 544, 128]" data-basis="proposal">
+      <title>部門横断の売上実績を
+業務指標へ変換する処理 / 長文でも文字サイズを維持</title>
+      <rect x="656" y="144" width="544" height="128" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="horizontal_name" data-kind="node" data-region="horizontal" data-stage="" data-geometry="[80, 456, 480, 112]" data-basis="proposal">
+      <title>ジョブ管理 / 加工処理の実行を制御</title>
+    </g>
+    <g id="raw" data-kind="node" data-region="product" data-stage="" data-geometry="[656, 464, 240, 128]" data-basis="proposal">
+      <title>Raw / 受領データ</title>
+      <path d="M656 476C656 460 896 460 896 476V580C896 596 656 596 656 580Z M656 476C656 492 896 492 896 476" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
+    </g>
+    <g id="mart" data-kind="node" data-region="product" data-stage="" data-geometry="[960, 464, 240, 128]" data-basis="proposal">
+      <title>Mart / 業務指標</title>
+      <path d="M960 476C960 460 1200 460 1200 476V580C1200 596 960 596 960 580Z M960 476C960 492 1200 492 1200 476" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
+    </g>
+  </g>
+  <g id="labels">
+    <text id="standard_label_0" x="64" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 74, 198, 24]">標準・アイコンなし</text>
+    <text id="long_label_0" x="640" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[640, 74, 264, 24]">長い名前は幅・高さで調整</text>
+    <text id="horizontal_label_0" x="64" y="384" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 362, 264, 24]">横並び（アイコン未指定）</text>
+    <text id="product_label_0" x="640" y="384" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[640, 362, 154, 24]">製品内の論理層</text>
+    <text id="plain_name_0" x="200.0" y="195.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[152.0, 171.0, 96, 26]">集計処理</text>
+    <text id="plain_role_0" x="200.0" y="227.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[145.0, 205.0, 110, 24]">指標を作成</text>
+    <text id="long_name_name_0" x="928.0" y="188.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[808.0, 164.0, 240, 26]">部門横断の売上実績を</text>
+    <text id="long_name_name_1" x="928.0" y="218.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[796.0, 194.0, 264, 26]">業務指標へ変換する処理</text>
+    <text id="long_name_role_0" x="928.0" y="250.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[796.0, 228.0, 264, 24]">長文でも文字サイズを維持</text>
+    <text id="horizontal_name_name_0" x="80" y="480" font-size="24" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[80, 456, 120, 26]">ジョブ管理</text>
+    <text id="horizontal_name_role_0" x="80" y="512" font-size="22" font-weight="400" text-anchor="start" style="fill:#5F6368" data-text-box="[80, 490, 220, 24]">加工処理の実行を制御</text>
+    <text id="raw_name_0" x="776.0" y="523.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[756.2, 499.0, 39.6, 26]">Raw</text>
+    <text id="raw_role_0" x="776.0" y="555.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[721.0, 533.0, 110, 24]">受領データ</text>
+    <text id="mart_name_0" x="1080.0" y="523.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1053.6, 499.0, 52.800000000000004, 26]">Mart</text>
+    <text id="mart_role_0" x="1080.0" y="555.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1036.0, 533.0, 88, 24]">業務指標</text>
+  </g>
+</svg>
