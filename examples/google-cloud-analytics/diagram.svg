@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1760" height="1080" viewBox="0 0 1760 1080" role="img" aria-labelledby="title description" data-schema-version="2">
   <title id="title">業務分析基盤 — Google Cloud構成案</title>
   <desc id="description">業務データと売上CSVを取り込み、業務指標を各利用先へ提供する </desc>
-  <metadata id="model_metadata">{"id": "google-cloud-analytics", "status": "proposal", "source": null, "omitted": []}</metadata>
+  <metadata id="model_metadata">{"id": "google-cloud-analytics", "status": "proposal", "source": null, "omitted": [], "view_level": "pipeline", "diagram_type": "data_flow"}</metadata>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
@@ -25,40 +25,40 @@
     <rect id="warehouse" data-region-kind="product" data-parent="ownership" data-geometry="[736, 232, 480, 288]" x="736" y="232" width="480" height="288" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
   </g>
   <g id="connections">
-    <g id="edge_0" data-source="source_system" data-target="ingest" data-kind="data" data-purpose="ingest">
+    <g id="edge_0" data-source="source_system" data-target="ingest" data-kind="data" data-purpose="ingest" data-interaction="" data-transfer-mode="">
       <path d="M232 288 L264 288 L264 348 L304 348" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_1" data-source="source_file" data-target="ingest" data-kind="data" data-purpose="ingest">
+    <g id="edge_1" data-source="source_file" data-target="ingest" data-kind="data" data-purpose="ingest" data-interaction="" data-transfer-mode="">
       <path d="M232 544 L264 544 L264 400 L304 400" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_2" data-source="ingest" data-target="objects" data-kind="data" data-purpose="publish">
+    <g id="edge_2" data-source="ingest" data-target="objects" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M464 348 L512 348" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_3" data-source="objects" data-target="raw" data-kind="data" data-purpose="publish">
+    <g id="edge_3" data-source="objects" data-target="raw" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M672 348 L712 348 L712 408 L760 408" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_4" data-source="raw" data-target="mart" data-kind="data" data-purpose="publish">
+    <g id="edge_4" data-source="raw" data-target="mart" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M936 408 L1024 408" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_5" data-source="mart" data-target="bi" data-kind="data" data-purpose="publish">
+    <g id="edge_5" data-source="mart" data-target="bi" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M1200 408 L1256 408 L1256 196 L1304 196" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_6" data-source="mart" data-target="excel" data-kind="data" data-purpose="publish">
+    <g id="edge_6" data-source="mart" data-target="excel" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M1200 408 L1256 408 L1256 332 L1304 332" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_7" data-source="mart" data-target="sheets" data-kind="data" data-purpose="publish">
+    <g id="edge_7" data-source="mart" data-target="sheets" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M1200 408 L1256 408 L1256 468 L1304 468" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_8" data-source="mart" data-target="product" data-kind="data" data-purpose="publish">
+    <g id="edge_8" data-source="mart" data-target="product" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M1200 408 L1256 408 L1256 604 L1304 604" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_9" data-source="mart" data-target="analyst" data-kind="data" data-purpose="publish">
+    <g id="edge_9" data-source="mart" data-target="analyst" data-kind="data" data-purpose="publish" data-interaction="" data-transfer-mode="">
       <path d="M1200 408 L1256 408 L1256 740 L1304 740" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
     </g>
-    <g id="edge_10" data-source="jobs" data-target="mart" data-kind="control" data-purpose="orchestrate">
+    <g id="edge_10" data-source="jobs" data-target="mart" data-kind="control" data-purpose="orchestrate" data-interaction="" data-transfer-mode="">
       <path d="M800 952 L800 888 L1240 888 L1240 472 L1112 472" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="6 5" />
     </g>
-    <g id="edge_11" data-source="analyst" data-target="mart" data-kind="control" data-purpose="query">
+    <g id="edge_11" data-source="analyst" data-target="mart" data-kind="control" data-purpose="query" data-interaction="" data-transfer-mode="">
       <path d="M1304 768 L1264 768 L1264 448 L1200 448" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="6 5" />
     </g>
   </g>
@@ -94,7 +94,7 @@
     </g>
     <g id="excel" data-kind="node" data-region="destinations" data-stage="destinations" data-geometry="[1304, 280, 384, 104]" data-basis="proposal">
       <title>Excel / 集計分析</title>
-      <rect x="1304" y="280" width="384" height="104" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+      <image id="excel_icon_0" x="1304" y="280" width="56" height="56" preserveAspectRatio="xMidYMid meet" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkgMTcuNUM5IDE1LjAxNDcgMTEuMDE0NyAxMyAxMy41IDEzSDM5VjM5QzM5IDQwLjY1NjkgMzcuNjU2OSA0MiAzNiA0MkgxNUMxMS42ODYzIDQyIDkgMzkuMzEzNyA5IDM2VjE3LjVaIiBmaWxsPSJ1cmwoI3BhaW50MF9yYWRpYWxfNzY3ODBfMTQ1NTMpIi8+CjxwYXRoIGQ9Ik05IDE3LjVDOSAxNS4wMTQ3IDExLjAxNDcgMTMgMTMuNSAxM0gzOVYzOUMzOSA0MC42NTY5IDM3LjY1NjkgNDIgMzYgNDJIMTVDMTEuNjg2MyA0MiA5IDM5LjMxMzcgOSAzNlYxNy41WiIgZmlsbD0idXJsKCNwYWludDFfcmFkaWFsXzc2NzgwXzE0NTUzKSIgZmlsbC1vcGFjaXR5PSIwLjciLz4KPHBhdGggZD0iTTkgMjIuNDk5OUM5IDIwLjAxNDcgMTEuMDE0NyAxNy45OTk5IDEzLjUgMTcuOTk5OUgyN0MyNS4zNDMxIDE3Ljk5OTkgMjQgMTkuMzQzMSAyNCAyMC45OTk5VjI2Ljk5OTlDMjQgMjguNjU2OCAyMi42NTY5IDI5Ljk5OTkgMjEgMjkuOTk5OUgxNUMxMS42ODYzIDI5Ljk5OTkgOSAzMi42ODYyIDkgMzUuOTk5OVYyMi40OTk5WiIgZmlsbD0idXJsKCNwYWludDJfbGluZWFyXzc2NzgwXzE0NTUzKSIvPgo8cGF0aCBkPSJNOSAyMi40OTk5QzkgMjAuMDE0NyAxMS4wMTQ3IDE3Ljk5OTkgMTMuNSAxNy45OTk5SDI3QzI1LjM0MzEgMTcuOTk5OSAyNCAxOS4zNDMxIDI0IDIwLjk5OTlWMjYuOTk5OUMyNCAyOC42NTY4IDIyLjY1NjkgMjkuOTk5OSAyMSAyOS45OTk5SDE1QzExLjY4NjMgMjkuOTk5OSA5IDMyLjY4NjIgOSAzNS45OTk5VjIyLjQ5OTlaIiBmaWxsPSJ1cmwoI3BhaW50M19saW5lYXJfNzY3ODBfMTQ1NTMpIiBmaWxsLW9wYWNpdHk9IjAuMyIvPgo8cGF0aCBkPSJNOSAxMkM5IDguNjg2MjkgMTEuNjg2MyA2IDE1IDZIMjdWMThIMTVDMTEuNjg2MyAxOCA5IDIwLjY4NjMgOSAyNFYxMloiIGZpbGw9InVybCgjcGFpbnQ0X2xpbmVhcl83Njc4MF8xNDU1MykiLz4KPHBhdGggZD0iTTkgMTJDOSA4LjY4NjI5IDExLjY4NjMgNiAxNSA2SDI3VjE4SDE1QzExLjY4NjMgMTggOSAyMC42ODYzIDkgMjRWMTJaIiBmaWxsPSJ1cmwoI3BhaW50NV9yYWRpYWxfNzY3ODBfMTQ1NTMpIi8+CjxwYXRoIGQ9Ik05IDEyQzkgOC42ODYyOSAxMS42ODYzIDYgMTUgNkgyN1YxOEgxNUMxMS42ODYzIDE4IDkgMjAuNjg2MyA5IDI0VjEyWiIgZmlsbD0idXJsKCNwYWludDZfbGluZWFyXzc2NzgwXzE0NTUzKSIvPgo8cmVjdCB3aWR0aD0iMTUiIGhlaWdodD0iMTIiIHJ4PSIzIiB0cmFuc2Zvcm09Im1hdHJpeCgtMSAwIDAgMSAzOSA2KSIgZmlsbD0idXJsKCNwYWludDdfcmFkaWFsXzc2NzgwXzE0NTUzKSIvPgo8cmVjdCB4PSI0IiB5PSIyMyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMy4yNSIgZmlsbD0idXJsKCNwYWludDhfcmFkaWFsXzc2NzgwXzE0NTUzKSIvPgo8cmVjdCB4PSI0IiB5PSIyMyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMy4yNSIgZmlsbD0idXJsKCNwYWludDlfcmFkaWFsXzc2NzgwXzE0NTUzKSIgZmlsbC1vcGFjaXR5PSIwLjMiLz4KPHBhdGggZD0iTTE2LjIwNTYgMzUuNTcxNEgxMy43MzkzTDEyLjE5MDcgMzIuNjU3N0MxMi4xMzU1IDMyLjU1NTcgMTIuMDkzIDMyLjQ3NDkgMTIuMDYzMyAzMi40MTU0QzEyLjAzNzggMzIuMzUxNyAxMi4wMTAyIDMyLjI3OTQgMTEuOTgwNCAzMi4xOTg3SDExLjk1NDlDMTEuOTE2NyAzMi4zMDA3IDExLjg4MDYgMzIuMzgzNiAxMS44NDY2IDMyLjQ0NzNDMTEuODEyNiAzMi41MTExIDExLjc3MjIgMzIuNTg5NyAxMS43MjU1IDMyLjY4MzJMMTAuMTE5NiAzNS41NzE0SDcuNzkzNTJMMTAuNTg0OCAzMC45OTM2TDcuOTg0NyAyNi40Mjg2SDEwLjQxOTFMMTEuNzk1NiAyOS4wMjk5QzExLjg1MDggMjkuMTM2MiAxMS44OTc2IDI5LjIyOTcgMTEuOTM1OCAyOS4zMTA0QzExLjk3ODMgMjkuMzg2OSAxMi4wMjA4IDI5LjQ3ODMgMTIuMDYzMyAyOS41ODQ2SDEyLjA4ODhDMTIuMTQ4MiAyOS40NjEzIDEyLjE5NSAyOS4zNjM2IDEyLjIyOSAyOS4yOTEzQzEyLjI2NzIgMjkuMjE5MSAxMi4zMTgyIDI5LjEyMzQgMTIuMzgxOSAyOS4wMDQ0TDEzLjgwOTQgMjYuNDI4NkgxNi4xMjkxTDEzLjQ5MDggMzAuOTIzNUwxNi4yMDU2IDM1LjU3MTRaIiBmaWxsPSJ3aGl0ZSIvPgo8ZGVmcz4KPHJhZGlhbEdyYWRpZW50IGlkPSJwYWludDBfcmFkaWFsXzc2NzgwXzE0NTUzIiBjeD0iMCIgY3k9IjAiIHI9IjEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKDM5IDQ0LjQxNjcpIHJvdGF0ZSgtMTMzLjU0OSkgc2NhbGUoNDEuMTIzNiAzMS45MDgyKSI+CjxzdG9wIG9mZnNldD0iMC4wNjQ3MjMzIiBzdG9wLWNvbG9yPSIjMzc5NTM5Ii8+CjxzdG9wIG9mZnNldD0iMC40MjIxNDkiIHN0b3AtY29sb3I9IiMyOTdDMkQiLz4KPHN0b3Agb2Zmc2V0PSIwLjcwMzQ0OCIgc3RvcC1jb2xvcj0iIzE1NTYxQyIvPgo8L3JhZGlhbEdyYWRpZW50Pgo8cmFkaWFsR3JhZGllbnQgaWQ9InBhaW50MV9yYWRpYWxfNzY3ODBfMTQ1NTMiIGN4PSIwIiBjeT0iMCIgcj0iMSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTguMTY2NyAyMy40NzIyKSByb3RhdGUoLTEzNS45NzEpIHNjYWxlKDE2LjY2MTEgMTIuODkwNikiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMDczQjEwIi8+CjxzdG9wIG9mZnNldD0iMC45OTIyMzQiIHN0b3AtY29sb3I9IiMwODRBMTMiIHN0b3Atb3BhY2l0eT0iMCIvPgo8L3JhZGlhbEdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50Ml9saW5lYXJfNzY3ODBfMTQ1NTMiIHgxPSI5IiB5MT0iMjYuOTk5OSIgeDI9IjIyLjc4NDgiIHkyPSIyNi45OTk5IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiM1MkQxN0MiLz4KPHN0b3Agb2Zmc2V0PSIwLjMyODUxMiIgc3RvcC1jb2xvcj0iIzRBQTY0NyIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50M19saW5lYXJfNzY3ODBfMTQ1NTMiIHgxPSIyMi41IiB5MT0iMTcuOTk5OSIgeDI9IjIyLjUiIHkyPSIzMC41MDI3IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMyOTg1MkYiLz4KPHN0b3Agb2Zmc2V0PSIwLjQ5OTk2OCIgc3RvcC1jb2xvcj0iIzRBQTY0NyIgc3RvcC1vcGFjaXR5PSIwIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQ0X2xpbmVhcl83Njc4MF8xNDU1MyIgeDE9IjkuNjYzMDEiIHkxPSIyMC41ODk1IiB4Mj0iMjYuMjk0NCIgeTI9IjYuMTY0ODMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzY2RDA1MiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM4NUU5NzIiLz4KPC9saW5lYXJHcmFkaWVudD4KPHJhZGlhbEdyYWRpZW50IGlkPSJwYWludDVfcmFkaWFsXzc2NzgwXzE0NTUzIiBjeD0iMCIgY3k9IjAiIHI9IjEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKDI2LjM1MiAxMy42NjM0KSByb3RhdGUoLTE4MCkgc2NhbGUoOS4wMTg4MyAxOS4wOTQpIj4KPHN0b3Agb2Zmc2V0PSIwLjI5MjQ5NSIgc3RvcC1jb2xvcj0iIzRFQjQzQiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM3MkNDNjEiIHN0b3Atb3BhY2l0eT0iMCIvPgo8L3JhZGlhbEdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50Nl9saW5lYXJfNzY3ODBfMTQ1NTMiIHgxPSIxNy4xMTQ3IiB5MT0iMTQuMzkyMyIgeDI9IjkiIHkyPSIxNC4zOTIzIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIG9mZnNldD0iMC4xODM2OTQiIHN0b3AtY29sb3I9IiNDMEUwNzUiIHN0b3Atb3BhY2l0eT0iMCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNEMUVCOTUiLz4KPC9saW5lYXJHcmFkaWVudD4KPHJhZGlhbEdyYWRpZW50IGlkPSJwYWludDdfcmFkaWFsXzc2NzgwXzE0NTUzIiBjeD0iMCIgY3k9IjAiIHI9IjEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKC0xLjkxMDk0IDEzLjY3OTQpIHJvdGF0ZSgtMzguOTY5Nykgc2NhbGUoMjEuNzUxIDIxLjY5MDQpIj4KPHN0b3Agb2Zmc2V0PSIwLjQzOTk4MyIgc3RvcC1jb2xvcj0iIzc5RTk2RCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNEMEVCNzYiLz4KPC9yYWRpYWxHcmFkaWVudD4KPHJhZGlhbEdyYWRpZW50IGlkPSJwYWludDhfcmFkaWFsXzc2NzgwXzE0NTUzIiBjeD0iMCIgY3k9IjAiIHI9IjEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKDQgMjMpIHJvdGF0ZSg0NSkgc2NhbGUoMjIuNjI3NCA2NC40MTQxKSI+CjxzdG9wIHN0b3AtY29sb3I9IiMyMEE4NUUiLz4KPHN0b3Agb2Zmc2V0PSIwLjk0Mzc1IiBzdG9wLWNvbG9yPSIjMDk0NDJBIi8+CjwvcmFkaWFsR3JhZGllbnQ+CjxyYWRpYWxHcmFkaWVudCBpZD0icGFpbnQ5X3JhZGlhbF83Njc4MF8xNDU1MyIgY3g9IjAiIGN5PSIwIiByPSIxIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgxMiAzMi42KSByb3RhdGUoOTApIHNjYWxlKDExLjIgMTIuOSkiPgo8c3RvcCBvZmZzZXQ9IjAuNTgwMzU3IiBzdG9wLWNvbG9yPSIjMzNBNjYyIiBzdG9wLW9wYWNpdHk9IjAiLz4KPHN0b3Agb2Zmc2V0PSIwLjk3MzgwNiIgc3RvcC1jb2xvcj0iIzk4RjBCMCIvPgo8L3JhZGlhbEdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=" data-asset="assets/icons/microsoft-office/Excel-Icon-FY26.svg" />
     </g>
     <g id="sheets" data-kind="node" data-region="destinations" data-stage="destinations" data-geometry="[1304, 416, 384, 104]" data-basis="proposal">
       <title>Google Sheets / 業務共有</title>
@@ -134,8 +134,8 @@
     <text id="mart_role_0" x="1112.0" y="435.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1068.0, 413.0, 88, 24]">業務指標</text>
     <text id="bi_name_0" x="1372" y="168" font-size="24" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[1372, 144, 79.19999999999999, 26]">Looker</text>
     <text id="bi_role_0" x="1372" y="200" font-size="22" font-weight="400" text-anchor="start" style="fill:#5F6368" data-text-box="[1372, 178, 132, 24]">指標の可視化</text>
-    <text id="excel_name_0" x="1496.0" y="327.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1463.0, 303.0, 66.0, 26]">Excel</text>
-    <text id="excel_role_0" x="1496.0" y="359.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1452.0, 337.0, 88, 24]">集計分析</text>
+    <text id="excel_name_0" x="1372" y="304" font-size="24" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[1372, 280, 66.0, 26]">Excel</text>
+    <text id="excel_role_0" x="1372" y="336" font-size="22" font-weight="400" text-anchor="start" style="fill:#5F6368" data-text-box="[1372, 314, 88, 24]">集計分析</text>
     <text id="sheets_name_0" x="1372" y="440" font-size="24" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[1372, 416, 171.59999999999997, 26]">Google Sheets</text>
     <text id="sheets_role_0" x="1372" y="472" font-size="22" font-weight="400" text-anchor="start" style="fill:#5F6368" data-text-box="[1372, 450, 88, 24]">業務共有</text>
     <text id="product_name_0" x="1496.0" y="599.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1412.0, 575.0, 168, 26]">内製プロダクト</text>

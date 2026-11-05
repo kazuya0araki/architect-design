@@ -22,3 +22,7 @@
 `kind`は`data`と`control`を維持し、`purpose`で`ingest`、`replicate`、`transform`、`publish`、`query`、`share`、`notify`、`orchestrate`、`validate`、`reverse_etl`等の目的を記す。必要な目的だけ使い、線の意味を色数で増やさない。`method`や`frequency`は確認済みの場合だけラベルに反映する。
 
 共有経路は単一の通路に揃え、合流・分岐が曖昧な場合のみ小さな接続点を置く。接続点は経路上に置き、単なる交差に点を置かない。線はノード・領域の辺へ接続し、図形やラベルの中央を横切らない。逆向きの実データ経路を示す場合は`return_path: true`と目的を指定する。制御線を使って実際のデータ移動を隠さない。
+
+## 方式と照会
+
+接続の意味を`interaction`、転送の方式を`transfer_mode`で補足できる。線種は既存のdata/controlを維持する。方式は[取り込み方式](../patterns/ingestion-modes.md)、コピーと照会の区別は[外部照会](../patterns/federated-query.md)を参照する。未知の方式や頻度を表示上の都合で補わない。

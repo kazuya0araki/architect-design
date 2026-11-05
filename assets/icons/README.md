@@ -10,11 +10,12 @@
 | AWS | `aws/` | 公式Icon package（07312026）のSVG 1,852点 | 2026-10-17 |
 | Material Symbols | `material-symbols/` | 組織・汎用DB・人の3点（Outlined） | 2026-10-27 |
 | Google Workspace | `google-workspace/` | ブランドロゴ1点・主要アプリ19点（計20点） | 2026-10-27 |
-| Data Studio | `google-data-studio/` | 公式製品SVG 1点 | 2026-10-27 |
+| Apache | `apache/` | Airflow・Beamの公式SVG各1点、Icebergの文字なしPNG 1点 | 2026-11-02 |
+| Microsoft Office / Microsoft 365 | `microsoft-office/` | Word・Excel・PowerPoint・Outlook・OneNote・OneDrive・Teamsの公式SVG計7点 | 2026-11-02 |
 | dbt | `dbt/` | 公式シンボル1点 | 2026-10-27 |
 | Azure | `azure/` | 公式Public Service Icons V24のSVG 714点 | 2026-10-17 |
 
-各提供元のアーカイブ内のディレクトリ構造・ファイル名・バイト列を保持する。SVG以外の重複画像、OSの管理ファイル、ツールキットは収録しない。Google Cloudは`core/`と`categories/`の2セットのみを収録し、Legacyやルート直下の互換コピーは置かない。
+各提供元のアーカイブ内のディレクトリ構造・ファイル名・バイト列を保持する。同じ素材の重複画像、OSの管理ファイル、ツールキットは収録しない。公式の文字なし素材がPNGのみの場合は、PNGを変換・加工せず収録できる。Google Cloudは`core/`と`categories/`の2セットのみを収録し、Legacyやルート直下の互換コピーは置かない。
 
 Google Cloudの45点は「現行配布セットに含まれる全SVG」であり、全製品の専用アイコンではない。複数の製品へ共通のカテゴリ素材を適用する。公式ガイドにはGeminiが記載される一方、現在リンクされるCore ZIPには対応するSVGがないため、Gemini専用素材は未収録として扱う。Vertex AIの素材をGeminiへ読み替えない。選択時は[公式ガイド](https://services.google.com/fh/files/misc/google-cloud-product-icons.pdf)と[運用ルール](../../docs/governance/icon-updates.md)に従う。
 
@@ -36,8 +37,14 @@ Google Cloudの45点は「現行配布セットに含まれる全SVG」であり
 
 汎用素材は[Google Fonts](https://fonts.google.com/icons)のMaterial Symbolsを使い、[Apache 2.0ライセンス](material-symbols/LICENSE)を同梱する。製品ロゴは汎用素材と分け、Google Sheetsの取得元はmanifestの公式ページを参照する。
 
-Data Studioは[公式サービス](https://datastudio.google.com/)が読み込む専用SVGを`google-data-studio/`へ保存する。Google CloudのLooker固有アイコンは別製品の素材であり、Data Studioへ流用しない。
+Data Studioは既存の`google-cloud/categories/Category Icons/Data Analytics/SVG/DataAnalytics-512-color.svg`を製品名と併記して使う。本システムの選択ルールとしてカテゴリ素材へ統一し、独立したData Studio素材や互換コピーを追加しない。Lookerの固有アイコンとは区別する。
 
 Google Workspaceは[公式サイト](https://workspace.google.com/)のブランドロゴと、主要アプリ（Gmail、Calendar、Drive、Docs、Sheets、Slides、Meet、Chat、Forms、Sites、Keep、Tasks、Vids、NotebookLM、AppSheet、Workspace Studio、Admin Console、Voice、Gemini）のSVGを収録する。全Workspace関連製品の網羅を意味しない。
 
 dbtのシンボルは[公式ドキュメントのリポジトリ](https://github.com/dbt-labs/docs.getdbt.com/tree/current/website/static/img/icons)から取得し、[商標ポリシー](https://www.getdbt.com/dbt-assets/dbt-trademark-guidelines)のデータスタック図での利用条件を適用する。
+
+Apacheの素材は[Airflow公式](https://airflow.apache.org/community/)・[Iceberg公式](https://iceberg.apache.org/)・[Beamのロゴ配布ページ](https://beam.apache.org/community/logos/)から取得する。[Apacheの商標ポリシー](https://www.apache.org/foundation/marks/)を参照し、素材のバイト列・名称を保持する。Icebergはテーブル形式であり、実行エンジンとして表示しない。
+
+Microsoft Office / Microsoft 365の素材は[Microsoft公式の製品一覧](https://www.microsoft.com/en-us/microsoft-365/products-apps-services)が参照するFY26アイコンを取得し、元SVGのバイト列を保持する。拡張子のない配信URLをmanifestに記録する。上記7製品の収録であり、Office関連製品全体の網羅ではない。[Microsoftの商標ガイドライン](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks)を参照する。
+
+Icebergは公式サイトで配布する文字なしの[iceberg-logo-icon.png](apache/iceberg/iceberg-logo-icon.png)（600×600）を採用する。文字付きロゴから切り抜いたり、独自にSVG化したりしない。共有SVG描画部品は元PNGを`image/png`として埋め込む。

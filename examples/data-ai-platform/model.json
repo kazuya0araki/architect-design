@@ -155,7 +155,7 @@
       "stage_id": "destinations",
       "icons": [
         {
-          "asset": "assets/icons/google-data-studio/data-studio.svg"
+          "asset": "assets/icons/google-cloud/categories/Category Icons/Data Analytics/SVG/DataAnalytics-512-color.svg"
         }
       ],
       "representation": "icon"
@@ -382,5 +382,7 @@
       "purpose": "orchestrate"
     }
   ],
-  "brand_notice": "This diagram is not affiliated with or endorsed by dbt Labs."
+  "brand_notice": "This diagram is not affiliated with or endorsed by dbt Labs.",
+  "view_level": "pipeline",
+  "diagram_type": "data_flow"
 }

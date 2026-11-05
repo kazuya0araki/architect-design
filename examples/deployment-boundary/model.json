@@ -1,0 +1,125 @@
+{
+  "schema_version": 2,
+  "id": "deployment-boundary",
+  "title": "所属とネットワーク配置の区別",
+  "purpose": "所属とネットワーク配置の区別を説明する架空の提案",
+  "status": "proposal",
+  "canvas": [
+    1280,
+    672
+  ],
+  "outer_margin": 48,
+  "publication_width": 960,
+  "flow_direction": "left-to-right",
+  "view_level": "detail",
+  "diagram_type": "deployment",
+  "regions": [
+    {
+      "id": "project",
+      "label": "クラウドプロジェクト（所属）",
+      "kind": "project",
+      "geometry": [
+        48,
+        64,
+        1184,
+        544
+      ]
+    },
+    {
+      "id": "network",
+      "label": "プライベートネットワーク",
+      "kind": "network",
+      "scope": "提案上のプライベートネットワーク。実ネットワークIDは未確定",
+      "geometry": [
+        80,
+        144,
+        512,
+        384
+      ],
+      "parent_id": "project"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "worker",
+      "name": "取り込みワーカー",
+      "role": "ネットワーク内に配置",
+      "geometry": [
+        112,
+        264,
+        240,
+        112
+      ],
+      "representation": "logical",
+      "region_id": "network"
+    },
+    {
+      "id": "endpoint",
+      "name": "Private endpoint",
+      "role": "接続口",
+      "geometry": [
+        392,
+        264,
+        168,
+        112
+      ],
+      "representation": "logical",
+      "region_id": "network"
+    },
+    {
+      "id": "service",
+      "name": "マネージド保存先",
+      "role": "ネットワークの外部",
+      "geometry": [
+        864,
+        264,
+        304,
+        112
+      ],
+      "representation": "logical",
+      "region_id": "project"
+    }
+  ],
+  "connections": [
+    {
+      "id": "worker_endpoint",
+      "source": "worker",
+      "target": "endpoint",
+      "kind": "data",
+      "points": [
+        [
+          352,
+          320
+        ],
+        [
+          392,
+          320
+        ]
+      ],
+      "interaction": "transfer"
+    },
+    {
+      "id": "endpoint_service",
+      "source": "endpoint",
+      "target": "service",
+      "kind": "data",
+      "points": [
+        [
+          560,
+          320
+        ],
+        [
+          864,
+          320
+        ]
+      ],
+      "interaction": "transfer",
+      "label": "プライベート接続",
+      "label_position": [
+        712,
+        304
+      ],
+      "label_width": 272
+    }
+  ]
+}

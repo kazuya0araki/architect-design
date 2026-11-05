@@ -8,6 +8,8 @@ sys.path.insert(0,str(ROOT/'scripts'))
 from diagram import render
 
 if __name__=='__main__':
+    from build_catalog import build
+    build()
     for path in sorted(Path(__file__).parent.glob('*/model.json')):
         model = json.loads(path.read_text())
         if model.get('schema_version')==2:

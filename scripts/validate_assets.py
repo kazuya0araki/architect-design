@@ -5,6 +5,7 @@ Run from any directory: python3 scripts/validate_assets.py
 import base64
 import hashlib
 import json
+import struct
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
@@ -27,11 +28,18 @@ def validate():
         if hashlib.sha256(file.read_bytes()).hexdigest() != item['sha256']:
             errors.append(f'SHA-256 mismatch: {relative}')
         try:
-            if ET.parse(file).getroot().tag != '{http://www.w3.org/2000/svg}svg':
-                errors.append(f'not an SVG: {relative}')
+            if file.suffix.lower() == '.svg':
+                if ET.parse(file).getroot().tag != '{http://www.w3.org/2000/svg}svg':
+                    errors.append(f'not an SVG: {relative}')
+            elif file.suffix.lower() == '.png':
+                data = file.read_bytes()
+                if len(data) < 33 or data[:8] != b'\x89PNG\r\n\x1a\n' or data[12:16] != b'IHDR' or min(struct.unpack('>II', data[16:24])) <= 0:
+                    errors.append(f'invalid PNG header: {relative}')
+            else:
+                errors.append(f'unsupported icon format: {relative}')
         except ET.ParseError as exc:
             errors.append(f'invalid SVG: {relative}: {exc}')
-    actual = {p.relative_to(ROOT).as_posix() for p in (ROOT / 'assets/icons').rglob('*.svg')}
+    actual = {p.relative_to(ROOT).as_posix() for p in (ROOT / 'assets/icons').rglob('*') if p.suffix.lower() in ('.svg', '.png')}
     errors.extend(f'unregistered asset: {p}' for p in sorted(actual - entries.keys()))
     google = [a for a in entries.values() if a['provider'] == 'Google Cloud']
     for item in google:
@@ -73,6 +81,9 @@ def validate():
             if element.tag == '{http://www.w3.org/2000/svg}image':
                 data = check_reference(element.get('data-asset', ''))
                 try:
+                    expected_mime = 'image/png' if Path(element.get('data-asset', '')).suffix.lower() == '.png' else 'image/svg+xml'
+                    if not element.get('href', '').startswith('data:' + expected_mime + ';base64,'):
+                        errors.append(f'wrong embedded image MIME type: {file.relative_to(ROOT)}')
                     payload = base64.b64decode(element.get('href', '').split(',', 1)[1], validate=True)
                     if data is not None and payload != data:
                         errors.append(f'embedded SVG asset mismatch: {file.relative_to(ROOT)}')
@@ -92,7 +103,7 @@ def validate():
                     errors.append(f'invalid draw.io image embedding: {file.relative_to(ROOT)}: {exc}')
     if errors:
         raise SystemExit('\n'.join(errors))
-    print(f'PASS: {len(entries)} icons; manifest/files/SHA-256/SVG/collections/example/architecture references and SVG/draw.io embeddings')
+    print(f'PASS: {len(entries)} icons; manifest/files/SHA-256/SVG/PNG/collections/example/architecture references and SVG/draw.io embeddings')
 
 
 if __name__ == '__main__':

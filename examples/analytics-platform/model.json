@@ -587,5 +587,7 @@
     }
   ],
   "scope": "接続元、取り込み、保存・加工、提供先と加工実行管理",
-  "assumptions": []
+  "assumptions": [],
+  "view_level": "pipeline",
+  "diagram_type": "data_flow"
 }

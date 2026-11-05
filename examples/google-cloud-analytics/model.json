@@ -235,12 +235,17 @@
       ],
       "region_id": "destinations",
       "stage_id": "destinations",
-      "representation": "logical",
+      "representation": "horizontal",
       "kind": "spreadsheet",
       "endpoint_roles": [
         "destination"
       ],
-      "product": "Microsoft Excel"
+      "product": "Microsoft Excel",
+      "icons": [
+        {
+          "asset": "assets/icons/microsoft-office/Excel-Icon-FY26.svg"
+        }
+      ]
     },
     {
       "id": "sheets",
@@ -613,5 +618,7 @@
     }
   ],
   "scope": "接続元、取り込み、保存・加工、提供先と加工実行管理",
-  "assumptions": []
+  "assumptions": [],
+  "view_level": "pipeline",
+  "diagram_type": "data_flow"
 }

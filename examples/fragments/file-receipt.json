@@ -1,0 +1,83 @@
+{
+  "regions": [],
+  "nodes": [
+    {
+      "id": "file",
+      "name": "受領ファイル",
+      "role": "CSV等の入力",
+      "geometry": [
+        0,
+        64,
+        192,
+        96
+      ],
+      "representation": "logical"
+    },
+    {
+      "id": "receipt",
+      "name": "受領処理",
+      "role": "内容と形式を確認",
+      "geometry": [
+        288,
+        64,
+        192,
+        96
+      ],
+      "representation": "logical"
+    },
+    {
+      "id": "storage",
+      "name": "受領ストレージ",
+      "role": "受領データを保存",
+      "geometry": [
+        576,
+        64,
+        192,
+        96
+      ],
+      "representation": "logical"
+    }
+  ],
+  "connections": [
+    {
+      "id": "receive",
+      "source": "file",
+      "target": "receipt",
+      "kind": "data",
+      "points": [
+        [
+          192,
+          112
+        ],
+        [
+          288,
+          112
+        ]
+      ],
+      "interaction": "transfer",
+      "transfer_mode": "batch"
+    },
+    {
+      "id": "save",
+      "source": "receipt",
+      "target": "storage",
+      "kind": "data",
+      "points": [
+        [
+          480,
+          112
+        ],
+        [
+          576,
+          112
+        ]
+      ],
+      "interaction": "transfer",
+      "transfer_mode": "batch"
+    }
+  ],
+  "ports": {
+    "input": "file",
+    "output": "storage"
+  }
+}

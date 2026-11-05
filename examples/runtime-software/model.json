@@ -1,0 +1,128 @@
+{
+  "schema_version": 2,
+  "id": "runtime-software",
+  "title": "実行基盤と併用ソフトウェアの見本",
+  "purpose": "サービス・ツール・形式の役割の違いを説明する架空の提案",
+  "status": "proposal",
+  "view_level": "pipeline",
+  "diagram_type": "component_catalog",
+  "canvas": [
+    1280,
+    720
+  ],
+  "outer_margin": 48,
+  "publication_width": 960,
+  "flow_direction": "left-to-right",
+  "regions": [
+    {
+      "id": "managed",
+      "label": "サービスと実行エンジン・フレームワーク",
+      "kind": "functional",
+      "geometry": [
+        48,
+        64,
+        1184,
+        256
+      ]
+    },
+    {
+      "id": "selected",
+      "label": "利用者が選択するツール・形式",
+      "kind": "functional",
+      "geometry": [
+        48,
+        368,
+        1184,
+        256
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "composer",
+      "name": "Cloud Composer",
+      "role": "Apache Airflowで実行管理",
+      "geometry": [
+        80,
+        144,
+        464,
+        144
+      ],
+      "region_id": "managed",
+      "representation": "horizontal",
+      "icons": [
+        {
+          "asset": "assets/icons/google-cloud/categories/Category Icons/Data Analytics/SVG/DataAnalytics-512-color.svg"
+        },
+        {
+          "asset": "assets/icons/apache/airflow/airflow-icon.svg"
+        }
+      ],
+      "basis": "proposal"
+    },
+    {
+      "id": "dataflow",
+      "name": "Dataflow",
+      "role": "Apache Beamでデータ処理",
+      "geometry": [
+        704,
+        144,
+        464,
+        144
+      ],
+      "region_id": "managed",
+      "representation": "horizontal",
+      "icons": [
+        {
+          "asset": "assets/icons/google-cloud/categories/Category Icons/Data Analytics/SVG/DataAnalytics-512-color.svg"
+        },
+        {
+          "asset": "assets/icons/apache/beam/beam-logo-full-color-nameless.svg"
+        }
+      ],
+      "basis": "proposal"
+    },
+    {
+      "id": "dbt_runtime",
+      "name": "Cloud Run",
+      "role": "dbtによる変換",
+      "geometry": [
+        80,
+        448,
+        464,
+        144
+      ],
+      "region_id": "selected",
+      "representation": "horizontal",
+      "icons": [
+        {
+          "asset": "assets/icons/google-cloud/core/Unique Icons/Cloud Run/SVG/CloudRun-512-color-rgb.svg"
+        },
+        {
+          "asset": "assets/icons/dbt/dbt-bit.svg"
+        }
+      ],
+      "basis": "proposal"
+    },
+    {
+      "id": "iceberg",
+      "name": "Apache Iceberg",
+      "role": "保存層のテーブル形式",
+      "geometry": [
+        704,
+        448,
+        464,
+        144
+      ],
+      "region_id": "selected",
+      "representation": "horizontal",
+      "icons": [
+        {
+          "asset": "assets/icons/apache/iceberg/iceberg-logo-icon.png"
+        }
+      ],
+      "basis": "proposal"
+    }
+  ],
+  "connections": []
+}

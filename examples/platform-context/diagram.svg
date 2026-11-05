@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="544" viewBox="0 0 1280 544" role="img" aria-labelledby="title description" data-schema-version="2">
+  <title id="title">データ基盤の全体像</title>
+  <desc id="description">データ基盤の全体像を説明する架空の提案 </desc>
+  <metadata id="model_metadata">{"id": "platform-context", "status": "proposal", "source": null, "omitted": [], "view_level": "context", "diagram_type": "context"}</metadata>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
+    </marker>
+  </defs>
+  <style>text{font-family:Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif;fill:#202124}</style>
+  <rect width="1280" height="544" fill="#FFFFFF" />
+  <g id="regions">
+    <rect id="scope" data-region-kind="functional" data-parent="" data-geometry="[480, 128, 320, 304]" x="480" y="128" width="320" height="304" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
+  </g>
+  <g id="connections">
+    <g id="input" data-source="source" data-target="platform" data-kind="data" data-purpose="" data-interaction="transfer" data-transfer-mode="">
+      <path d="M336 280 L512 280" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
+    </g>
+    <g id="output" data-source="platform" data-target="consumer" data-kind="data" data-purpose="" data-interaction="transfer" data-transfer-mode="">
+      <path d="M768 280 L944 280" fill="none" stroke="#5F6368" stroke-width="1.5" marker-end="url(#arrow)" />
+    </g>
+  </g>
+  <g id="nodes">
+    <g id="source" data-kind="node" data-region="" data-stage="" data-geometry="[80, 216, 256, 128]" data-basis="proposal">
+      <title>業務システム / データを提供</title>
+      <rect x="80" y="216" width="256" height="128" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="platform" data-kind="node" data-region="" data-stage="" data-geometry="[512, 216, 256, 128]" data-basis="proposal">
+      <title>データ基盤 / 収集・加工・提供</title>
+      <rect x="512" y="216" width="256" height="128" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+    <g id="consumer" data-kind="node" data-region="" data-stage="" data-geometry="[944, 216, 256, 128]" data-basis="proposal">
+      <title>利用者・業務アプリ / データを活用</title>
+      <rect x="944" y="216" width="256" height="128" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
+    </g>
+  </g>
+  <g id="labels">
+    <text id="scope_label_0" x="496" y="160" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[496, 138, 176, 24]">対象：データ基盤</text>
+    <text id="source_name_0" x="208.0" y="275.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[136.0, 251.0, 144, 26]">業務システム</text>
+    <text id="source_role_0" x="208.0" y="307.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[142.0, 285.0, 132, 24]">データを提供</text>
+    <text id="platform_name_0" x="640.0" y="275.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[580.0, 251.0, 120, 26]">データ基盤</text>
+    <text id="platform_role_0" x="640.0" y="307.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[552.0, 285.0, 176, 24]">収集・加工・提供</text>
+    <text id="consumer_name_0" x="1072.0" y="275.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[964.0, 251.0, 216, 26]">利用者・業務アプリ</text>
+    <text id="consumer_role_0" x="1072.0" y="307.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1006.0, 285.0, 132, 24]">データを活用</text>
+  </g>
+</svg>

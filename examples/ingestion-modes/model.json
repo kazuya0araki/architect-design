@@ -1,0 +1,316 @@
+{
+  "schema_version": 2,
+  "id": "ingestion-modes",
+  "title": "取り込み方式の比較",
+  "purpose": "取り込み方式の比較を説明する架空の提案",
+  "status": "proposal",
+  "canvas": [
+    1280,
+    800
+  ],
+  "outer_margin": 48,
+  "publication_width": 960,
+  "flow_direction": "left-to-right",
+  "view_level": "pipeline",
+  "diagram_type": "data_flow",
+  "regions": [
+    {
+      "id": "batch_lane",
+      "label": "バッチ",
+      "kind": "functional",
+      "geometry": [
+        48,
+        64,
+        1184,
+        200
+      ]
+    },
+    {
+      "id": "streaming_lane",
+      "label": "ストリーミング",
+      "kind": "functional",
+      "geometry": [
+        48,
+        288,
+        1184,
+        200
+      ]
+    },
+    {
+      "id": "cdc_lane",
+      "label": "CDC",
+      "kind": "functional",
+      "geometry": [
+        48,
+        512,
+        1184,
+        200
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "batch_source",
+      "name": "業務ファイル",
+      "role": "",
+      "geometry": [
+        80,
+        136,
+        192,
+        96
+      ],
+      "representation": "logical",
+      "region_id": "batch_lane"
+    },
+    {
+      "id": "batch_process",
+      "name": "一括取り込み",
+      "role": "",
+      "geometry": [
+        544,
+        136,
+        192,
+        96
+      ],
+      "representation": "logical",
+      "region_id": "batch_lane"
+    },
+    {
+      "id": "batch_target",
+      "name": "分析ストレージ",
+      "role": "",
+      "geometry": [
+        1008,
+        136,
+        192,
+        96
+      ],
+      "representation": "logical",
+      "region_id": "batch_lane"
+    },
+    {
+      "id": "streaming_source",
+      "name": "イベント発生元",
+      "role": "",
+      "geometry": [
+        80,
+        360,
+        192,
+        96
+      ],
+      "representation": "logical",
+      "region_id": "streaming_lane"
+    },
+    {
+      "id": "streaming_process",
+      "name": "イベント処理",
+      "role": "",
+      "geometry": [
+        544,
+        360,
+        192,
+        96
+      ],
+      "representation": "logical",
+      "region_id": "streaming_lane"
+    },
+    {
+      "id": "streaming_target",
+      "name": "分析ストレージ",
+      "role": "",
+      "geometry": [
+        1008,
+        360,
+        192,
+        96
+      ],
+      "representation": "logical",
+      "region_id": "streaming_lane"
+    },
+    {
+      "id": "cdc_source",
+      "name": "業務DB",
+      "role": "",
+      "geometry": [
+        80,
+        584,
+        192,
+        96
+      ],
+      "representation": "logical",
+      "region_id": "cdc_lane"
+    },
+    {
+      "id": "cdc_process",
+      "name": "変更取得",
+      "role": "",
+      "geometry": [
+        544,
+        584,
+        192,
+        96
+      ],
+      "representation": "logical",
+      "region_id": "cdc_lane"
+    },
+    {
+      "id": "cdc_target",
+      "name": "分析ストレージ",
+      "role": "",
+      "geometry": [
+        1008,
+        584,
+        192,
+        96
+      ],
+      "representation": "logical",
+      "region_id": "cdc_lane"
+    }
+  ],
+  "connections": [
+    {
+      "id": "batch_ingest",
+      "source": "batch_source",
+      "target": "batch_process",
+      "kind": "data",
+      "points": [
+        [
+          272,
+          184
+        ],
+        [
+          544,
+          184
+        ]
+      ],
+      "interaction": "transfer",
+      "transfer_mode": "batch",
+      "label": "まとめて取得",
+      "label_position": [
+        408.0,
+        168
+      ],
+      "label_width": 240
+    },
+    {
+      "id": "batch_save",
+      "source": "batch_process",
+      "target": "batch_target",
+      "kind": "data",
+      "points": [
+        [
+          736,
+          184
+        ],
+        [
+          1008,
+          184
+        ]
+      ],
+      "interaction": "transfer",
+      "transfer_mode": "batch",
+      "label": "保存",
+      "label_position": [
+        872.0,
+        168
+      ],
+      "label_width": 240
+    },
+    {
+      "id": "streaming_ingest",
+      "source": "streaming_source",
+      "target": "streaming_process",
+      "kind": "data",
+      "points": [
+        [
+          272,
+          408
+        ],
+        [
+          544,
+          408
+        ]
+      ],
+      "interaction": "transfer",
+      "transfer_mode": "streaming",
+      "label": "イベントを転送",
+      "label_position": [
+        408.0,
+        392
+      ],
+      "label_width": 240
+    },
+    {
+      "id": "streaming_save",
+      "source": "streaming_process",
+      "target": "streaming_target",
+      "kind": "data",
+      "points": [
+        [
+          736,
+          408
+        ],
+        [
+          1008,
+          408
+        ]
+      ],
+      "interaction": "transfer",
+      "transfer_mode": "streaming",
+      "label": "保存",
+      "label_position": [
+        872.0,
+        392
+      ],
+      "label_width": 240
+    },
+    {
+      "id": "cdc_ingest",
+      "source": "cdc_source",
+      "target": "cdc_process",
+      "kind": "data",
+      "points": [
+        [
+          272,
+          632
+        ],
+        [
+          544,
+          632
+        ]
+      ],
+      "interaction": "transfer",
+      "transfer_mode": "cdc",
+      "label": "変更を転送",
+      "label_position": [
+        408.0,
+        616
+      ],
+      "label_width": 240
+    },
+    {
+      "id": "cdc_save",
+      "source": "cdc_process",
+      "target": "cdc_target",
+      "kind": "data",
+      "points": [
+        [
+          736,
+          632
+        ],
+        [
+          1008,
+          632
+        ]
+      ],
+      "interaction": "transfer",
+      "transfer_mode": "cdc",
+      "label": "保存",
+      "label_position": [
+        872.0,
+        616
+      ],
+      "label_width": 240
+    }
+  ]
+}

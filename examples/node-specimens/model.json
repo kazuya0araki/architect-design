@@ -1,0 +1,130 @@
+{
+  "schema_version": 2,
+  "id": "node-specimens",
+  "title": "ノードの状態別見本",
+  "purpose": "標準・長文・アイコンなし・横並び・入れ子の作図見本",
+  "status": "proposal",
+  "canvas": [
+    1280,
+    800
+  ],
+  "outer_margin": 48,
+  "publication_width": 960,
+  "view_level": "pipeline",
+  "diagram_type": "component_catalog",
+  "flow_direction": "left-to-right",
+  "regions": [
+    {
+      "id": "standard",
+      "label": "標準・アイコンなし",
+      "kind": "functional",
+      "geometry": [
+        48,
+        64,
+        544,
+        240
+      ]
+    },
+    {
+      "id": "long",
+      "label": "長い名前は幅・高さで調整",
+      "kind": "functional",
+      "geometry": [
+        624,
+        64,
+        608,
+        240
+      ]
+    },
+    {
+      "id": "horizontal",
+      "label": "横並び（アイコン未指定）",
+      "kind": "functional",
+      "geometry": [
+        48,
+        352,
+        544,
+        336
+      ]
+    },
+    {
+      "id": "product",
+      "label": "製品内の論理層",
+      "kind": "product",
+      "geometry": [
+        624,
+        352,
+        608,
+        336
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "plain",
+      "name": "集計処理",
+      "role": "指標を作成",
+      "geometry": [
+        80,
+        144,
+        240,
+        112
+      ],
+      "representation": "logical",
+      "region_id": "standard"
+    },
+    {
+      "id": "long_name",
+      "name": "部門横断の売上実績を\n業務指標へ変換する処理",
+      "role": "長文でも文字サイズを維持",
+      "geometry": [
+        656,
+        144,
+        544,
+        128
+      ],
+      "representation": "logical",
+      "region_id": "long"
+    },
+    {
+      "id": "horizontal_name",
+      "name": "ジョブ管理",
+      "role": "加工処理の実行を制御",
+      "geometry": [
+        80,
+        456,
+        480,
+        112
+      ],
+      "representation": "horizontal",
+      "region_id": "horizontal"
+    },
+    {
+      "id": "raw",
+      "name": "Raw",
+      "role": "受領データ",
+      "geometry": [
+        656,
+        464,
+        240,
+        128
+      ],
+      "representation": "data",
+      "region_id": "product"
+    },
+    {
+      "id": "mart",
+      "name": "Mart",
+      "role": "業務指標",
+      "geometry": [
+        960,
+        464,
+        240,
+        128
+      ],
+      "representation": "data",
+      "region_id": "product"
+    }
+  ],
+  "connections": []
+}

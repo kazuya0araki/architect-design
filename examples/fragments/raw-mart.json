@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "id": "store",
+      "label": "分析用データストア",
+      "kind": "product",
+      "geometry": [
+        0,
+        0,
+        768,
+        240
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "raw",
+      "name": "Raw",
+      "role": "受領データ",
+      "geometry": [
+        32,
+        80,
+        224,
+        112
+      ],
+      "representation": "data",
+      "region_id": "store"
+    },
+    {
+      "id": "mart",
+      "name": "Mart",
+      "role": "業務指標",
+      "geometry": [
+        512,
+        80,
+        224,
+        112
+      ],
+      "representation": "data",
+      "region_id": "store"
+    }
+  ],
+  "connections": [
+    {
+      "id": "transform",
+      "source": "raw",
+      "target": "mart",
+      "kind": "data",
+      "points": [
+        [
+          256,
+          136
+        ],
+        [
+          512,
+          136
+        ]
+      ],
+      "purpose": "transform",
+      "interaction": "transfer"
+    }
+  ],
+  "ports": {
+    "input": "raw",
+    "output": "mart"
+  }
+}

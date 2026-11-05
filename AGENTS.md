@@ -14,6 +14,8 @@
 | 作業 | 参照先 |
 | --- | --- |
 | 初めて図を作る | `docs/introduction/quick-start.md` |
+| 図の粒度を選ぶ | `docs/guides/view-levels.md` |
+| 再利用部品を選ぶ | `docs/components/specimens.md`、`docs/patterns/reusable-fragments.md` |
 | 入力と構成を整理する | `docs/guides/input-model.md`、`docs/patterns/README.md` |
 | 接続元・接続先を定義する | `docs/components/source.md`、`docs/components/destination.md`、`docs/guides/input-model.md` |
 | 描画する | `docs/foundations/`、`docs/components/`（領域・横断機能を含む）、`docs/guides/generation.md`。v2の共有部品は`scripts/diagram.py` |
