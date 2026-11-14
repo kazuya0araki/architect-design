@@ -1,12 +1,12 @@
 # ノードの状態別見本
 
-![ノードの状態別見本](diagram.svg)
+![ノードの状態別見本](diagram.ja_jp.svg)
 
 状態：架空の提案・作図見本。実企業の稼働構成ではない。
 
 目的・対象範囲：標準、長い名前、アイコンなし、横並び、製品内の入れ子を比較する。
 
-編集元：[model.json](model.json)。出力：[diagram.svg](diagram.svg)。`cargo run --release -- examples`で上書き再生成する。
+編集元：[model.json](model.json)（英語基準）・[日本語文言](locales/ja_jp.json)。出力：[日本語](diagram.ja_jp.svg)・[英語](diagram.svg)。`cargo run --release -- examples --all-locales`で上書き再生成する。
 
 凡例：線なし。製品領域は論理層を内包する。
 

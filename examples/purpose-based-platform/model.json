@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "id": "purpose-based-platform",
-  "title": "用途別に分離したデータ基盤（架空の提案）",
-  "purpose": "用途別に分離したデータ基盤（架空の提案）",
+  "title": "Purpose-based data platforms (fictional proposal)",
+  "purpose": "Purpose-based data platforms (fictional proposal)",
   "status": "proposal",
   "canvas": [
     1280,
@@ -14,7 +14,7 @@
   "regions": [
     {
       "id": "sources",
-      "label": "接続元",
+      "label": "Data sources",
       "kind": "stage",
       "geometry": [
         48,
@@ -25,7 +25,7 @@
     },
     {
       "id": "platform",
-      "label": "用途別のデータ基盤",
+      "label": "Purpose-based data platforms",
       "kind": "stage",
       "geometry": [
         280,
@@ -36,7 +36,7 @@
     },
     {
       "id": "destinations",
-      "label": "利用先",
+      "label": "Destinations",
       "kind": "stage",
       "geometry": [
         1008,
@@ -47,7 +47,7 @@
     },
     {
       "id": "product",
-      "label": "プロダクト用",
+      "label": "For products",
       "kind": "project",
       "geometry": [
         296,
@@ -59,7 +59,7 @@
     },
     {
       "id": "business",
-      "label": "業務分析用",
+      "label": "For business analytics",
       "kind": "project",
       "geometry": [
         296,
@@ -73,8 +73,8 @@
   "nodes": [
     {
       "id": "product_source",
-      "name": "業務システム",
-      "role": "顧客機能用",
+      "name": "Business systems",
+      "role": "For customer features",
       "geometry": [
         72,
         216,
@@ -84,12 +84,12 @@
       "region_id": "sources",
       "stage_id": "sources",
       "representation": "logical",
-      "display_role": "提供データ"
+      "display_role": "Served data"
     },
     {
       "id": "product_ingest",
-      "name": "取り込み",
-      "role": "顧客機能用",
+      "name": "Ingestion",
+      "role": "For customer features",
       "geometry": [
         320,
         216,
@@ -99,12 +99,12 @@
       "region_id": "product",
       "stage_id": "platform",
       "representation": "logical",
-      "display_role": "受領・転送"
+      "display_role": "Receive and transfer"
     },
     {
       "id": "product_raw",
       "name": "Raw",
-      "role": "顧客機能用",
+      "role": "For customer features",
       "geometry": [
         544,
         216,
@@ -114,12 +114,12 @@
       "region_id": "product",
       "stage_id": "platform",
       "representation": "data",
-      "display_role": "未加工データ"
+      "display_role": "Raw data"
     },
     {
       "id": "product_mart",
       "name": "Mart",
-      "role": "顧客機能用",
+      "role": "For customer features",
       "geometry": [
         768,
         216,
@@ -129,12 +129,12 @@
       "region_id": "product",
       "stage_id": "platform",
       "representation": "data",
-      "display_role": "公開指標"
+      "display_role": "Published metrics"
     },
     {
       "id": "product_consumer",
-      "name": "内製サービス",
-      "role": "顧客機能用",
+      "name": "In-house service",
+      "role": "For customer features",
       "geometry": [
         1040,
         216,
@@ -144,12 +144,12 @@
       "region_id": "destinations",
       "stage_id": "destinations",
       "representation": "logical",
-      "display_role": "顧客向け機能"
+      "display_role": "Customer features"
     },
     {
       "id": "business_source",
-      "name": "業務システム",
-      "role": "社内指標用",
+      "name": "Business systems",
+      "role": "For internal metrics",
       "geometry": [
         72,
         496,
@@ -159,12 +159,12 @@
       "region_id": "sources",
       "stage_id": "sources",
       "representation": "logical",
-      "display_role": "提供データ"
+      "display_role": "Served data"
     },
     {
       "id": "business_ingest",
-      "name": "取り込み",
-      "role": "社内指標用",
+      "name": "Ingestion",
+      "role": "For internal metrics",
       "geometry": [
         320,
         496,
@@ -174,12 +174,12 @@
       "region_id": "business",
       "stage_id": "platform",
       "representation": "logical",
-      "display_role": "受領・転送"
+      "display_role": "Receive and transfer"
     },
     {
       "id": "business_raw",
       "name": "Raw",
-      "role": "社内指標用",
+      "role": "For internal metrics",
       "geometry": [
         544,
         496,
@@ -189,12 +189,12 @@
       "region_id": "business",
       "stage_id": "platform",
       "representation": "data",
-      "display_role": "未加工データ"
+      "display_role": "Raw data"
     },
     {
       "id": "business_mart",
       "name": "Mart",
-      "role": "社内指標用",
+      "role": "For internal metrics",
       "geometry": [
         768,
         496,
@@ -204,12 +204,12 @@
       "region_id": "business",
       "stage_id": "platform",
       "representation": "data",
-      "display_role": "公開指標"
+      "display_role": "Published metrics"
     },
     {
       "id": "business_consumer",
-      "name": "BI・分析",
-      "role": "社内指標用",
+      "name": "BI and analytics",
+      "role": "For internal metrics",
       "geometry": [
         1040,
         496,
@@ -219,7 +219,7 @@
       "region_id": "destinations",
       "stage_id": "destinations",
       "representation": "logical",
-      "display_role": "社内分析"
+      "display_role": "Internal analytics"
     }
   ],
   "connections": [

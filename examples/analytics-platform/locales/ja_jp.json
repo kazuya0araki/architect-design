@@ -1,0 +1,84 @@
+{
+  "locale": "ja-JP",
+  "title": "業務分析基盤 — 論理構成",
+  "purpose": "業務データと売上CSVを取り込み、業務指標を各利用先へ提供する",
+  "regions": {
+    "sources": {
+      "label": "接続元"
+    },
+    "platform": {
+      "label": "データ基盤"
+    },
+    "destinations": {
+      "label": "提供・活用"
+    },
+    "ownership": {
+      "label": "分析基盤の機能範囲"
+    },
+    "warehouse": {
+      "label": "分析用データストア"
+    },
+    "operations": {
+      "label": "横断機能 / 実行管理"
+    }
+  },
+  "nodes": {
+    "source_system": {
+      "name": "基幹システム",
+      "role": "業務データ提供",
+      "display_name": "基幹システム",
+      "display_role": "業務データ"
+    },
+    "source_file": {
+      "name": "売上CSV（提供元未確認）",
+      "role": "提供元未確認",
+      "display_name": "売上CSV"
+    },
+    "ingest": {
+      "name": "データ転送",
+      "role": "取り込み処理",
+      "display_role": "データ転送"
+    },
+    "objects": {
+      "name": "受領ストレージ",
+      "role": "ファイル・受領データ",
+      "display_role": "受領ファイル"
+    },
+    "raw": {
+      "role": "受領テーブル",
+      "display_role": "受領データ"
+    },
+    "mart": {
+      "role": "業務指標",
+      "display_role": "業務指標"
+    },
+    "bi": {
+      "name": "BIツール",
+      "role": "指標の可視化"
+    },
+    "excel": {
+      "name": "表計算ツールA",
+      "role": "集計分析"
+    },
+    "sheets": {
+      "name": "表計算ツールB",
+      "role": "業務共有"
+    },
+    "product": {
+      "name": "内製プロダクト",
+      "role": "プロダクトへのデータ提供"
+    },
+    "analyst": {
+      "name": "アナリスト",
+      "role": "アドホック分析"
+    },
+    "jobs": {
+      "name": "ジョブ管理",
+      "role": "加工実行の制御"
+    }
+  },
+  "untranslated": [
+    "nodes.raw.name",
+    "nodes.mart.name"
+  ]
+}

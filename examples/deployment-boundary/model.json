@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "id": "deployment-boundary",
-  "title": "所属とネットワーク配置の区別",
-  "purpose": "所属とネットワーク配置の区別を説明する架空の提案",
+  "title": "Ownership vs. network placement",
+  "purpose": "A fictional proposal distinguishing ownership from network placement",
   "status": "proposal",
   "canvas": [
     1280,
@@ -16,7 +16,7 @@
   "regions": [
     {
       "id": "project",
-      "label": "クラウドプロジェクト（所属）",
+      "label": "Cloud project (ownership)",
       "kind": "project",
       "geometry": [
         48,
@@ -27,9 +27,9 @@
     },
     {
       "id": "network",
-      "label": "プライベートネットワーク",
+      "label": "Private network",
       "kind": "network",
-      "scope": "提案上のプライベートネットワーク。実ネットワークIDは未確定",
+      "scope": "Proposed private network. The actual network ID is unconfirmed",
       "geometry": [
         80,
         144,
@@ -42,8 +42,8 @@
   "nodes": [
     {
       "id": "worker",
-      "name": "取り込みワーカー",
-      "role": "ネットワーク内に配置",
+      "name": "Ingestion worker",
+      "role": "Placed inside the network",
       "geometry": [
         112,
         264,
@@ -56,7 +56,7 @@
     {
       "id": "endpoint",
       "name": "Private endpoint",
-      "role": "接続口",
+      "role": "Connection endpoint",
       "geometry": [
         392,
         264,
@@ -68,8 +68,8 @@
     },
     {
       "id": "service",
-      "name": "マネージド保存先",
-      "role": "ネットワークの外部",
+      "name": "Managed storage",
+      "role": "Outside the network",
       "geometry": [
         864,
         264,
@@ -114,7 +114,7 @@
         ]
       ],
       "interaction": "transfer",
-      "label": "プライベート接続",
+      "label": "Private connection",
       "label_position": [
         712,
         304

@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "id": "runtime-software",
-  "title": "実行基盤と併用ソフトウェアの見本",
-  "purpose": "サービス・ツール・形式の役割の違いを説明する架空の提案",
+  "title": "Runtime and companion software specimens",
+  "purpose": "A fictional proposal explaining the different roles of services, tools and formats",
   "status": "proposal",
   "view_level": "pipeline",
   "diagram_type": "component_catalog",
@@ -16,7 +16,7 @@
   "regions": [
     {
       "id": "managed",
-      "label": "サービスと実行エンジン・フレームワーク",
+      "label": "Services, execution engines and frameworks",
       "kind": "functional",
       "geometry": [
         48,
@@ -27,7 +27,7 @@
     },
     {
       "id": "selected",
-      "label": "利用者が選択するツール・形式",
+      "label": "Tools and formats chosen by users",
       "kind": "functional",
       "geometry": [
         48,
@@ -41,7 +41,7 @@
     {
       "id": "composer",
       "name": "Cloud Composer",
-      "role": "Apache Airflowで実行管理",
+      "role": "Orchestrated by Apache Airflow",
       "geometry": [
         80,
         144,
@@ -63,7 +63,7 @@
     {
       "id": "dataflow",
       "name": "Dataflow",
-      "role": "Apache Beamでデータ処理",
+      "role": "Data processed by Apache Beam",
       "geometry": [
         704,
         144,
@@ -85,7 +85,7 @@
     {
       "id": "dbt_runtime",
       "name": "Cloud Run",
-      "role": "dbtによる変換",
+      "role": "Transformed with dbt",
       "geometry": [
         80,
         448,
@@ -107,7 +107,7 @@
     {
       "id": "iceberg",
       "name": "Apache Iceberg",
-      "role": "保存層のテーブル形式",
+      "role": "Table format of the storage layer",
       "geometry": [
         704,
         448,

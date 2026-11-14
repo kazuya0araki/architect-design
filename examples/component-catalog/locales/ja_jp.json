@@ -1,0 +1,52 @@
+{
+  "locale": "ja-JP",
+  "title": "再利用部品の見本",
+  "purpose": "再利用部品の見本を説明する架空の提案",
+  "regions": {
+    "receipt_group": {
+      "label": "ファイル受領"
+    },
+    "consumers_group": {
+      "label": "提供先の組み合わせ"
+    },
+    "warehouse_store": {
+      "label": "分析用データストア"
+    }
+  },
+  "nodes": {
+    "receipt_file": {
+      "name": "受領ファイル",
+      "role": "CSV等の入力"
+    },
+    "receipt_receipt": {
+      "name": "受領処理",
+      "role": "内容と形式を確認"
+    },
+    "receipt_storage": {
+      "name": "受領ストレージ",
+      "role": "受領データを保存"
+    },
+    "warehouse_raw": {
+      "role": "受領データ"
+    },
+    "warehouse_mart": {
+      "role": "業務指標"
+    },
+    "use_bi": {
+      "name": "BIツール",
+      "role": "可視化"
+    },
+    "use_sheet": {
+      "name": "表計算",
+      "role": "業務共有"
+    },
+    "use_person": {
+      "name": "アナリスト",
+      "role": "手動SQL"
+    }
+  },
+  "untranslated": [
+    "nodes.warehouse_raw.name",
+    "nodes.warehouse_mart.name"
+  ]
+}

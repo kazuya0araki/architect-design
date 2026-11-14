@@ -1,0 +1,43 @@
+{
+  "locale": "ja-JP",
+  "title": "ノードの状態別見本",
+  "purpose": "標準・長文・アイコンなし・横並び・入れ子の作図見本",
+  "regions": {
+    "standard": {
+      "label": "標準・アイコンなし"
+    },
+    "long": {
+      "label": "長い名前は幅・高さで調整"
+    },
+    "horizontal": {
+      "label": "横並び（アイコン未指定）"
+    },
+    "product": {
+      "label": "製品内の論理層"
+    }
+  },
+  "nodes": {
+    "plain": {
+      "name": "集計処理",
+      "role": "指標を作成"
+    },
+    "long_name": {
+      "name": "部門横断の売上実績を\n業務指標へ変換する処理",
+      "role": "長文でも文字サイズを維持"
+    },
+    "horizontal_name": {
+      "name": "ジョブ管理",
+      "role": "加工処理の実行を制御"
+    },
+    "raw": {
+      "role": "受領データ"
+    },
+    "mart": {
+      "role": "業務指標"
+    }
+  },
+  "untranslated": [
+    "nodes.raw.name",
+    "nodes.mart.name"
+  ]
+}

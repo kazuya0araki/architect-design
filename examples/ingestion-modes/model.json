@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "id": "ingestion-modes",
-  "title": "取り込み方式の比較",
-  "purpose": "取り込み方式の比較を説明する架空の提案",
+  "title": "Comparison of ingestion modes",
+  "purpose": "A fictional proposal comparing ingestion modes",
   "status": "proposal",
   "canvas": [
     1280,
@@ -16,7 +16,7 @@
   "regions": [
     {
       "id": "batch_lane",
-      "label": "バッチ",
+      "label": "Batch",
       "kind": "functional",
       "geometry": [
         48,
@@ -27,7 +27,7 @@
     },
     {
       "id": "streaming_lane",
-      "label": "ストリーミング",
+      "label": "Streaming",
       "kind": "functional",
       "geometry": [
         48,
@@ -51,7 +51,7 @@
   "nodes": [
     {
       "id": "batch_source",
-      "name": "業務ファイル",
+      "name": "Business files",
       "role": "",
       "geometry": [
         80,
@@ -64,7 +64,7 @@
     },
     {
       "id": "batch_process",
-      "name": "一括取り込み",
+      "name": "Bulk ingestion",
       "role": "",
       "geometry": [
         544,
@@ -77,7 +77,7 @@
     },
     {
       "id": "batch_target",
-      "name": "分析ストレージ",
+      "name": "Analytics storage",
       "role": "",
       "geometry": [
         1008,
@@ -90,7 +90,7 @@
     },
     {
       "id": "streaming_source",
-      "name": "イベント発生元",
+      "name": "Event source",
       "role": "",
       "geometry": [
         80,
@@ -103,7 +103,7 @@
     },
     {
       "id": "streaming_process",
-      "name": "イベント処理",
+      "name": "Event processing",
       "role": "",
       "geometry": [
         544,
@@ -116,7 +116,7 @@
     },
     {
       "id": "streaming_target",
-      "name": "分析ストレージ",
+      "name": "Analytics storage",
       "role": "",
       "geometry": [
         1008,
@@ -129,7 +129,7 @@
     },
     {
       "id": "cdc_source",
-      "name": "業務DB",
+      "name": "Business DB",
       "role": "",
       "geometry": [
         80,
@@ -142,7 +142,7 @@
     },
     {
       "id": "cdc_process",
-      "name": "変更取得",
+      "name": "Change capture",
       "role": "",
       "geometry": [
         544,
@@ -155,7 +155,7 @@
     },
     {
       "id": "cdc_target",
-      "name": "分析ストレージ",
+      "name": "Analytics storage",
       "role": "",
       "geometry": [
         1008,
@@ -185,7 +185,7 @@
       ],
       "interaction": "transfer",
       "transfer_mode": "batch",
-      "label": "まとめて取得",
+      "label": "Fetches in bulk",
       "label_position": [
         408.0,
         168
@@ -209,7 +209,7 @@
       ],
       "interaction": "transfer",
       "transfer_mode": "batch",
-      "label": "保存",
+      "label": "Store",
       "label_position": [
         872.0,
         168
@@ -233,7 +233,7 @@
       ],
       "interaction": "transfer",
       "transfer_mode": "streaming",
-      "label": "イベントを転送",
+      "label": "Forwards events",
       "label_position": [
         408.0,
         392
@@ -257,7 +257,7 @@
       ],
       "interaction": "transfer",
       "transfer_mode": "streaming",
-      "label": "保存",
+      "label": "Store",
       "label_position": [
         872.0,
         392
@@ -281,7 +281,7 @@
       ],
       "interaction": "transfer",
       "transfer_mode": "cdc",
-      "label": "変更を転送",
+      "label": "Forwards changes",
       "label_position": [
         408.0,
         616
@@ -305,7 +305,7 @@
       ],
       "interaction": "transfer",
       "transfer_mode": "cdc",
-      "label": "保存",
+      "label": "Store",
       "label_position": [
         872.0,
         616

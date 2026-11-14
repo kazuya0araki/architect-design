@@ -230,3 +230,38 @@ fn word_wrap_preserves_product_words_and_explicit_lines() {
     assert_eq!(wrap_text("Cloud Storage", 176.0, 24.0), ["Cloud Storage"]);
     assert_eq!(wrap_text("Raw\nMart", 176.0, 24.0), ["Raw", "Mart"]);
 }
+
+#[test]
+fn locale_attributes_escaping_and_word_integrity_are_audited() {
+    use architect_design::audit::{audit_svg_with, Expect};
+    use architect_design::render::{render_with, RenderOptions};
+    let mut m = fixture();
+    m["nodes"][0]["name"] = json!("R&D <Lab>");
+    let model = resolve(&m).unwrap();
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("diagram.ja_jp.svg");
+    let svg = render_with(&model, &root(), &tokens(&root()).unwrap(), &RenderOptions { lang: "ja-JP", font_family: None }).unwrap();
+    write_file(&svg, &path).unwrap();
+    let family = tokens(&root()).unwrap()["font"]["family"].as_str().unwrap().to_string();
+    audit_svg_with(&model, &path, Some(&Expect { lang: "ja-JP", font_family: &family })).unwrap();
+    let e = audit_svg_with(&model, &path, Some(&Expect { lang: "en", font_family: &family })).unwrap_err();
+    assert!(e.0.contains("lang and xml:lang"));
+    let e = audit_svg_with(&model, &path, Some(&Expect { lang: "ja-JP", font_family: "Arial" })).unwrap_err();
+    assert!(e.0.contains("font-family differs") && e.0.contains("Japanese font"));
+    let mut broken = model.clone();
+    broken["nodes"][0]["name"] = json!("Changed");
+    assert!(audit_svg_with(&broken, &path, None).unwrap_err().0.contains("differs from model"));
+}
+
+#[test]
+fn mermaid_and_drawio_exports_follow_the_model() {
+    use architect_design::export::{drawio, mermaid};
+    let mut m = fixture();
+    m["nodes"][0]["name"] = json!("Say \"hi\" & <go>");
+    let t = tokens(&root()).unwrap();
+    let text = mermaid(&m, &t).unwrap();
+    assert!(text.contains("subgraph left[\"Input\"]") && text.contains("a[\"Say #quot;hi#quot; & <go> / Input data\"]") && text.contains("a --> b"));
+    let xml = drawio(&m, &root(), &t, None).unwrap();
+    assert!(xml.contains("<mxCell id=\"ab\"") && xml.contains("value=\"Say &quot;hi&quot; &amp; &lt;go&gt;&#10;Input data\""));
+    roxmltree::Document::parse(&xml).unwrap();
+}

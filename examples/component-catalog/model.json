@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "id": "component-catalog",
-  "title": "再利用部品の見本",
-  "purpose": "再利用部品の見本を説明する架空の提案",
+  "title": "Reusable component specimens",
+  "purpose": "A fictional proposal illustrating reusable component specimens",
   "status": "proposal",
   "canvas": [
     1280,
@@ -16,7 +16,7 @@
   "regions": [
     {
       "id": "receipt_group",
-      "label": "ファイル受領",
+      "label": "File reception",
       "kind": "functional",
       "geometry": [
         48,
@@ -27,7 +27,7 @@
     },
     {
       "id": "consumers_group",
-      "label": "提供先の組み合わせ",
+      "label": "Destination combinations",
       "kind": "functional",
       "geometry": [
         928,
@@ -38,7 +38,7 @@
     },
     {
       "id": "warehouse_store",
-      "label": "分析用データストア",
+      "label": "Analytics data store",
       "kind": "product",
       "geometry": [
         64,
@@ -51,8 +51,8 @@
   "nodes": [
     {
       "id": "receipt_file",
-      "name": "受領ファイル",
-      "role": "CSV等の入力",
+      "name": "Files",
+      "role": "CSV inputs",
       "geometry": [
         64,
         176,
@@ -63,8 +63,8 @@
     },
     {
       "id": "receipt_receipt",
-      "name": "受領処理",
-      "role": "内容と形式を確認",
+      "name": "Receipt",
+      "role": "Checks format",
       "geometry": [
         352,
         176,
@@ -75,8 +75,8 @@
     },
     {
       "id": "receipt_storage",
-      "name": "受領ストレージ",
-      "role": "受領データを保存",
+      "name": "Storage",
+      "role": "Stores data",
       "geometry": [
         640,
         176,
@@ -88,7 +88,7 @@
     {
       "id": "warehouse_raw",
       "name": "Raw",
-      "role": "受領データ",
+      "role": "Received data",
       "geometry": [
         96,
         432,
@@ -101,7 +101,7 @@
     {
       "id": "warehouse_mart",
       "name": "Mart",
-      "role": "業務指標",
+      "role": "Business metrics",
       "geometry": [
         576,
         432,
@@ -113,8 +113,8 @@
     },
     {
       "id": "use_bi",
-      "name": "BIツール",
-      "role": "可視化",
+      "name": "BI tool",
+      "role": "Visualization",
       "geometry": [
         944,
         112,
@@ -125,8 +125,8 @@
     },
     {
       "id": "use_sheet",
-      "name": "表計算",
-      "role": "業務共有",
+      "name": "Spreadsheet",
+      "role": "Business sharing",
       "geometry": [
         944,
         240,
@@ -137,8 +137,8 @@
     },
     {
       "id": "use_person",
-      "name": "アナリスト",
-      "role": "手動SQL",
+      "name": "Analyst",
+      "role": "Manual SQL",
       "geometry": [
         944,
         368,

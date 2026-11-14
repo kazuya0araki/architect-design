@@ -1,0 +1,65 @@
+{
+  "locale": "ja-JP",
+  "title": "取り込み方式の比較",
+  "purpose": "取り込み方式の比較を説明する架空の提案",
+  "regions": {
+    "batch_lane": {
+      "label": "バッチ"
+    },
+    "streaming_lane": {
+      "label": "ストリーミング"
+    }
+  },
+  "nodes": {
+    "batch_source": {
+      "name": "業務ファイル"
+    },
+    "batch_process": {
+      "name": "一括取り込み"
+    },
+    "batch_target": {
+      "name": "分析ストレージ"
+    },
+    "streaming_source": {
+      "name": "イベント発生元"
+    },
+    "streaming_process": {
+      "name": "イベント処理"
+    },
+    "streaming_target": {
+      "name": "分析ストレージ"
+    },
+    "cdc_source": {
+      "name": "業務DB"
+    },
+    "cdc_process": {
+      "name": "変更取得"
+    },
+    "cdc_target": {
+      "name": "分析ストレージ"
+    }
+  },
+  "connections": {
+    "batch_ingest": {
+      "label": "まとめて取得"
+    },
+    "batch_save": {
+      "label": "保存"
+    },
+    "streaming_ingest": {
+      "label": "イベントを転送"
+    },
+    "streaming_save": {
+      "label": "保存"
+    },
+    "cdc_ingest": {
+      "label": "変更を転送"
+    },
+    "cdc_save": {
+      "label": "保存"
+    }
+  },
+  "untranslated": [
+    "regions.cdc_lane.label"
+  ]
+}

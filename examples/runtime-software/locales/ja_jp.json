@@ -1,0 +1,33 @@
+{
+  "locale": "ja-JP",
+  "title": "実行基盤と併用ソフトウェアの見本",
+  "purpose": "サービス・ツール・形式の役割の違いを説明する架空の提案",
+  "regions": {
+    "managed": {
+      "label": "サービスと実行エンジン・フレームワーク"
+    },
+    "selected": {
+      "label": "利用者が選択するツール・形式"
+    }
+  },
+  "nodes": {
+    "composer": {
+      "role": "Apache Airflowで実行管理"
+    },
+    "dataflow": {
+      "role": "Apache Beamでデータ処理"
+    },
+    "dbt_runtime": {
+      "role": "dbtによる変換"
+    },
+    "iceberg": {
+      "role": "保存層のテーブル形式"
+    }
+  },
+  "untranslated": [
+    "nodes.composer.name",
+    "nodes.dataflow.name",
+    "nodes.dbt_runtime.name",
+    "nodes.iceberg.name"
+  ]
+}

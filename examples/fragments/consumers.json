@@ -3,8 +3,8 @@
   "nodes": [
     {
       "id": "bi",
-      "name": "BIツール",
-      "role": "可視化",
+      "name": "BI tool",
+      "role": "Visualization",
       "geometry": [
         0,
         0,
@@ -15,8 +15,8 @@
     },
     {
       "id": "sheet",
-      "name": "表計算",
-      "role": "業務共有",
+      "name": "Spreadsheet",
+      "role": "Business sharing",
       "geometry": [
         0,
         128,
@@ -27,8 +27,8 @@
     },
     {
       "id": "person",
-      "name": "アナリスト",
-      "role": "手動SQL",
+      "name": "Analyst",
+      "role": "Manual SQL",
       "geometry": [
         0,
         256,

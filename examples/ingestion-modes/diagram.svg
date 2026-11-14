@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-labelledby="title description" data-schema-version="2">
-  <title id="title">取り込み方式の比較</title>
-  <desc id="description">取り込み方式の比較を説明する架空の提案 </desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" lang="en" xml:lang="en" role="img" aria-labelledby="title description" data-schema-version="2">
+  <title id="title">Comparison of ingestion modes</title>
+  <desc id="description">A fictional proposal comparing ingestion modes </desc>
   <metadata id="model_metadata">{"id": "ingestion-modes", "status": "proposal", "source": null, "omitted": [], "view_level": "pipeline", "diagram_type": "data_flow"}</metadata>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
     </marker>
   </defs>
-  <style>text{font-family:Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif;fill:#202124}</style>
+  <style>text{font-family:Helvetica Neue,Arial,Noto Sans,sans-serif;fill:#202124}</style>
   <rect width="1280" height="800" fill="#FFFFFF" />
   <g id="regions">
     <rect id="batch_lane" data-region-kind="functional" data-parent="" data-geometry="[48, 64, 1184, 200]" x="48" y="64" width="1184" height="200" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
@@ -37,66 +37,73 @@
   </g>
   <g id="nodes">
     <g id="batch_source" data-kind="node" data-region="batch_lane" data-stage="" data-geometry="[80, 136, 192, 96]" data-basis="proposal">
-      <title>業務ファイル / </title>
+      <title>Business files / </title>
       <rect x="80" y="136" width="192" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="batch_process" data-kind="node" data-region="batch_lane" data-stage="" data-geometry="[544, 136, 192, 96]" data-basis="proposal">
-      <title>一括取り込み / </title>
+      <title>Bulk ingestion / </title>
       <rect x="544" y="136" width="192" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="batch_target" data-kind="node" data-region="batch_lane" data-stage="" data-geometry="[1008, 136, 192, 96]" data-basis="proposal">
-      <title>分析ストレージ / </title>
+      <title>Analytics storage / </title>
       <rect x="1008" y="136" width="192" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="streaming_source" data-kind="node" data-region="streaming_lane" data-stage="" data-geometry="[80, 360, 192, 96]" data-basis="proposal">
-      <title>イベント発生元 / </title>
+      <title>Event source / </title>
       <rect x="80" y="360" width="192" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="streaming_process" data-kind="node" data-region="streaming_lane" data-stage="" data-geometry="[544, 360, 192, 96]" data-basis="proposal">
-      <title>イベント処理 / </title>
+      <title>Event processing / </title>
       <rect x="544" y="360" width="192" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="streaming_target" data-kind="node" data-region="streaming_lane" data-stage="" data-geometry="[1008, 360, 192, 96]" data-basis="proposal">
-      <title>分析ストレージ / </title>
+      <title>Analytics storage / </title>
       <rect x="1008" y="360" width="192" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="cdc_source" data-kind="node" data-region="cdc_lane" data-stage="" data-geometry="[80, 584, 192, 96]" data-basis="proposal">
-      <title>業務DB / </title>
+      <title>Business DB / </title>
       <rect x="80" y="584" width="192" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="cdc_process" data-kind="node" data-region="cdc_lane" data-stage="" data-geometry="[544, 584, 192, 96]" data-basis="proposal">
-      <title>変更取得 / </title>
+      <title>Change capture / </title>
       <rect x="544" y="584" width="192" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="cdc_target" data-kind="node" data-region="cdc_lane" data-stage="" data-geometry="[1008, 584, 192, 96]" data-basis="proposal">
-      <title>分析ストレージ / </title>
+      <title>Analytics storage / </title>
       <rect x="1008" y="584" width="192" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
   </g>
   <g id="labels">
-    <text id="batch_lane_label_0" x="64" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 74, 66, 24]">バッチ</text>
-    <text id="streaming_lane_label_0" x="64" y="320" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 298, 154, 24]">ストリーミング</text>
+    <text id="batch_lane_label_0" x="64" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 74, 60.5, 24]">Batch</text>
+    <text id="streaming_lane_label_0" x="64" y="320" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 298, 108.89999999999998, 24]">Streaming</text>
     <text id="cdc_lane_label_0" x="64" y="544" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 522, 36.300000000000004, 24]">CDC</text>
-    <rect x="338" y="144" width="140" height="28" fill="#FFFFFF" />
-    <text id="batch_ingest_label_0" x="408" y="168" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[342, 146, 132, 24]">まとめて取得</text>
-    <rect x="846" y="144" width="52" height="28" fill="#FFFFFF" />
-    <text id="batch_save_label_0" x="872" y="168" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[850, 146, 44, 24]">保存</text>
-    <rect x="327" y="368" width="162" height="28" fill="#FFFFFF" />
-    <text id="streaming_ingest_label_0" x="408" y="392" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[331, 370, 154, 24]">イベントを転送</text>
-    <rect x="846" y="368" width="52" height="28" fill="#FFFFFF" />
-    <text id="streaming_save_label_0" x="872" y="392" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[850, 370, 44, 24]">保存</text>
-    <rect x="349" y="592" width="118" height="28" fill="#FFFFFF" />
-    <text id="cdc_ingest_label_0" x="408" y="616" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[353, 594, 110, 24]">変更を転送</text>
-    <rect x="846" y="592" width="52" height="28" fill="#FFFFFF" />
-    <text id="cdc_save_label_0" x="872" y="616" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[850, 594, 44, 24]">保存</text>
-    <text id="batch_source_name_0" x="176" y="193" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[104, 169, 144, 26]">業務ファイル</text>
-    <text id="batch_process_name_0" x="640" y="193" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[568, 169, 144, 26]">一括取り込み</text>
-    <text id="batch_target_name_0" x="1104" y="193" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1020, 169, 168, 26]">分析ストレージ</text>
-    <text id="streaming_source_name_0" x="176" y="417" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[92, 393, 168, 26]">イベント発生元</text>
-    <text id="streaming_process_name_0" x="640" y="417" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[568, 393, 144, 26]">イベント処理</text>
-    <text id="streaming_target_name_0" x="1104" y="417" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1020, 393, 168, 26]">分析ストレージ</text>
-    <text id="cdc_source_name_0" x="176" y="641" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[138.8, 617, 74.39999999999999, 26]">業務DB</text>
-    <text id="cdc_process_name_0" x="640" y="641" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[592, 617, 96, 26]">変更取得</text>
-    <text id="cdc_target_name_0" x="1104" y="641" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1020, 617, 168, 26]">分析ストレージ</text>
+    <rect x="313.25" y="144" width="189.49999999999997" height="28" fill="#FFFFFF" />
+    <text id="batch_ingest_label_0" x="408" y="168" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[317.25, 146, 181.49999999999997, 24]">Fetches in bulk</text>
+    <rect x="837.75" y="144" width="68.5" height="28" fill="#FFFFFF" />
+    <text id="batch_save_label_0" x="872" y="168" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[841.75, 146, 60.5, 24]">Store</text>
+    <rect x="313.25" y="368" width="189.49999999999997" height="28" fill="#FFFFFF" />
+    <text id="streaming_ingest_label_0" x="408" y="392" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[317.25, 370, 181.49999999999997, 24]">Forwards events</text>
+    <rect x="837.75" y="368" width="68.5" height="28" fill="#FFFFFF" />
+    <text id="streaming_save_label_0" x="872" y="392" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[841.75, 370, 60.5, 24]">Store</text>
+    <rect x="307.20000000000005" y="592" width="201.59999999999997" height="28" fill="#FFFFFF" />
+    <text id="cdc_ingest_label_0" x="408" y="616" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[311.20000000000005, 594, 193.59999999999997, 24]">Forwards changes</text>
+    <rect x="837.75" y="592" width="68.5" height="28" fill="#FFFFFF" />
+    <text id="cdc_save_label_0" x="872" y="616" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[841.75, 594, 60.5, 24]">Store</text>
+    <text id="batch_source_name_0" x="176" y="178" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[123.2, 154, 105.6, 26]">Business</text>
+    <text id="batch_source_name_1" x="176" y="208" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[143, 184, 66, 26]">files</text>
+    <text id="batch_process_name_0" x="640" y="178" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[613.6, 154, 52.800000000000004, 26]">Bulk</text>
+    <text id="batch_process_name_1" x="640" y="208" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[580.6, 184, 118.79999999999998, 26]">ingestion</text>
+    <text id="batch_target_name_0" x="1104" y="178" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1044.6, 154, 118.79999999999998, 26]">Analytics</text>
+    <text id="batch_target_name_1" x="1104" y="208" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1057.8, 184, 92.39999999999999, 26]">storage</text>
+    <text id="streaming_source_name_0" x="176" y="417" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[96.80000000000001, 393, 158.39999999999998, 26]">Event source</text>
+    <text id="streaming_process_name_0" x="640" y="402" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[607, 378, 66, 26]">Event</text>
+    <text id="streaming_process_name_1" x="640" y="432" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[574, 408, 131.99999999999997, 26]">processing</text>
+    <text id="streaming_target_name_0" x="1104" y="402" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1044.6, 378, 118.79999999999998, 26]">Analytics</text>
+    <text id="streaming_target_name_1" x="1104" y="432" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1057.8, 408, 92.39999999999999, 26]">storage</text>
+    <text id="cdc_source_name_0" x="176" y="641" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[103.4, 617, 145.2, 26]">Business DB</text>
+    <text id="cdc_process_name_0" x="640" y="626" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[600.4, 602, 79.19999999999999, 26]">Change</text>
+    <text id="cdc_process_name_1" x="640" y="656" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[593.8, 632, 92.39999999999999, 26]">capture</text>
+    <text id="cdc_target_name_0" x="1104" y="626" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1044.6, 602, 118.79999999999998, 26]">Analytics</text>
+    <text id="cdc_target_name_1" x="1104" y="656" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1057.8, 632, 92.39999999999999, 26]">storage</text>
   </g>
 </svg>

@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="1080" viewBox="0 0 1760 1080" role="img" aria-labelledby="title description" data-schema-version="2">
-  <title id="title">業務分析基盤 — 論理構成</title>
-  <desc id="description">業務データと売上CSVを取り込み、業務指標を各利用先へ提供する </desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="1080" viewBox="0 0 1760 1080" lang="en" xml:lang="en" role="img" aria-labelledby="title description" data-schema-version="2">
+  <title id="title">Business Analytics Platform — Logical Architecture</title>
+  <desc id="description">Ingests business data and sales CSV files and serves business metrics to each destination </desc>
   <metadata id="model_metadata">{"id": "analytics-platform", "status": "proposal", "source": null, "omitted": [], "view_level": "pipeline", "diagram_type": "data_flow"}</metadata>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
     </marker>
   </defs>
-  <style>text{font-family:Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif;fill:#202124}</style>
+  <style>text{font-family:Helvetica Neue,Arial,Noto Sans,sans-serif;fill:#202124}</style>
   <rect width="1760" height="1080" fill="#FFFFFF" />
   <g id="regions">
     <rect id="sources" data-region-kind="stage" data-parent="" data-geometry="[48, 64, 208, 808]" x="48" y="64" width="208" height="808" fill="#FFFFFF" stroke="#AEB8C4" stroke-width="1" rx="4" />
@@ -64,85 +64,92 @@
   </g>
   <g id="nodes">
     <g id="source_system" data-kind="node" data-region="sources" data-stage="sources" data-geometry="[72, 208, 160, 160]" data-basis="proposal">
-      <title>基幹システム / 業務データ提供</title>
+      <title>Core system / Provides business data</title>
       <rect x="72" y="208" width="160" height="160" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="source_file" data-kind="node" data-region="sources" data-stage="sources" data-geometry="[72, 464, 160, 160]" data-basis="proposal">
-      <title>売上CSV（提供元未確認） / 提供元未確認</title>
+      <title>Sales CSV (provider unconfirmed) / Provider unconfirmed</title>
       <rect x="72" y="464" width="160" height="160" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="ingest" data-kind="node" data-region="ownership" data-stage="platform" data-geometry="[304, 320, 160, 192]" data-basis="proposal">
-      <title>データ転送 / 取り込み処理</title>
+      <title>Data transfer / Ingestion</title>
       <rect x="304" y="320" width="160" height="192" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="objects" data-kind="node" data-region="ownership" data-stage="platform" data-geometry="[512, 320, 160, 192]" data-basis="proposal">
-      <title>受領ストレージ / ファイル・受領データ</title>
+      <title>Receiving storage / Files and received data</title>
       <rect x="512" y="320" width="160" height="192" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="raw" data-kind="node" data-region="warehouse" data-stage="platform" data-geometry="[760, 344, 176, 128]" data-basis="proposal">
-      <title>Raw / 受領テーブル</title>
+      <title>Raw / Received tables</title>
       <path d="M760 356C760 340 936 340 936 356V460C936 476 760 476 760 460Z M760 356C760 372 936 372 936 356" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
     </g>
     <g id="mart" data-kind="node" data-region="warehouse" data-stage="platform" data-geometry="[1024, 344, 176, 128]" data-basis="proposal">
-      <title>Mart / 業務指標</title>
+      <title>Mart / Business metrics</title>
       <path d="M1024 356C1024 340 1200 340 1200 356V460C1200 476 1024 476 1024 460Z M1024 356C1024 372 1200 372 1200 356" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
     </g>
     <g id="bi" data-kind="node" data-region="destinations" data-stage="destinations" data-geometry="[1304, 144, 384, 104]" data-basis="proposal">
-      <title>BIツール / 指標の可視化</title>
+      <title>BI tool / Visualizes metrics</title>
       <rect x="1304" y="144" width="384" height="104" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="excel" data-kind="node" data-region="destinations" data-stage="destinations" data-geometry="[1304, 280, 384, 104]" data-basis="proposal">
-      <title>表計算ツールA / 集計分析</title>
+      <title>Spreadsheet tool A / Aggregate analysis</title>
       <rect x="1304" y="280" width="384" height="104" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="sheets" data-kind="node" data-region="destinations" data-stage="destinations" data-geometry="[1304, 416, 384, 104]" data-basis="proposal">
-      <title>表計算ツールB / 業務共有</title>
+      <title>Spreadsheet tool B / Business sharing</title>
       <rect x="1304" y="416" width="384" height="104" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="product" data-kind="node" data-region="destinations" data-stage="destinations" data-geometry="[1304, 552, 384, 104]" data-basis="proposal">
-      <title>内製プロダクト / プロダクトへのデータ提供</title>
+      <title>In-house product / Serves data to the product</title>
       <rect x="1304" y="552" width="384" height="104" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="analyst" data-kind="node" data-region="destinations" data-stage="destinations" data-geometry="[1304, 688, 384, 104]" data-basis="proposal">
-      <title>アナリスト / アドホック分析</title>
+      <title>Analyst / Ad hoc analysis</title>
       <image id="analyst_icon_0" x="1304" y="688" width="56" height="56" preserveAspectRatio="xMidYMid meet" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgLTk2MCA5NjAgOTYwIiB3aWR0aD0iMjQiPjxwYXRoIGQ9Ik00ODAtNDgwcS02NiAwLTExMy00N3QtNDctMTEzcTAtNjYgNDctMTEzdDExMy00N3E2NiAwIDExMyA0N3Q0NyAxMTNxMCA2Ni00NyAxMTN0LTExMyA0N1pNMTYwLTE2MHYtMTEycTAtMzQgMTcuNS02Mi41VDIyNC0zNzhxNjItMzEgMTI2LTQ2LjVUNDgwLTQ0MHE2NiAwIDEzMCAxNS41VDczNi0zNzhxMjkgMTUgNDYuNSA0My41VDgwMC0yNzJ2MTEySDE2MFptODAtODBoNDgwdi0zMnEwLTExLTUuNS0yMFQ3MDAtMzA2cS01NC0yNy0xMDktNDAuNVQ0ODAtMzYwcS01NiAwLTExMSAxMy41VDI2MC0zMDZxLTkgNS0xNC41IDE0dC01LjUgMjB2MzJabTI0MC0zMjBxMzMgMCA1Ni41LTIzLjVUNTYwLTY0MHEwLTMzLTIzLjUtNTYuNVQ0ODAtNzIwcS0zMyAwLTU2LjUgMjMuNVQ0MDAtNjQwcTAgMzMgMjMuNSA1Ni41VDQ4MC01NjBabTAtODBabTAgNDAwWiIvPjwvc3ZnPg==" data-asset="assets/icons/material-symbols/person.svg" />
     </g>
     <g id="jobs" data-kind="node" data-region="operations" data-stage="" data-geometry="[600, 952, 400, 64]" data-basis="proposal">
-      <title>ジョブ管理 / 加工実行の制御</title>
+      <title>Job management / Controls transformation runs</title>
       <rect x="600" y="952" width="400" height="64" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
   </g>
   <g id="labels">
-    <text id="sources_label_0" x="64" y="96" font-size="24" font-weight="600" text-anchor="start" style="fill:#202124" data-text-box="[64, 72, 72, 26]">接続元</text>
-    <text id="platform_label_0" x="296" y="96" font-size="24" font-weight="600" text-anchor="start" style="fill:#202124" data-text-box="[296, 72, 120, 26]">データ基盤</text>
-    <text id="destinations_label_0" x="1296" y="96" font-size="24" font-weight="600" text-anchor="start" style="fill:#202124" data-text-box="[1296, 72, 120, 26]">提供・活用</text>
-    <text id="operations_label_0" x="296" y="928" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[296, 906, 212.29999999999995, 24]">横断機能 / 実行管理</text>
-    <text id="ownership_label_0" x="312" y="176" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[312, 154, 198, 24]">分析基盤の機能範囲</text>
-    <text id="warehouse_label_0" x="752" y="264" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[752, 242, 198, 24]">分析用データストア</text>
-    <text id="source_system_name_0" x="152" y="283" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[80, 259, 144, 26]">基幹システム</text>
-    <text id="source_system_role_0" x="152" y="315" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[97, 293, 110, 24]">業務データ</text>
-    <text id="source_file_name_0" x="152" y="539" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[108.2, 515, 87.6, 26]">売上CSV</text>
-    <text id="source_file_role_0" x="152" y="571" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[86, 549, 132, 24]">提供元未確認</text>
-    <text id="ingest_name_0" x="384" y="411" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[324, 387, 120, 26]">データ転送</text>
-    <text id="ingest_role_0" x="384" y="443" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[329, 421, 110, 24]">データ転送</text>
-    <text id="objects_name_0" x="592" y="396" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[520, 372, 144, 26]">受領ストレー</text>
-    <text id="objects_name_1" x="592" y="426" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[580, 402, 24, 26]">ジ</text>
-    <text id="objects_role_0" x="592" y="458" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[526, 436, 132, 24]">受領ファイル</text>
+    <text id="sources_label_0" x="64" y="96" font-size="24" font-weight="600" text-anchor="start" style="fill:#202124" data-text-box="[64, 72, 158.39999999999998, 26]">Data sources</text>
+    <text id="platform_label_0" x="296" y="96" font-size="24" font-weight="600" text-anchor="start" style="fill:#202124" data-text-box="[296, 72, 171.59999999999997, 26]">Data platform</text>
+    <text id="destinations_label_0" x="1296" y="96" font-size="24" font-weight="600" text-anchor="start" style="fill:#202124" data-text-box="[1296, 72, 303.6000000000001, 26]">Serving and consumption</text>
+    <text id="operations_label_0" x="296" y="928" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[296, 906, 350.9000000000002, 24]">Cross-cutting / Orchestration</text>
+    <text id="ownership_label_0" x="312" y="176" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[312, 154, 290.4000000000001, 24]">Analytics platform scope</text>
+    <text id="warehouse_label_0" x="752" y="264" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[752, 242, 242.00000000000003, 24]">Analytics data store</text>
+    <text id="source_system_name_0" x="152" y="254" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[125.6, 230, 52.800000000000004, 26]">Core</text>
+    <text id="source_system_name_1" x="152" y="284" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[112.4, 260, 79.19999999999999, 26]">system</text>
+    <text id="source_system_role_0" x="152" y="316" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[103.60000000000001, 294, 96.79999999999998, 24]">Business</text>
+    <text id="source_system_role_1" x="152" y="344" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[127.8, 322, 48.400000000000006, 24]">data</text>
+    <text id="source_file_name_0" x="152" y="525" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[92.60000000000001, 501, 118.79999999999998, 26]">Sales CSV</text>
+    <text id="source_file_role_0" x="152" y="557" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[103.60000000000001, 535, 96.79999999999998, 24]">Provider</text>
+    <text id="source_file_role_1" x="152" y="585" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[85.45000000000002, 563, 133.09999999999997, 24]">unconfirmed</text>
+    <text id="ingest_name_0" x="384" y="382" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[357.6, 358, 52.800000000000004, 26]">Data</text>
+    <text id="ingest_name_1" x="384" y="412" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[331.2, 388, 105.6, 26]">transfer</text>
+    <text id="ingest_role_0" x="384" y="444" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[359.8, 422, 48.400000000000006, 24]">Data</text>
+    <text id="ingest_role_1" x="384" y="472" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[335.6, 450, 96.79999999999998, 24]">transfer</text>
+    <text id="objects_name_0" x="592" y="382" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[532.6, 358, 118.79999999999998, 26]">Receiving</text>
+    <text id="objects_name_1" x="592" y="412" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[545.8, 388, 92.39999999999999, 26]">storage</text>
+    <text id="objects_role_0" x="592" y="444" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[543.6, 422, 96.79999999999998, 24]">Received</text>
+    <text id="objects_role_1" x="592" y="472" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[561.75, 450, 60.5, 24]">files</text>
     <text id="raw_name_0" x="848" y="403" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[828.2, 379, 39.6, 26]">Raw</text>
-    <text id="raw_role_0" x="848" y="435" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[793, 413, 110, 24]">受領データ</text>
-    <text id="mart_name_0" x="1112" y="403" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1085.6, 379, 52.800000000000004, 26]">Mart</text>
-    <text id="mart_role_0" x="1112" y="435" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1068, 413, 88, 24]">業務指標</text>
-    <text id="bi_name_0" x="1496" y="191" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1446.8, 167, 98.39999999999999, 26]">BIツール</text>
-    <text id="bi_role_0" x="1496" y="223" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1430, 201, 132, 24]">指標の可視化</text>
-    <text id="excel_name_0" x="1496" y="327" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1417.4, 303, 157.2, 26]">表計算ツールA</text>
-    <text id="excel_role_0" x="1496" y="359" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1452, 337, 88, 24]">集計分析</text>
-    <text id="sheets_name_0" x="1496" y="463" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1417.4, 439, 157.2, 26]">表計算ツールB</text>
-    <text id="sheets_role_0" x="1496" y="495" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1452, 473, 88, 24]">業務共有</text>
-    <text id="product_name_0" x="1496" y="599" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1412, 575, 168, 26]">内製プロダクト</text>
-    <text id="product_role_0" x="1496" y="631" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1364, 609, 264, 24]">プロダクトへのデータ提供</text>
-    <text id="analyst_name_0" x="1372" y="712" font-size="24" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[1372, 688, 120, 26]">アナリスト</text>
-    <text id="analyst_role_0" x="1372" y="744" font-size="22" font-weight="400" text-anchor="start" style="fill:#5F6368" data-text-box="[1372, 722, 154, 24]">アドホック分析</text>
-    <text id="jobs_name_0" x="800" y="979" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[740, 955, 120, 26]">ジョブ管理</text>
-    <text id="jobs_role_0" x="800" y="1011" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[723, 989, 154, 24]">加工実行の制御</text>
+    <text id="raw_role_0" x="848" y="435" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[769.35, 413, 157.29999999999995, 24]">Received data</text>
+    <text id="mart_name_0" x="1112" y="389" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1085.6, 365, 52.800000000000004, 26]">Mart</text>
+    <text id="mart_role_0" x="1112" y="421" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1063.6, 399, 96.79999999999998, 24]">Business</text>
+    <text id="mart_role_1" x="1112" y="449" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1069.65, 427, 84.69999999999999, 24]">metrics</text>
+    <text id="bi_name_0" x="1496" y="191" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1449.8, 167, 92.39999999999999, 26]">BI tool</text>
+    <text id="bi_role_0" x="1496" y="223" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1387.1, 201, 217.8, 24]">Visualizes metrics</text>
+    <text id="excel_name_0" x="1496" y="327" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1377.2, 303, 237.60000000000002, 26]">Spreadsheet tool A</text>
+    <text id="excel_role_0" x="1496" y="359" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1387.1, 337, 217.8, 24]">Aggregate analysis</text>
+    <text id="sheets_name_0" x="1496" y="463" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1377.2, 439, 237.60000000000002, 26]">Spreadsheet tool B</text>
+    <text id="sheets_role_0" x="1496" y="495" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1399.2, 473, 193.59999999999997, 24]">Business sharing</text>
+    <text id="product_name_0" x="1496" y="599" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1390.4, 575, 211.2, 26]">In-house product</text>
+    <text id="product_role_0" x="1496" y="631" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1338.6999999999998, 609, 314.60000000000014, 24]">Serves data to the product</text>
+    <text id="analyst_name_0" x="1372" y="712" font-size="24" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[1372, 688, 92.39999999999999, 26]">Analyst</text>
+    <text id="analyst_role_0" x="1372" y="744" font-size="22" font-weight="400" text-anchor="start" style="fill:#5F6368" data-text-box="[1372, 722, 181.49999999999997, 24]">Ad hoc analysis</text>
+    <text id="jobs_name_0" x="800" y="979" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[707.6, 955, 184.79999999999995, 26]">Job management</text>
+    <text id="jobs_role_0" x="800" y="1011" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[630.5999999999999, 989, 338.8000000000002, 24]">Controls transformation runs</text>
   </g>
 </svg>

@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "id": "node-specimens",
-  "title": "ノードの状態別見本",
-  "purpose": "標準・長文・アイコンなし・横並び・入れ子の作図見本",
+  "title": "Node state specimens",
+  "purpose": "Drawing specimens for standard, long-text, no-icon, horizontal and nested nodes",
   "status": "proposal",
   "canvas": [
     1280,
@@ -16,7 +16,7 @@
   "regions": [
     {
       "id": "standard",
-      "label": "標準・アイコンなし",
+      "label": "Standard, no icon",
       "kind": "functional",
       "geometry": [
         48,
@@ -27,7 +27,7 @@
     },
     {
       "id": "long",
-      "label": "長い名前は幅・高さで調整",
+      "label": "Long names fit by adjusting width and height",
       "kind": "functional",
       "geometry": [
         624,
@@ -38,7 +38,7 @@
     },
     {
       "id": "horizontal",
-      "label": "横並び（アイコン未指定）",
+      "label": "Horizontal (no icon specified)",
       "kind": "functional",
       "geometry": [
         48,
@@ -49,7 +49,7 @@
     },
     {
       "id": "product",
-      "label": "製品内の論理層",
+      "label": "Logical layers within a product",
       "kind": "product",
       "geometry": [
         624,
@@ -62,8 +62,8 @@
   "nodes": [
     {
       "id": "plain",
-      "name": "集計処理",
-      "role": "指標を作成",
+      "name": "Aggregation",
+      "role": "Builds metrics",
       "geometry": [
         80,
         144,
@@ -75,8 +75,8 @@
     },
     {
       "id": "long_name",
-      "name": "部門横断の売上実績を\n業務指標へ変換する処理",
-      "role": "長文でも文字サイズを維持",
+      "name": "Transformation that converts cross-department\nsales results into business metrics",
+      "role": "Keeps text size even for long text",
       "geometry": [
         656,
         144,
@@ -88,8 +88,8 @@
     },
     {
       "id": "horizontal_name",
-      "name": "ジョブ管理",
-      "role": "加工処理の実行を制御",
+      "name": "Job management",
+      "role": "Controls execution of transformations",
       "geometry": [
         80,
         456,
@@ -102,7 +102,7 @@
     {
       "id": "raw",
       "name": "Raw",
-      "role": "受領データ",
+      "role": "Received data",
       "geometry": [
         656,
         464,
@@ -115,7 +115,7 @@
     {
       "id": "mart",
       "name": "Mart",
-      "role": "業務指標",
+      "role": "Business metrics",
       "geometry": [
         960,
         464,

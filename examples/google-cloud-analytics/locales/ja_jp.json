@@ -1,0 +1,82 @@
+{
+  "locale": "ja-JP",
+  "title": "業務分析基盤 — Google Cloud構成案",
+  "purpose": "業務データと売上CSVを取り込み、業務指標を各利用先へ提供する",
+  "regions": {
+    "sources": {
+      "label": "接続元"
+    },
+    "platform": {
+      "label": "データ基盤"
+    },
+    "destinations": {
+      "label": "提供・活用"
+    },
+    "ownership": {
+      "label": "Google Cloud（提案）"
+    },
+    "operations": {
+      "label": "横断機能 / 実行管理"
+    }
+  },
+  "nodes": {
+    "source_system": {
+      "name": "基幹システム",
+      "role": "業務データ提供",
+      "display_name": "基幹システム",
+      "display_role": "業務データ"
+    },
+    "source_file": {
+      "name": "売上CSV（提供元未確認）",
+      "role": "提供元未確認",
+      "display_name": "売上CSV"
+    },
+    "ingest": {
+      "role": "取り込み処理",
+      "display_role": "データ転送"
+    },
+    "objects": {
+      "role": "ファイル・受領データ",
+      "display_role": "受領ファイル"
+    },
+    "raw": {
+      "role": "受領テーブル",
+      "display_role": "受領データ"
+    },
+    "mart": {
+      "role": "業務指標",
+      "display_role": "業務指標"
+    },
+    "bi": {
+      "role": "指標の可視化"
+    },
+    "excel": {
+      "role": "集計分析"
+    },
+    "sheets": {
+      "role": "業務共有"
+    },
+    "product": {
+      "name": "内製プロダクト",
+      "role": "プロダクトへのデータ提供"
+    },
+    "analyst": {
+      "name": "アナリスト",
+      "role": "アドホック分析"
+    },
+    "jobs": {
+      "name": "ジョブ管理",
+      "role": "加工実行の制御"
+    }
+  },
+  "untranslated": [
+    "regions.warehouse.label",
+    "nodes.ingest.name",
+    "nodes.objects.name",
+    "nodes.raw.name",
+    "nodes.mart.name",
+    "nodes.bi.name",
+    "nodes.excel.name",
+    "nodes.sheets.name"
+  ]
+}

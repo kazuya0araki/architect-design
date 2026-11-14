@@ -1,0 +1,15 @@
+{
+  "source_locale": "en",
+  "default_output_locale": "ja-JP",
+  "locales": {
+    "en": {
+      "suffix": "",
+      "lang": "en",
+      "font_family": "Helvetica Neue,Arial,Noto Sans,sans-serif"
+    },
+    "ja-JP": {
+      "suffix": "ja_jp",
+      "lang": "ja-JP"
+    }
+  }
+}

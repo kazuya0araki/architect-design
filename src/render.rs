@@ -113,8 +113,22 @@ fn depth(id: &str, regions: &HashMap<&str, &Value>) -> usize {
     }
 }
 
-/// Resolve, validate and draw `model`; returns the SVG tree.
+/// Output-language attributes of the SVG; the model is already localized.
+#[derive(Debug, Clone, Copy, Default)]
+pub struct RenderOptions<'a> {
+    /// BCP 47 tag written to `lang` and `xml:lang`.
+    pub lang: &'a str,
+    /// Overrides the design-token font stack.
+    pub font_family: Option<&'a str>,
+}
+
+/// Draw `model` with the source-language (`en`) defaults.
 pub fn render(model: &Value, root: &Path, tokens: &Value) -> Result<Element> {
+    render_with(model, root, tokens, &RenderOptions { lang: "en", font_family: None })
+}
+
+/// Resolve, validate and draw `model`; returns the SVG tree.
+pub fn render_with(model: &Value, root: &Path, tokens: &Value, options: &RenderOptions) -> Result<Element> {
     let model = resolve(model)?;
     validate(&model, tokens)?;
     let (colors, font, spacing) = (&tokens["color"], &tokens["font"], &tokens["spacing"]);
@@ -128,6 +142,8 @@ pub fn render(model: &Value, root: &Path, tokens: &Value) -> Result<Element> {
             ("width", n(w)),
             ("height", n(h)),
             ("viewBox", format!("0 0 {} {}", n(w), n(h))),
+            ("lang", options.lang.into()),
+            ("xml:lang", options.lang.into()),
             ("role", "img".into()),
             ("aria-labelledby", "title description".into()),
             ("data-schema-version", "2".into()),
@@ -167,7 +183,7 @@ pub fn render(model: &Value, root: &Path, tokens: &Value) -> Result<Element> {
     );
     defs.children.push(marker);
     svg.children.push(defs);
-    let family = font["family"].as_str().unwrap_or_default();
+    let family = options.font_family.or(font["family"].as_str()).unwrap_or_default();
     push(&mut svg, "style", vec![], Some(&format!("text{{font-family:{family};fill:{}}}", color(colors, "text"))));
     push(&mut svg, "rect", vec![("width", n(w)), ("height", n(h)), ("fill", color(colors, "canvas").into())], None);
 

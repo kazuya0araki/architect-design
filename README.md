@@ -25,8 +25,8 @@ src/              Rust製の共通SVG部品・素材と図の検証・CLI
 tests/            所属・接続・描画部品の振る舞い検証（`cargo test`）
 ```
 
-共通ルールは`docs/`を正本とし、作業手順や将来のSkillsから参照する。現時点ではドキュメントとMermaid・draw.io・SVGの例を提供し、座標を指定する共通SVG部品、再利用できる部品群、表示レベル・接続方式・配置境界の検証を提供する。自動配置エンジンやSkillsは含まない。
+共通ルールは`docs/`を正本とし、作業手順や将来のSkillsから参照する。現時点ではドキュメントとMermaid・draw.io・SVGの例（Mermaid・draw.ioはモデルから生成）を提供し、座標を指定する共通SVG部品、再利用できる部品群、表示レベル・接続方式・配置境界の検証を提供する。自動配置エンジンやSkillsは含まない。
 
-Rust（stable）のみで描画・検証・examples再生成を行う（`cargo run --release -- render|validate-diagrams|validate-assets|examples`）。Pythonは不要。
+Rust（stable）のみで描画・検証・examples再生成を行う（`cargo run --release -- render|validate-diagrams|validate-assets|examples`。出力言語は既定が日本語で、`--locale en`・`--all-locales`を指定できる。[ローカライズ](docs/guides/localization.md)）。Pythonは不要。
 
 案件ごとに生成した構成図や入力資料は`architectures/`に保存し、Git管理対象から除外する。デザインシステムの作例は`examples/`で管理する。

@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "id": "contract-boundary",
-  "title": "提供インターフェースと責任境界（架空の提案）",
-  "purpose": "提供インターフェースと責任境界（架空の提案）",
+  "title": "Serving interface and responsibility boundary (fictional proposal)",
+  "purpose": "Serving interface and responsibility boundary (fictional proposal)",
   "status": "proposal",
   "canvas": [
     1280,
@@ -14,7 +14,7 @@
   "regions": [
     {
       "id": "provider",
-      "label": "提供側チーム",
+      "label": "Provider team",
       "kind": "team",
       "geometry": [
         48,
@@ -25,7 +25,7 @@
     },
     {
       "id": "consumer",
-      "label": "分析側チーム",
+      "label": "Analytics team",
       "kind": "team",
       "geometry": [
         552,
@@ -36,7 +36,7 @@
     },
     {
       "id": "contract",
-      "label": "データ契約",
+      "label": "Data contract",
       "kind": "contract",
       "parent_id": "provider",
       "fit": {
@@ -48,7 +48,7 @@
     },
     {
       "id": "warehouse",
-      "label": "論理データ基盤",
+      "label": "Logical data platform",
       "kind": "product",
       "parent_id": "consumer",
       "fit": {
@@ -61,7 +61,7 @@
     },
     {
       "id": "quality",
-      "label": "横断機能 / 品質検証",
+      "label": "Cross-cutting / Quality validation",
       "kind": "operations",
       "geometry": [
         552,
@@ -74,8 +74,8 @@
   "nodes": [
     {
       "id": "source",
-      "name": "業務DB",
-      "role": "提供側で管理",
+      "name": "Business DB",
+      "role": "Managed by provider",
       "geometry": [
         80,
         288,
@@ -87,8 +87,8 @@
     },
     {
       "id": "interface",
-      "name": "公開データ",
-      "role": "スキーマ・品質",
+      "name": "Public data",
+      "role": "Schema and quality",
       "geometry": [
         328,
         288,
@@ -97,12 +97,13 @@
       ],
       "region_id": "contract",
       "representation": "logical",
-      "display_role": "スキーマ\n品質"
+      "display_role": "Schema\nQuality",
+      "name_size": 20
     },
     {
       "id": "raw",
       "name": "Raw",
-      "role": "契約から受領",
+      "role": "Receive from contract",
       "geometry": [
         592,
         288,
@@ -111,12 +112,12 @@
       ],
       "region_id": "warehouse",
       "representation": "data",
-      "display_role": "契約データ"
+      "display_role": "Contract data"
     },
     {
       "id": "mart",
       "name": "Mart",
-      "role": "指標データ",
+      "role": "Metric data",
       "geometry": [
         784,
         288,
@@ -129,7 +130,7 @@
     {
       "id": "bi",
       "name": "BI",
-      "role": "業務で活用",
+      "role": "Used in business",
       "geometry": [
         1040,
         288,
@@ -141,8 +142,8 @@
     },
     {
       "id": "checks",
-      "name": "契約の検証",
-      "role": "品質条件を確認",
+      "name": "Contract validation",
+      "role": "Checks quality conditions",
       "geometry": [
         816,
         664,

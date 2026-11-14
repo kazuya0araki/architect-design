@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="656" viewBox="0 0 1280 656" role="img" aria-labelledby="title description" data-schema-version="2">
-  <title id="title">再利用部品の見本</title>
-  <desc id="description">再利用部品の見本を説明する架空の提案 </desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="656" viewBox="0 0 1280 656" lang="en" xml:lang="en" role="img" aria-labelledby="title description" data-schema-version="2">
+  <title id="title">Reusable component specimens</title>
+  <desc id="description">A fictional proposal illustrating reusable component specimens </desc>
   <metadata id="model_metadata">{"id": "component-catalog", "status": "proposal", "source": null, "omitted": [], "view_level": "pipeline", "diagram_type": "component_catalog"}</metadata>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
     </marker>
   </defs>
-  <style>text{font-family:Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif;fill:#202124}</style>
+  <style>text{font-family:Helvetica Neue,Arial,Noto Sans,sans-serif;fill:#202124}</style>
   <rect width="1280" height="656" fill="#FFFFFF" />
   <g id="regions">
     <rect id="receipt_group" data-region-kind="functional" data-parent="" data-geometry="[48, 64, 800, 240]" x="48" y="64" width="800" height="240" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
@@ -28,57 +28,58 @@
   </g>
   <g id="nodes">
     <g id="receipt_file" data-kind="node" data-region="" data-stage="" data-geometry="[64, 176, 192, 96]" data-basis="proposal">
-      <title>受領ファイル / CSV等の入力</title>
+      <title>Files / CSV inputs</title>
       <rect x="64" y="176" width="192" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="receipt_receipt" data-kind="node" data-region="" data-stage="" data-geometry="[352, 176, 192, 96]" data-basis="proposal">
-      <title>受領処理 / 内容と形式を確認</title>
+      <title>Receipt / Checks format</title>
       <rect x="352" y="176" width="192" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="receipt_storage" data-kind="node" data-region="" data-stage="" data-geometry="[640, 176, 192, 96]" data-basis="proposal">
-      <title>受領ストレージ / 受領データを保存</title>
+      <title>Storage / Stores data</title>
       <rect x="640" y="176" width="192" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="warehouse_raw" data-kind="node" data-region="warehouse_store" data-stage="" data-geometry="[96, 432, 224, 112]" data-basis="proposal">
-      <title>Raw / 受領データ</title>
+      <title>Raw / Received data</title>
       <path d="M96 444C96 428 320 428 320 444V532C320 548 96 548 96 532Z M96 444C96 460 320 460 320 444" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
     </g>
     <g id="warehouse_mart" data-kind="node" data-region="warehouse_store" data-stage="" data-geometry="[576, 432, 224, 112]" data-basis="proposal">
-      <title>Mart / 業務指標</title>
+      <title>Mart / Business metrics</title>
       <path d="M576 444C576 428 800 428 800 444V532C800 548 576 548 576 532Z M576 444C576 460 800 460 800 444" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
     </g>
     <g id="use_bi" data-kind="node" data-region="" data-stage="" data-geometry="[944, 112, 256, 96]" data-basis="proposal">
-      <title>BIツール / 可視化</title>
+      <title>BI tool / Visualization</title>
       <rect x="944" y="112" width="256" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="use_sheet" data-kind="node" data-region="" data-stage="" data-geometry="[944, 240, 256, 96]" data-basis="proposal">
-      <title>表計算 / 業務共有</title>
+      <title>Spreadsheet / Business sharing</title>
       <rect x="944" y="240" width="256" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="use_person" data-kind="node" data-region="" data-stage="" data-geometry="[944, 368, 256, 96]" data-basis="proposal">
-      <title>アナリスト / 手動SQL</title>
+      <title>Analyst / Manual SQL</title>
       <rect x="944" y="368" width="256" height="96" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
   </g>
   <g id="labels">
-    <text id="receipt_group_label_0" x="64" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 74, 132, 24]">ファイル受領</text>
-    <text id="consumers_group_label_0" x="944" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[944, 74, 198, 24]">提供先の組み合わせ</text>
-    <text id="warehouse_store_label_0" x="80" y="384" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[80, 362, 198, 24]">分析用データストア</text>
-    <text id="receipt_file_name_0" x="160" y="219" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[88, 195, 144, 26]">受領ファイル</text>
-    <text id="receipt_file_role_0" x="160" y="251" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[97.85, 229, 124.30000000000001, 24]">CSV等の入力</text>
-    <text id="receipt_receipt_name_0" x="448" y="219" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[400, 195, 96, 26]">受領処理</text>
-    <text id="receipt_receipt_role_0" x="448" y="251" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[360, 229, 176, 24]">内容と形式を確認</text>
-    <text id="receipt_storage_name_0" x="736" y="219" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[652, 195, 168, 26]">受領ストレージ</text>
-    <text id="receipt_storage_role_0" x="736" y="251" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[648, 229, 176, 24]">受領データを保存</text>
+    <text id="receipt_group_label_0" x="64" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 74, 169.39999999999998, 24]">File reception</text>
+    <text id="consumers_group_label_0" x="944" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[944, 74, 133.09999999999997, 24]">Destination</text>
+    <text id="consumers_group_label_1" x="944" y="124" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[944, 102, 145.19999999999996, 24]">combinations</text>
+    <text id="warehouse_store_label_0" x="80" y="384" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[80, 362, 242.00000000000003, 24]">Analytics data store</text>
+    <text id="receipt_file_name_0" x="160" y="219" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[127, 195, 66, 26]">Files</text>
+    <text id="receipt_file_role_0" x="160" y="251" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[99.5, 229, 120.99999999999999, 24]">CSV inputs</text>
+    <text id="receipt_receipt_name_0" x="448" y="219" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[401.8, 195, 92.39999999999999, 26]">Receipt</text>
+    <text id="receipt_receipt_role_0" x="448" y="251" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[369.35, 229, 157.29999999999995, 24]">Checks format</text>
+    <text id="receipt_storage_name_0" x="736" y="219" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[689.8, 195, 92.39999999999999, 26]">Storage</text>
+    <text id="receipt_storage_role_0" x="736" y="251" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[669.45, 229, 133.09999999999997, 24]">Stores data</text>
     <text id="warehouse_raw_name_0" x="208" y="483" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[188.2, 459, 39.6, 26]">Raw</text>
-    <text id="warehouse_raw_role_0" x="208" y="515" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[153, 493, 110, 24]">受領データ</text>
+    <text id="warehouse_raw_role_0" x="208" y="515" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[129.35000000000002, 493, 157.29999999999995, 24]">Received data</text>
     <text id="warehouse_mart_name_0" x="688" y="483" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[661.6, 459, 52.800000000000004, 26]">Mart</text>
-    <text id="warehouse_mart_role_0" x="688" y="515" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[644, 493, 88, 24]">業務指標</text>
-    <text id="use_bi_name_0" x="1072" y="155" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1022.8, 131, 98.39999999999999, 26]">BIツール</text>
-    <text id="use_bi_role_0" x="1072" y="187" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1039, 165, 66, 24]">可視化</text>
-    <text id="use_sheet_name_0" x="1072" y="283" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1036, 259, 72, 26]">表計算</text>
-    <text id="use_sheet_role_0" x="1072" y="315" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1028, 293, 88, 24]">業務共有</text>
-    <text id="use_person_name_0" x="1072" y="411" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1012, 387, 120, 26]">アナリスト</text>
-    <text id="use_person_role_0" x="1072" y="443" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1031.85, 421, 80.29999999999998, 24]">手動SQL</text>
+    <text id="warehouse_mart_role_0" x="688" y="515" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[591.2, 493, 193.59999999999997, 24]">Business metrics</text>
+    <text id="use_bi_name_0" x="1072" y="155" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1025.8, 131, 92.39999999999999, 26]">BI tool</text>
+    <text id="use_bi_role_0" x="1072" y="187" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[993.35, 165, 157.29999999999995, 24]">Visualization</text>
+    <text id="use_sheet_name_0" x="1072" y="283" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[999.4, 259, 145.2, 26]">Spreadsheet</text>
+    <text id="use_sheet_role_0" x="1072" y="315" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[975.2, 293, 193.59999999999997, 24]">Business sharing</text>
+    <text id="use_person_name_0" x="1072" y="411" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1025.8, 387, 92.39999999999999, 26]">Analyst</text>
+    <text id="use_person_role_0" x="1072" y="443" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1011.5, 421, 120.99999999999999, 24]">Manual SQL</text>
   </g>
 </svg>

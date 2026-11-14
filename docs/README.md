@@ -50,6 +50,7 @@
 - [構成図の生成](guides/generation.md)
 - [図の表示レベルと種類](guides/view-levels.md)
 - [レビュー](guides/review.md)
+- [ローカライズ](guides/localization.md)
 - [編集形式と画像出力](guides/export.md)
 
 ## 運用とサンプル
@@ -61,6 +62,7 @@
 - [素材と参照の検証](../src/assets.rs)
 - [共有SVG部品](../src/render.rs)・[描画トークン](../assets/design-tokens.json)
 - [図の構造・配置の検証](../src/audit.rs)
+- [言語定義・既定の出力言語](../config/diagram.json)・[翻訳の適用と検査](../src/locale.rs)
 
 ## 配置ルール
 

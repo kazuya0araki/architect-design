@@ -2,7 +2,7 @@
   "regions": [
     {
       "id": "store",
-      "label": "分析用データストア",
+      "label": "Analytics data store",
       "kind": "product",
       "geometry": [
         0,
@@ -16,7 +16,7 @@
     {
       "id": "raw",
       "name": "Raw",
-      "role": "受領データ",
+      "role": "Received data",
       "geometry": [
         32,
         80,
@@ -29,7 +29,7 @@
     {
       "id": "mart",
       "name": "Mart",
-      "role": "業務指標",
+      "role": "Business metrics",
       "geometry": [
         512,
         80,

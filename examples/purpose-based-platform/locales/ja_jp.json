@@ -1,0 +1,76 @@
+{
+  "locale": "ja-JP",
+  "title": "用途別に分離したデータ基盤（架空の提案）",
+  "purpose": "用途別に分離したデータ基盤（架空の提案）",
+  "regions": {
+    "sources": {
+      "label": "接続元"
+    },
+    "platform": {
+      "label": "用途別のデータ基盤"
+    },
+    "destinations": {
+      "label": "利用先"
+    },
+    "product": {
+      "label": "プロダクト用"
+    },
+    "business": {
+      "label": "業務分析用"
+    }
+  },
+  "nodes": {
+    "product_source": {
+      "name": "業務システム",
+      "role": "顧客機能用",
+      "display_role": "提供データ"
+    },
+    "product_ingest": {
+      "name": "取り込み",
+      "role": "顧客機能用",
+      "display_role": "受領・転送"
+    },
+    "product_raw": {
+      "role": "顧客機能用",
+      "display_role": "未加工データ"
+    },
+    "product_mart": {
+      "role": "顧客機能用",
+      "display_role": "公開指標"
+    },
+    "product_consumer": {
+      "name": "内製サービス",
+      "role": "顧客機能用",
+      "display_role": "顧客向け機能"
+    },
+    "business_source": {
+      "name": "業務システム",
+      "role": "社内指標用",
+      "display_role": "提供データ"
+    },
+    "business_ingest": {
+      "name": "取り込み",
+      "role": "社内指標用",
+      "display_role": "受領・転送"
+    },
+    "business_raw": {
+      "role": "社内指標用",
+      "display_role": "未加工データ"
+    },
+    "business_mart": {
+      "role": "社内指標用",
+      "display_role": "公開指標"
+    },
+    "business_consumer": {
+      "name": "BI・分析",
+      "role": "社内指標用",
+      "display_role": "社内分析"
+    }
+  },
+  "untranslated": [
+    "nodes.product_raw.name",
+    "nodes.product_mart.name",
+    "nodes.business_raw.name",
+    "nodes.business_mart.name"
+  ]
+}
