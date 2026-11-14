@@ -58,9 +58,9 @@
 - [公式アイコンの取得・更新](governance/icon-updates.md)
 - [出力例の一覧・再生成方法](../examples/README.md)
 - [公式素材と取得記録](../assets/icons/README.md)
-- [素材と参照の検証スクリプト](../scripts/validate_assets.py)
-- [共有SVG部品](../scripts/diagram.py)・[描画トークン](../assets/design-tokens.json)
-- [図の構造・配置の検証](../scripts/validate_diagrams.py)
+- [素材と参照の検証](../src/assets.rs)
+- [共有SVG部品](../src/render.rs)・[描画トークン](../assets/design-tokens.json)
+- [図の構造・配置の検証](../src/audit.rs)
 
 ## 配置ルール
 

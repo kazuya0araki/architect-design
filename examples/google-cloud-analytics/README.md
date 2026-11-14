@@ -8,6 +8,6 @@
 
 実線はデータ・参照結果、破線は実行制御。アナリストへのデータ提供と、アナリストからのクエリ指示は別の線で示す。どちらも任意の将来設計であり、実在する運用を意味しない。
 
-編集元は[model.json](model.json)、完成図は[diagram.svg](diagram.svg)。`python3 examples/render.py`でSVGのみ再生成できる。両例は同じノードID・接続を維持し、製品表記とアイコンを変えている。1760×1080。掲載幅960pxでも表示を確認する。
+編集元は[model.json](model.json)、完成図は[diagram.svg](diagram.svg)。`cargo run --release -- examples`でSVGのみ再生成できる。両例は同じノードID・接続を維持し、製品表記とアイコンを変えている。1760×1080。掲載幅960pxでも表示を確認する。
 
 [draw.io](diagram.drawio)・[Mermaid](diagram.mmd)はv2移行前の保存版であり、現行SVGとの同期対象外。利用条件・未確認事項は[素材の案内](../../assets/icons/README.md)と[正確性](../../docs/principles/accuracy.md)に従う。

@@ -49,17 +49,17 @@
     <text id="use_scope_label_0" x="928" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[928, 74, 66, 24]">利用者</text>
     <rect x="811.85" y="144" width="88.30000000000001" height="28" fill="#FFFFFF" />
     <text id="sql_request_label_0" x="856" y="168" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[815.85, 146, 80.30000000000001, 24]">SQL実行</text>
-    <rect x="343.0" y="144" width="162" height="28" fill="#FFFFFF" />
-    <text id="pushdown_label_0" x="424" y="168" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[347.0, 146, 154, 24]">外部へのクエリ</text>
-    <rect x="376.0" y="240" width="96" height="28" fill="#FFFFFF" />
-    <text id="external_result_label_0" x="424" y="264" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[380.0, 242, 88, 24]">参照結果</text>
-    <rect x="808.0" y="240" width="96" height="28" fill="#FFFFFF" />
-    <text id="query_result_label_0" x="856" y="264" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[812.0, 242, 88, 24]">参照結果</text>
-    <text id="external_name_0" x="208.0" y="227.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[112.0, 203.0, 192, 26]">外部データソース</text>
-    <text id="external_role_0" x="208.0" y="259.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[142.0, 237.0, 132, 24]">データを保持</text>
-    <text id="engine_name_0" x="640.0" y="227.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[556.0, 203.0, 168, 26]">クエリエンジン</text>
-    <text id="engine_role_0" x="640.0" y="259.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[552.0, 237.0, 176, 24]">外部データを参照</text>
-    <text id="analyst_name_0" x="1072.0" y="227.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1012.0, 203.0, 120, 26]">アナリスト</text>
-    <text id="analyst_role_0" x="1072.0" y="259.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1031.85, 237.0, 80.29999999999998, 24]">手動SQL</text>
+    <rect x="343" y="144" width="162" height="28" fill="#FFFFFF" />
+    <text id="pushdown_label_0" x="424" y="168" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[347, 146, 154, 24]">外部へのクエリ</text>
+    <rect x="376" y="240" width="96" height="28" fill="#FFFFFF" />
+    <text id="external_result_label_0" x="424" y="264" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[380, 242, 88, 24]">参照結果</text>
+    <rect x="808" y="240" width="96" height="28" fill="#FFFFFF" />
+    <text id="query_result_label_0" x="856" y="264" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[812, 242, 88, 24]">参照結果</text>
+    <text id="external_name_0" x="208" y="227" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[112, 203, 192, 26]">外部データソース</text>
+    <text id="external_role_0" x="208" y="259" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[142, 237, 132, 24]">データを保持</text>
+    <text id="engine_name_0" x="640" y="227" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[556, 203, 168, 26]">クエリエンジン</text>
+    <text id="engine_role_0" x="640" y="259" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[552, 237, 176, 24]">外部データを参照</text>
+    <text id="analyst_name_0" x="1072" y="227" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1012, 203, 120, 26]">アナリスト</text>
+    <text id="analyst_role_0" x="1072" y="259" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1031.85, 237, 80.29999999999998, 24]">手動SQL</text>
   </g>
 </svg>

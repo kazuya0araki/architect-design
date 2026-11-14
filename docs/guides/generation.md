@@ -26,13 +26,13 @@
 
 ## 共通SVG部品
 
-[モデル v2](input-model.md)を使い、`python3 scripts/diagram.py path/to/model.json --output path/to/diagram.svg`で描画する。実体の位置は明示し、内容に合わせる領域だけ`fit`を利用する。まず工程と所属、製品内部の層を整理してから座標を決める。
+[モデル v2](input-model.md)を使い、`cargo run --release -- render path/to/model.json --output path/to/diagram.svg`で描画する。実体の位置は明示し、内容に合わせる領域だけ`fit`を利用する。まず工程と所属、製品内部の層を整理してから座標を決める。
 
 [名前付き領域](../components/boundary.md)、[横断機能](../components/cross-cutting.md)、[ノード](../components/node.md)を組み合わせる。共有部品はSVGを出力し、draw.io・Mermaidの自動生成は今回のv2では提供しない。
 
 ユーザーがSVGのみの修正を指定した場合、他形式やモデルへ変更を広げない。直接編集されたSVGを再生成する際は差分を確認し、最新の編集を消す再生成を行わない。旧版を残す指示では、新しいディレクトリへモデル・SVG・説明を作る。
 
-`python3 scripts/validate_diagrams.py`で構造・所属・経路・文字領域を確認する。最終成果物はブラウザでも描画し、掲載寸法で確認する。自動チェックだけで可読性を保証しない。
+`cargo run --release -- validate-diagrams`で構造・所属・経路・文字領域を確認する。最終成果物はブラウザでも描画し、掲載寸法で確認する。自動チェックだけで可読性を保証しない。
 
 ## 粒度と部品の選択
 

@@ -33,7 +33,7 @@ Google Cloudの45点は「現行配布セットに含まれる全SVG」であり
 
 ## 検証
 
-`python3 scripts/validate_assets.py`でファイルとmanifest、サンプルの参照を照合する。manifestの`collections`にはGoogle Cloudの配布セットごとの件数・配布物ハッシュ・確認日を記録する。オンラインの配布更新検知は行わない。
+`cargo run --release -- validate-assets`でファイルとmanifest、サンプルの参照を照合する。manifestの`collections`にはGoogle Cloudの配布セットごとの件数・配布物ハッシュ・確認日を記録する。オンラインの配布更新検知は行わない。
 
 汎用素材は[Google Fonts](https://fonts.google.com/icons)のMaterial Symbolsを使い、[Apache 2.0ライセンス](material-symbols/LICENSE)を同梱する。製品ロゴは汎用素材と分け、Google Sheetsの取得元はmanifestの公式ページを参照する。
 

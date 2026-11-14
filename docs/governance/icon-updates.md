@@ -35,7 +35,7 @@ Google Cloudは現行のCore・カテゴリの2セットを保管し、Legacyと
 
 ## 整合性の確認
 
-リポジトリのルートで`python3 scripts/validate_assets.py`を実行する。manifestと実ファイルの過不足、重複、SHA-256、SVG構文、現行コレクションの件数、サンプルの素材参照と埋め込みを確認する。オンラインの最新版確認は別途必要。
+リポジトリのルートで`cargo run --release -- validate-assets`を実行する。manifestと実ファイルの過不足、重複、SHA-256、SVG構文、現行コレクションの件数、サンプルの素材参照と埋め込みを確認する。オンラインの最新版確認は別途必要。
 
 ## 個別製品の選択
 

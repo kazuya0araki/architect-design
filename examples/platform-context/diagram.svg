@@ -37,11 +37,11 @@
   </g>
   <g id="labels">
     <text id="scope_label_0" x="496" y="160" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[496, 138, 176, 24]">対象：データ基盤</text>
-    <text id="source_name_0" x="208.0" y="275.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[136.0, 251.0, 144, 26]">業務システム</text>
-    <text id="source_role_0" x="208.0" y="307.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[142.0, 285.0, 132, 24]">データを提供</text>
-    <text id="platform_name_0" x="640.0" y="275.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[580.0, 251.0, 120, 26]">データ基盤</text>
-    <text id="platform_role_0" x="640.0" y="307.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[552.0, 285.0, 176, 24]">収集・加工・提供</text>
-    <text id="consumer_name_0" x="1072.0" y="275.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[964.0, 251.0, 216, 26]">利用者・業務アプリ</text>
-    <text id="consumer_role_0" x="1072.0" y="307.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1006.0, 285.0, 132, 24]">データを活用</text>
+    <text id="source_name_0" x="208" y="275" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[136, 251, 144, 26]">業務システム</text>
+    <text id="source_role_0" x="208" y="307" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[142, 285, 132, 24]">データを提供</text>
+    <text id="platform_name_0" x="640" y="275" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[580, 251, 120, 26]">データ基盤</text>
+    <text id="platform_role_0" x="640" y="307" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[552, 285, 176, 24]">収集・加工・提供</text>
+    <text id="consumer_name_0" x="1072" y="275" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[964, 251, 216, 26]">利用者・業務アプリ</text>
+    <text id="consumer_role_0" x="1072" y="307" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1006, 285, 132, 24]">データを活用</text>
   </g>
 </svg>

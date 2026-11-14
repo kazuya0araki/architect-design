@@ -97,25 +97,25 @@
     <text id="destinations_label_0" x="1024" y="96" font-size="24" font-weight="600" text-anchor="start" style="fill:#202124" data-text-box="[1024, 72, 72, 26]">利用先</text>
     <text id="product_label_0" x="312" y="184" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[312, 162, 132, 24]">プロダクト用</text>
     <text id="business_label_0" x="312" y="464" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[312, 442, 110, 24]">業務分析用</text>
-    <text id="product_source_name_0" x="152.0" y="279.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[80.0, 255.0, 144, 26]">業務システム</text>
-    <text id="product_source_role_0" x="152.0" y="311.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[97.0, 289.0, 110, 24]">提供データ</text>
-    <text id="product_ingest_name_0" x="400.0" y="279.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[352.0, 255.0, 96, 26]">取り込み</text>
-    <text id="product_ingest_role_0" x="400.0" y="311.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[345.0, 289.0, 110, 24]">受領・転送</text>
-    <text id="product_raw_name_0" x="624.0" y="279.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[604.2, 255.0, 39.6, 26]">Raw</text>
-    <text id="product_raw_role_0" x="624.0" y="311.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[558.0, 289.0, 132, 24]">未加工データ</text>
-    <text id="product_mart_name_0" x="848.0" y="279.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[821.6, 255.0, 52.800000000000004, 26]">Mart</text>
-    <text id="product_mart_role_0" x="848.0" y="311.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[804.0, 289.0, 88, 24]">公開指標</text>
-    <text id="product_consumer_name_0" x="1120.0" y="279.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1048.0, 255.0, 144, 26]">内製サービス</text>
-    <text id="product_consumer_role_0" x="1120.0" y="311.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1054.0, 289.0, 132, 24]">顧客向け機能</text>
-    <text id="business_source_name_0" x="152.0" y="559.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[80.0, 535.0, 144, 26]">業務システム</text>
-    <text id="business_source_role_0" x="152.0" y="591.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[97.0, 569.0, 110, 24]">提供データ</text>
-    <text id="business_ingest_name_0" x="400.0" y="559.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[352.0, 535.0, 96, 26]">取り込み</text>
-    <text id="business_ingest_role_0" x="400.0" y="591.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[345.0, 569.0, 110, 24]">受領・転送</text>
-    <text id="business_raw_name_0" x="624.0" y="559.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[604.2, 535.0, 39.6, 26]">Raw</text>
-    <text id="business_raw_role_0" x="624.0" y="591.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[558.0, 569.0, 132, 24]">未加工データ</text>
-    <text id="business_mart_name_0" x="848.0" y="559.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[821.6, 535.0, 52.800000000000004, 26]">Mart</text>
-    <text id="business_mart_role_0" x="848.0" y="591.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[804.0, 569.0, 88, 24]">公開指標</text>
-    <text id="business_consumer_name_0" x="1120.0" y="559.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1070.8, 535.0, 98.39999999999999, 26]">BI・分析</text>
-    <text id="business_consumer_role_0" x="1120.0" y="591.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1076.0, 569.0, 88, 24]">社内分析</text>
+    <text id="product_source_name_0" x="152" y="279" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[80, 255, 144, 26]">業務システム</text>
+    <text id="product_source_role_0" x="152" y="311" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[97, 289, 110, 24]">提供データ</text>
+    <text id="product_ingest_name_0" x="400" y="279" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[352, 255, 96, 26]">取り込み</text>
+    <text id="product_ingest_role_0" x="400" y="311" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[345, 289, 110, 24]">受領・転送</text>
+    <text id="product_raw_name_0" x="624" y="279" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[604.2, 255, 39.6, 26]">Raw</text>
+    <text id="product_raw_role_0" x="624" y="311" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[558, 289, 132, 24]">未加工データ</text>
+    <text id="product_mart_name_0" x="848" y="279" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[821.6, 255, 52.800000000000004, 26]">Mart</text>
+    <text id="product_mart_role_0" x="848" y="311" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[804, 289, 88, 24]">公開指標</text>
+    <text id="product_consumer_name_0" x="1120" y="279" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1048, 255, 144, 26]">内製サービス</text>
+    <text id="product_consumer_role_0" x="1120" y="311" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1054, 289, 132, 24]">顧客向け機能</text>
+    <text id="business_source_name_0" x="152" y="559" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[80, 535, 144, 26]">業務システム</text>
+    <text id="business_source_role_0" x="152" y="591" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[97, 569, 110, 24]">提供データ</text>
+    <text id="business_ingest_name_0" x="400" y="559" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[352, 535, 96, 26]">取り込み</text>
+    <text id="business_ingest_role_0" x="400" y="591" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[345, 569, 110, 24]">受領・転送</text>
+    <text id="business_raw_name_0" x="624" y="559" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[604.2, 535, 39.6, 26]">Raw</text>
+    <text id="business_raw_role_0" x="624" y="591" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[558, 569, 132, 24]">未加工データ</text>
+    <text id="business_mart_name_0" x="848" y="559" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[821.6, 535, 52.800000000000004, 26]">Mart</text>
+    <text id="business_mart_role_0" x="848" y="591" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[804, 569, 88, 24]">公開指標</text>
+    <text id="business_consumer_name_0" x="1120" y="559" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1070.8, 535, 98.39999999999999, 26]">BI・分析</text>
+    <text id="business_consumer_role_0" x="1120" y="591" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1076, 569, 88, 24]">社内分析</text>
   </g>
 </svg>

@@ -64,21 +64,21 @@
     <text id="receipt_group_label_0" x="64" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 74, 132, 24]">ファイル受領</text>
     <text id="consumers_group_label_0" x="944" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[944, 74, 198, 24]">提供先の組み合わせ</text>
     <text id="warehouse_store_label_0" x="80" y="384" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[80, 362, 198, 24]">分析用データストア</text>
-    <text id="receipt_file_name_0" x="160.0" y="219.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[88.0, 195.0, 144, 26]">受領ファイル</text>
-    <text id="receipt_file_role_0" x="160.0" y="251.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[97.85, 229.0, 124.30000000000001, 24]">CSV等の入力</text>
-    <text id="receipt_receipt_name_0" x="448.0" y="219.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[400.0, 195.0, 96, 26]">受領処理</text>
-    <text id="receipt_receipt_role_0" x="448.0" y="251.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[360.0, 229.0, 176, 24]">内容と形式を確認</text>
-    <text id="receipt_storage_name_0" x="736.0" y="219.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[652.0, 195.0, 168, 26]">受領ストレージ</text>
-    <text id="receipt_storage_role_0" x="736.0" y="251.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[648.0, 229.0, 176, 24]">受領データを保存</text>
-    <text id="warehouse_raw_name_0" x="208.0" y="483.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[188.2, 459.0, 39.6, 26]">Raw</text>
-    <text id="warehouse_raw_role_0" x="208.0" y="515.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[153.0, 493.0, 110, 24]">受領データ</text>
-    <text id="warehouse_mart_name_0" x="688.0" y="483.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[661.6, 459.0, 52.800000000000004, 26]">Mart</text>
-    <text id="warehouse_mart_role_0" x="688.0" y="515.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[644.0, 493.0, 88, 24]">業務指標</text>
-    <text id="use_bi_name_0" x="1072.0" y="155.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1022.8, 131.0, 98.39999999999999, 26]">BIツール</text>
-    <text id="use_bi_role_0" x="1072.0" y="187.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1039.0, 165.0, 66, 24]">可視化</text>
-    <text id="use_sheet_name_0" x="1072.0" y="283.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1036.0, 259.0, 72, 26]">表計算</text>
-    <text id="use_sheet_role_0" x="1072.0" y="315.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1028.0, 293.0, 88, 24]">業務共有</text>
-    <text id="use_person_name_0" x="1072.0" y="411.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1012.0, 387.0, 120, 26]">アナリスト</text>
-    <text id="use_person_role_0" x="1072.0" y="443.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1031.85, 421.0, 80.29999999999998, 24]">手動SQL</text>
+    <text id="receipt_file_name_0" x="160" y="219" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[88, 195, 144, 26]">受領ファイル</text>
+    <text id="receipt_file_role_0" x="160" y="251" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[97.85, 229, 124.30000000000001, 24]">CSV等の入力</text>
+    <text id="receipt_receipt_name_0" x="448" y="219" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[400, 195, 96, 26]">受領処理</text>
+    <text id="receipt_receipt_role_0" x="448" y="251" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[360, 229, 176, 24]">内容と形式を確認</text>
+    <text id="receipt_storage_name_0" x="736" y="219" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[652, 195, 168, 26]">受領ストレージ</text>
+    <text id="receipt_storage_role_0" x="736" y="251" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[648, 229, 176, 24]">受領データを保存</text>
+    <text id="warehouse_raw_name_0" x="208" y="483" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[188.2, 459, 39.6, 26]">Raw</text>
+    <text id="warehouse_raw_role_0" x="208" y="515" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[153, 493, 110, 24]">受領データ</text>
+    <text id="warehouse_mart_name_0" x="688" y="483" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[661.6, 459, 52.800000000000004, 26]">Mart</text>
+    <text id="warehouse_mart_role_0" x="688" y="515" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[644, 493, 88, 24]">業務指標</text>
+    <text id="use_bi_name_0" x="1072" y="155" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1022.8, 131, 98.39999999999999, 26]">BIツール</text>
+    <text id="use_bi_role_0" x="1072" y="187" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1039, 165, 66, 24]">可視化</text>
+    <text id="use_sheet_name_0" x="1072" y="283" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1036, 259, 72, 26]">表計算</text>
+    <text id="use_sheet_role_0" x="1072" y="315" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1028, 293, 88, 24]">業務共有</text>
+    <text id="use_person_name_0" x="1072" y="411" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1012, 387, 120, 26]">アナリスト</text>
+    <text id="use_person_role_0" x="1072" y="443" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1031.85, 421, 80.29999999999998, 24]">手動SQL</text>
   </g>
 </svg>

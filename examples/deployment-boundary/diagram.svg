@@ -39,14 +39,14 @@
   <g id="labels">
     <text id="project_label_0" x="64" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 74, 308, 24]">クラウドプロジェクト（所属）</text>
     <text id="network_label_0" x="96" y="176" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[96, 154, 264, 24]">プライベートネットワーク</text>
-    <rect x="620.0" y="280" width="184" height="28" fill="#FFFFFF" />
-    <text id="endpoint_service_label_0" x="712" y="304" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[624.0, 282, 176, 24]">プライベート接続</text>
-    <text id="worker_name_0" x="232.0" y="315.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[136.0, 291.0, 192, 26]">取り込みワーカー</text>
-    <text id="worker_role_0" x="232.0" y="347.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[122.0, 325.0, 220, 24]">ネットワーク内に配置</text>
-    <text id="endpoint_name_0" x="476.0" y="300.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[429.8, 276.0, 92.39999999999999, 26]">Private</text>
-    <text id="endpoint_name_1" x="476.0" y="330.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[423.2, 306.0, 105.6, 26]">endpoint</text>
-    <text id="endpoint_role_0" x="476.0" y="362.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[443.0, 340.0, 66, 24]">接続口</text>
-    <text id="service_name_0" x="1016.0" y="315.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[920.0, 291.0, 192, 26]">マネージド保存先</text>
-    <text id="service_role_0" x="1016.0" y="347.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[917.0, 325.0, 198, 24]">ネットワークの外部</text>
+    <rect x="620" y="280" width="184" height="28" fill="#FFFFFF" />
+    <text id="endpoint_service_label_0" x="712" y="304" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[624, 282, 176, 24]">プライベート接続</text>
+    <text id="worker_name_0" x="232" y="315" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[136, 291, 192, 26]">取り込みワーカー</text>
+    <text id="worker_role_0" x="232" y="347" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[122, 325, 220, 24]">ネットワーク内に配置</text>
+    <text id="endpoint_name_0" x="476" y="300" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[429.8, 276, 92.39999999999999, 26]">Private</text>
+    <text id="endpoint_name_1" x="476" y="330" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[423.2, 306, 105.6, 26]">endpoint</text>
+    <text id="endpoint_role_0" x="476" y="362" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[443, 340, 66, 24]">接続口</text>
+    <text id="service_name_0" x="1016" y="315" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[920, 291, 192, 26]">マネージド保存先</text>
+    <text id="service_role_0" x="1016" y="347" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[917, 325, 198, 24]">ネットワークの外部</text>
   </g>
 </svg>

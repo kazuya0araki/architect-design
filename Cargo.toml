@@ -1,0 +1,17 @@
+[package]
+name = "architect-design"
+version = "0.1.0"
+edition = "2021"
+description = "Offline SVG renderer and validators for the data platform architecture design system"
+publish = false
+
+[dependencies]
+base64 = "0.22"
+clap = { version = "4", features = ["derive"] }
+roxmltree = "0.20"
+serde_json = { version = "1", features = ["preserve_order"] }
+sha2 = "0.10"
+unicode-width = "0.2"
+
+[dev-dependencies]
+tempfile = "3"
