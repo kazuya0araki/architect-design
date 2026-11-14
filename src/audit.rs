@@ -1,5 +1,6 @@
 //! Diagram checks: v2 model discovery, model/SVG parity, estimated text bounds and line crossings.
 use crate::error::{err, Error, Result};
+use crate::locale::{self, Config, LocaleDef};
 use crate::model::{resolve, validate};
 use crate::util::*;
 use roxmltree::Document;
@@ -59,7 +60,41 @@ fn attr<'a>(e: roxmltree::Node<'a, '_>, name: &str) -> Option<&'a str> {
     e.attribute(name).filter(|v| !v.is_empty())
 }
 
+/// Output language the SVG must declare: tag and font stack.
+pub struct Expect<'a> {
+    pub lang: &'a str,
+    pub font_family: &'a str,
+}
+
+const JAPANESE_FONTS: [&str; 4] = ["Noto Sans JP", "Hiragino", "Yu Gothic", "Meiryo"];
+const XML_NS: &str = "http://www.w3.org/XML/1998/namespace";
+
 pub fn audit_svg(model: &Value, path: &Path) -> Result<()> {
+    audit_svg_with(model, path, None)
+}
+
+fn ascii_words(text: &str) -> Vec<&str> {
+    text.split(|c: char| !(c.is_ascii_alphanumeric() || matches!(c, '_' | '.' | '/' | '-'))).filter(|w| !w.is_empty()).collect()
+}
+
+/// Displayed strings with the ID prefix of their `<text>` lines.
+fn displayed(model: &Value) -> Vec<(String, String)> {
+    let mut out = Vec::new();
+    for r in items(model, "regions") {
+        out.push((format!("{}_label", str_of(r, "id").unwrap_or_default()), str_of(r, "label").unwrap_or_default().to_string()));
+    }
+    for n in items(model, "nodes") {
+        let id = str_of(n, "id").unwrap_or_default();
+        out.push((format!("{id}_name"), str_of(n, "display_name").or(str_of(n, "name")).unwrap_or_default().to_string()));
+        out.push((format!("{id}_role"), str_of(n, "display_role").or(str_of(n, "role")).unwrap_or_default().to_string()));
+    }
+    for c in items(model, "connections") {
+        out.push((format!("{}_label", str_of(c, "id").unwrap_or_default()), crate::model::connection_label(c)));
+    }
+    out
+}
+
+pub fn audit_svg_with(model: &Value, path: &Path, expect: Option<&Expect>) -> Result<()> {
     let text = std::fs::read_to_string(path).map_err(|e| Error(format!("{}: {e}", path.display())))?;
     let doc = Document::parse_with_options(&text, roxmltree::ParsingOptions { allow_dtd: true, ..Default::default() })?;
     let elements: Vec<_> = doc.descendants().filter(|n| n.is_element()).collect();
@@ -114,6 +149,47 @@ pub fn audit_svg(model: &Value, path: &Path) -> Result<()> {
     }
     if region_elements.keys().copied().collect::<HashSet<_>>() != regions.keys().copied().collect::<HashSet<_>>() {
         errors.push("SVG regions differ from model".into());
+    }
+
+    if let Some(expect) = expect {
+        let root = doc.root_element();
+        if root.attribute("lang") != Some(expect.lang) || root.attribute((XML_NS, "lang")) != Some(expect.lang) {
+            errors.push(format!("SVG lang and xml:lang must be {}", expect.lang));
+        }
+        let style: String = elements.iter().filter(|e| e.tag_name().name() == "style").filter_map(|e| e.text()).collect();
+        if !style.contains(&format!("font-family:{}", expect.font_family)) {
+            errors.push("SVG font-family differs from the locale".into());
+        }
+        if expect.lang.to_ascii_lowercase().starts_with("ja") && !JAPANESE_FONTS.iter().any(|f| expect.font_family.contains(f)) {
+            errors.push("Japanese output requires a Japanese font in the font stack".into());
+        }
+    }
+    // Escaped text must read back unchanged, and wrapping must neither lose text nor split Latin words.
+    let title = elements.iter().find(|e| e.attribute("id") == Some("title")).and_then(|e| e.text());
+    if title != str_of(model, "title") {
+        errors.push("SVG title differs from model".into());
+    }
+    for n in items(model, "nodes") {
+        let id = str_of(n, "id").unwrap_or_default();
+        let element = elements.iter().find(|e| e.attribute("id") == Some(id) && e.attribute("data-kind") == Some("node"));
+        let found = element.and_then(|e| e.children().find(|c| c.tag_name().name() == "title")).and_then(|c| c.text());
+        let expected = format!("{} / {}", str_of(n, "name").unwrap_or_default(), str_of(n, "role").unwrap_or_default());
+        if element.is_some() && found != Some(expected.as_str()) {
+            errors.push(format!("SVG node title differs from model: {id}"));
+        }
+    }
+    for (prefix, shown) in displayed(model) {
+        let lines: Vec<&str> = elements
+            .iter()
+            .filter(|e| e.attribute("id").and_then(|i| i.strip_prefix(&format!("{prefix}_"))).is_some_and(|rest| !rest.is_empty() && rest.chars().all(|c| c.is_ascii_digit())))
+            .map(|e| e.text().unwrap_or_default())
+            .collect();
+        let squeeze = |s: &str| s.split_whitespace().collect::<String>();
+        if lines.iter().map(|l| squeeze(l)).collect::<String>() != squeeze(&shown) {
+            errors.push(format!("SVG text differs from model: {prefix}"));
+        } else if ascii_words(&shown).iter().any(|w| !lines.iter().any(|l| l.contains(w))) {
+            errors.push(format!("word split across lines: {prefix}"));
+        }
     }
 
     let mut labels: Vec<(String, [f64; 4])> = Vec::new();
@@ -182,19 +258,96 @@ pub fn audit_svg(model: &Value, path: &Path) -> Result<()> {
     }
 }
 
-/// Validate every maintained v2 model and its SVG; returns the number of diagrams checked.
+/// Language-neutral structure of an SVG: everything with an ID except text and its localized scope.
+fn structure(path: &Path) -> Result<Vec<String>> {
+    let text = std::fs::read_to_string(path).map_err(|e| Error(format!("{}: {e}", path.display())))?;
+    let doc = Document::parse_with_options(&text, roxmltree::ParsingOptions { allow_dtd: true, ..Default::default() })?;
+    let mut out: Vec<String> = doc
+        .descendants()
+        .filter(|e| e.is_element() && !matches!(e.tag_name().name(), "text" | "title" | "desc") && e.attribute("id").is_some())
+        .map(|e| {
+            let mut attrs: Vec<String> = e.attributes().filter(|a| !matches!(a.name(), "data-text-box" | "data-scope")).map(|a| format!("{}={}", a.name(), a.value())).collect();
+            attrs.sort();
+            format!("{} {}", e.tag_name().name(), attrs.join(" "))
+        })
+        .collect();
+    out.sort();
+    Ok(out)
+}
+
+fn check_locale(path: &Path, raw: &Value, def: &LocaleDef, config: &Config, tokens: &Value) -> Result<Vec<String>> {
+    let localized = locale::load_localized(path, raw, def, config)?;
+    let model = resolve(&localized)?;
+    validate(&model, tokens)?;
+    let svg = locale::output_path(&svg_path(path), def);
+    let family = def.font_family.as_deref().or(tokens["font"]["family"].as_str()).unwrap_or_default();
+    audit_svg_with(&model, &svg, Some(&Expect { lang: &def.lang, font_family: family })).map_err(|e| Error(format!("{}:\n{}", svg.display(), e.0)))?;
+    for format in crate::export::declared(raw)? {
+        check_export(&model, &locale::output_path(&svg_path(path).with_extension(format.extension()), def), format)?;
+    }
+    structure(&svg)
+}
+
+/// A declared Mermaid / draw.io export must exist and carry every node, region and connection of the model.
+fn check_export(model: &Value, path: &Path, format: crate::export::Format) -> Result<()> {
+    let text = std::fs::read_to_string(path).map_err(|e| Error(format!("{}: {e}", path.display())))?;
+    let ids = |key: &str| items(model, key).iter().filter_map(|i| str_of(i, "id")).collect::<Vec<_>>();
+    let mut errors: Vec<String> = Vec::new();
+    match format {
+        crate::export::Format::Drawio => {
+            let doc = Document::parse(&text)?;
+            let cells: HashSet<&str> = doc.descendants().filter(|n| n.has_tag_name("mxCell")).filter_map(|n| n.attribute("id")).collect();
+            for id in ["regions", "nodes", "connections"].iter().flat_map(|k| ids(k)) {
+                if !cells.contains(id) {
+                    errors.push(format!("draw.io cell missing: {id}"));
+                }
+            }
+        }
+        _ => {
+            for id in ids("regions").into_iter().chain(ids("nodes")) {
+                if !text.lines().any(|l| l.trim_start().starts_with(&format!("{id}[")) || l.trim_start().starts_with(&format!("subgraph {id}["))) {
+                    errors.push(format!("Mermaid element missing: {id}"));
+                }
+            }
+            let arrows = text.lines().filter(|l| l.contains("-->") || l.contains("-.->")).count();
+            if arrows != items(model, "connections").len() {
+                errors.push("Mermaid connections differ from model".into());
+            }
+        }
+    }
+    if errors.is_empty() {
+        Ok(())
+    } else {
+        Err(Error(format!("{}:\n{}", path.display(), errors.join("\n"))))
+    }
+}
+
+/// Validate every maintained v2 model and its SVG in every configured locale; returns the
+/// number of diagrams checked. Nodes, connections, ownership and icons must match across locales.
 pub fn validate_diagrams(root: &Path, tokens: &Value) -> Result<usize> {
+    let config = Config::load(root)?;
     let mut count = 0;
     for (path, raw) in model_files(root)? {
         let rel = path.strip_prefix(root).unwrap_or(&path).display().to_string();
-        let result = resolve(&raw).and_then(|model| {
-            validate(&model, tokens)?;
-            audit_svg(&model, &svg_path(&path))
-        });
-        if let Err(e) = result {
-            return err(format!("{rel}:\n{e}"));
+        let mut reference: Option<Vec<String>> = None;
+        let source = config.source_def()?;
+        for def in std::iter::once(source).chain(config.locales.iter().filter(|l| *l != source)) {
+            let found = check_locale(&path, &raw, def, &config, tokens).map_err(|e| Error(format!("{rel} [{}]:\n{e}", def.code)))?;
+            match &reference {
+                None => reference = Some(found),
+                Some(expected) if *expected != found => return err(format!("{rel} [{}]: SVG structure differs from {}", def.code, config.source)),
+                Some(_) => {}
+            }
         }
         count += 1;
+    }
+    // A locale file must belong to a model beside it and to a configured locale.
+    for file in files_under(root, |p| p.parent().and_then(|d| d.file_name()).is_some_and(|n| n == "locales") && p.extension().is_some_and(|e| e == "json")) {
+        let suffix = file.file_stem().and_then(|s| s.to_str()).unwrap_or_default();
+        let owned = file.parent().and_then(|d| d.parent()).is_some_and(|d| d.join("model.json").is_file());
+        if !owned || !config.locales.iter().any(|l| !l.suffix.is_empty() && l.suffix == suffix) {
+            return err(format!("{}: locale file has no matching model or configured locale", file.strip_prefix(root).unwrap_or(&file).display()));
+        }
     }
     Ok(count)
 }

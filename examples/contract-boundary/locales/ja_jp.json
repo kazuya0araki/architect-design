@@ -1,0 +1,59 @@
+{
+  "locale": "ja-JP",
+  "title": "提供インターフェースと責任境界（架空の提案）",
+  "purpose": "提供インターフェースと責任境界（架空の提案）",
+  "regions": {
+    "provider": {
+      "label": "提供側チーム"
+    },
+    "consumer": {
+      "label": "分析側チーム"
+    },
+    "contract": {
+      "label": "データ契約"
+    },
+    "warehouse": {
+      "label": "論理データ基盤"
+    },
+    "quality": {
+      "label": "横断機能 / 品質検証"
+    }
+  },
+  "nodes": {
+    "source": {
+      "name": "業務DB",
+      "role": "提供側で管理"
+    },
+    "interface": {
+      "name": "公開データ",
+      "role": "スキーマ・品質",
+      "display_role": "スキーマ\n品質"
+    },
+    "raw": {
+      "role": "契約から受領",
+      "display_role": "契約データ"
+    },
+    "mart": {
+      "role": "指標データ"
+    },
+    "bi": {
+      "role": "業務で活用"
+    },
+    "checks": {
+      "name": "契約の検証",
+      "role": "品質条件を確認"
+    }
+  },
+  "untranslated": [
+    "nodes.raw.name",
+    "nodes.mart.name",
+    "nodes.bi.name"
+  ],
+  "adjustments": {
+    "nodes": {
+      "interface": {
+        "name_size": 24
+      }
+    }
+  }
+}

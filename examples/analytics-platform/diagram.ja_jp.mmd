@@ -1,0 +1,40 @@
+flowchart LR
+    subgraph sources["接続元"]
+        source_system["基幹システム / 業務データ"]
+        source_file["売上CSV / 提供元未確認"]
+    end
+    subgraph platform["データ基盤"]
+        subgraph ownership["分析基盤の機能範囲"]
+            subgraph warehouse["分析用データストア"]
+                raw["Raw / 受領データ"]
+                mart["Mart / 業務指標"]
+            end
+            ingest["データ転送 / データ転送"]
+            objects["受領ストレージ / 受領ファイル"]
+        end
+    end
+    subgraph destinations["提供・活用"]
+        bi["BIツール / 指標の可視化"]
+        excel["表計算ツールA / 集計分析"]
+        sheets["表計算ツールB / 業務共有"]
+        product["内製プロダクト / プロダクトへのデータ提供"]
+        analyst["アナリスト / アドホック分析"]
+    end
+    subgraph operations["横断機能 / 実行管理"]
+        jobs["ジョブ管理 / 加工実行の制御"]
+    end
+    source_system --> ingest
+    source_file --> ingest
+    ingest --> objects
+    objects --> raw
+    raw --> mart
+    mart --> bi
+    mart --> excel
+    mart --> sheets
+    mart --> product
+    mart --> analyst
+    jobs -.-> mart
+    analyst -.-> mart
+    classDef neutral fill:#FFFFFF,stroke:#D0D6DD,color:#202124
+    class source_system,source_file,ingest,objects,raw,mart,bi,excel,sheets,product,analyst,jobs neutral
+    linkStyle default stroke:#5F6368

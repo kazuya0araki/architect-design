@@ -1,0 +1,44 @@
+{
+  "locale": "ja-JP",
+  "title": "コピーを伴わない外部照会",
+  "purpose": "コピーを伴わない外部照会を説明する架空の提案",
+  "regions": {
+    "source_scope": {
+      "label": "外部システム"
+    },
+    "platform_scope": {
+      "label": "分析基盤（保存層は省略）"
+    },
+    "use_scope": {
+      "label": "利用者"
+    }
+  },
+  "nodes": {
+    "external": {
+      "name": "外部データソース",
+      "role": "データを保持"
+    },
+    "engine": {
+      "name": "クエリエンジン",
+      "role": "外部データを参照"
+    },
+    "analyst": {
+      "name": "アナリスト",
+      "role": "手動SQL"
+    }
+  },
+  "connections": {
+    "sql_request": {
+      "label": "SQL実行"
+    },
+    "pushdown": {
+      "label": "外部へのクエリ"
+    },
+    "external_result": {
+      "label": "参照結果"
+    },
+    "query_result": {
+      "label": "参照結果"
+    }
+  }
+}

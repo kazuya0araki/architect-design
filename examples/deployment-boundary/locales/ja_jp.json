@@ -1,0 +1,35 @@
+{
+  "locale": "ja-JP",
+  "title": "所属とネットワーク配置の区別",
+  "purpose": "所属とネットワーク配置の区別を説明する架空の提案",
+  "regions": {
+    "project": {
+      "label": "クラウドプロジェクト（所属）"
+    },
+    "network": {
+      "label": "プライベートネットワーク",
+      "scope": "提案上のプライベートネットワーク。実ネットワークIDは未確定"
+    }
+  },
+  "nodes": {
+    "worker": {
+      "name": "取り込みワーカー",
+      "role": "ネットワーク内に配置"
+    },
+    "endpoint": {
+      "role": "接続口"
+    },
+    "service": {
+      "name": "マネージド保存先",
+      "role": "ネットワークの外部"
+    }
+  },
+  "connections": {
+    "endpoint_service": {
+      "label": "プライベート接続"
+    }
+  },
+  "untranslated": [
+    "nodes.endpoint.name"
+  ]
+}

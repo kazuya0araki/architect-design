@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "id": "data-ai-platform",
-  "title": "共通データからBI・AI・業務活用へ（架空の提案）",
-  "purpose": "共通データからBI・AI・業務活用へ（架空の提案）",
+  "title": "From shared data to BI, AI and business use (fictional proposal)",
+  "purpose": "From shared data to BI, AI and business use (fictional proposal)",
   "status": "proposal",
   "canvas": [
     1280,
@@ -14,7 +14,7 @@
   "regions": [
     {
       "id": "sources",
-      "label": "接続元",
+      "label": "Data sources",
       "kind": "stage",
       "geometry": [
         48,
@@ -25,7 +25,7 @@
     },
     {
       "id": "platform",
-      "label": "共通データ基盤",
+      "label": "Shared data platform",
       "kind": "stage",
       "geometry": [
         280,
@@ -36,7 +36,7 @@
     },
     {
       "id": "destinations",
-      "label": "提供・活用",
+      "label": "Serving and consumption",
       "kind": "stage",
       "geometry": [
         1008,
@@ -60,7 +60,7 @@
     },
     {
       "id": "operations",
-      "label": "横断機能 / 変換実行",
+      "label": "Cross-cutting / Transformation",
       "kind": "operations",
       "geometry": [
         280,
@@ -73,8 +73,8 @@
   "nodes": [
     {
       "id": "app_source",
-      "name": "業務アプリ",
-      "role": "業務データ",
+      "name": "Business app",
+      "role": "Business data",
       "geometry": [
         72,
         312,
@@ -97,7 +97,7 @@
     {
       "id": "ingest",
       "name": "Cloud Run",
-      "role": "取り込み",
+      "role": "Ingestion",
       "geometry": [
         304,
         312,
@@ -116,7 +116,7 @@
     {
       "id": "raw",
       "name": "Raw",
-      "role": "受領データ",
+      "role": "Received data",
       "geometry": [
         536,
         312,
@@ -130,7 +130,7 @@
     {
       "id": "mart",
       "name": "Mart",
-      "role": "公開データ",
+      "role": "Published data",
       "geometry": [
         768,
         312,
@@ -144,7 +144,7 @@
     {
       "id": "bi",
       "name": "Data Studio",
-      "role": "指標の可視化",
+      "role": "Visualizes metrics",
       "geometry": [
         1040,
         168,
@@ -162,8 +162,8 @@
     },
     {
       "id": "ai",
-      "name": "AI・分析",
-      "role": "モデルで活用",
+      "name": "AI and analytics",
+      "role": "Used in models",
       "geometry": [
         1040,
         360,
@@ -176,8 +176,8 @@
     },
     {
       "id": "app_destination",
-      "name": "業務アプリ",
-      "role": "施策へ反映",
+      "name": "Business app",
+      "role": "Applied to initiatives",
       "geometry": [
         1040,
         528,
@@ -199,7 +199,7 @@
     },
     {
       "id": "transform",
-      "name": "変換実行",
+      "name": "Transformation execution",
       "role": "Cloud Run / dbt",
       "geometry": [
         544,

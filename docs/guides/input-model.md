@@ -21,7 +21,7 @@
 
 `icons`は`[{"asset": "assets/icons/...svg"}]`。複数の場合も同じ一つの処理ノードであり、別の実行工程ではない。図形・ラベルの扱いは[ノード](../components/node.md)に従う。出典は`source`、指定による追加は`basis: user_requested`、図の対象外は`omitted`へ記録する。
 
-`title`・`purpose`等はSVGの非表示情報と付随Markdownに使う。モデルに存在することは画像内へタイトルや注釈を追加する指定ではない。
+`exports`（`["mermaid", "drawio"]`）を指定すると、SVGに加えてその形式も生成する。`title`・`purpose`等はSVGの非表示情報と付随Markdownに使う。表示文言（`title`・`purpose`・領域の`label`・ノードの`name`／`role`／`display_*`・接続の`label`／`data`／`method`／`frequency`）は英語で記述し、他言語は[ローカライズ](localization.md)の翻訳ファイルへID別に保存する。モデルに存在することは画像内へタイトルや注釈を追加する指定ではない。
 
 ## 接続元・接続先の情報
 

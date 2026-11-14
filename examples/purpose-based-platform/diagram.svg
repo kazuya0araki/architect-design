@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-labelledby="title description" data-schema-version="2">
-  <title id="title">用途別に分離したデータ基盤（架空の提案）</title>
-  <desc id="description">用途別に分離したデータ基盤（架空の提案） </desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" lang="en" xml:lang="en" role="img" aria-labelledby="title description" data-schema-version="2">
+  <title id="title">Purpose-based data platforms (fictional proposal)</title>
+  <desc id="description">Purpose-based data platforms (fictional proposal) </desc>
   <metadata id="model_metadata">{"id": "purpose-based-platform", "status": "proposal", "source": null, "omitted": [], "view_level": "pipeline", "diagram_type": "data_flow"}</metadata>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
     </marker>
   </defs>
-  <style>text{font-family:Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif;fill:#202124}</style>
+  <style>text{font-family:Helvetica Neue,Arial,Noto Sans,sans-serif;fill:#202124}</style>
   <rect width="1280" height="800" fill="#FFFFFF" />
   <g id="regions">
     <rect id="sources" data-region-kind="stage" data-parent="" data-geometry="[48, 64, 208, 672]" x="48" y="64" width="208" height="672" fill="#FFFFFF" stroke="#AEB8C4" stroke-width="1" rx="4" />
@@ -51,71 +51,81 @@
   </g>
   <g id="nodes">
     <g id="product_source" data-kind="node" data-region="sources" data-stage="sources" data-geometry="[72, 216, 160, 136]" data-basis="proposal">
-      <title>業務システム / 顧客機能用</title>
+      <title>Business systems / For customer features</title>
       <rect x="72" y="216" width="160" height="136" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="product_ingest" data-kind="node" data-region="product" data-stage="platform" data-geometry="[320, 216, 160, 136]" data-basis="proposal">
-      <title>取り込み / 顧客機能用</title>
+      <title>Ingestion / For customer features</title>
       <rect x="320" y="216" width="160" height="136" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="product_raw" data-kind="node" data-region="product" data-stage="platform" data-geometry="[544, 216, 160, 136]" data-basis="proposal">
-      <title>Raw / 顧客機能用</title>
+      <title>Raw / For customer features</title>
       <path d="M544 228C544 212 704 212 704 228V340C704 356 544 356 544 340Z M544 228C544 244 704 244 704 228" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
     </g>
     <g id="product_mart" data-kind="node" data-region="product" data-stage="platform" data-geometry="[768, 216, 160, 136]" data-basis="proposal">
-      <title>Mart / 顧客機能用</title>
+      <title>Mart / For customer features</title>
       <path d="M768 228C768 212 928 212 928 228V340C928 356 768 356 768 340Z M768 228C768 244 928 244 928 228" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
     </g>
     <g id="product_consumer" data-kind="node" data-region="destinations" data-stage="destinations" data-geometry="[1040, 216, 160, 136]" data-basis="proposal">
-      <title>内製サービス / 顧客機能用</title>
+      <title>In-house service / For customer features</title>
       <rect x="1040" y="216" width="160" height="136" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="business_source" data-kind="node" data-region="sources" data-stage="sources" data-geometry="[72, 496, 160, 136]" data-basis="proposal">
-      <title>業務システム / 社内指標用</title>
+      <title>Business systems / For internal metrics</title>
       <rect x="72" y="496" width="160" height="136" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="business_ingest" data-kind="node" data-region="business" data-stage="platform" data-geometry="[320, 496, 160, 136]" data-basis="proposal">
-      <title>取り込み / 社内指標用</title>
+      <title>Ingestion / For internal metrics</title>
       <rect x="320" y="496" width="160" height="136" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="business_raw" data-kind="node" data-region="business" data-stage="platform" data-geometry="[544, 496, 160, 136]" data-basis="proposal">
-      <title>Raw / 社内指標用</title>
+      <title>Raw / For internal metrics</title>
       <path d="M544 508C544 492 704 492 704 508V620C704 636 544 636 544 620Z M544 508C544 524 704 524 704 508" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
     </g>
     <g id="business_mart" data-kind="node" data-region="business" data-stage="platform" data-geometry="[768, 496, 160, 136]" data-basis="proposal">
-      <title>Mart / 社内指標用</title>
+      <title>Mart / For internal metrics</title>
       <path d="M768 508C768 492 928 492 928 508V620C928 636 768 636 768 620Z M768 508C768 524 928 524 928 508" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
     </g>
     <g id="business_consumer" data-kind="node" data-region="destinations" data-stage="destinations" data-geometry="[1040, 496, 160, 136]" data-basis="proposal">
-      <title>BI・分析 / 社内指標用</title>
+      <title>BI and analytics / For internal metrics</title>
       <rect x="1040" y="496" width="160" height="136" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
   </g>
   <g id="labels">
-    <text id="sources_label_0" x="64" y="96" font-size="24" font-weight="600" text-anchor="start" style="fill:#202124" data-text-box="[64, 72, 72, 26]">接続元</text>
-    <text id="platform_label_0" x="296" y="96" font-size="24" font-weight="600" text-anchor="start" style="fill:#202124" data-text-box="[296, 72, 216, 26]">用途別のデータ基盤</text>
-    <text id="destinations_label_0" x="1024" y="96" font-size="24" font-weight="600" text-anchor="start" style="fill:#202124" data-text-box="[1024, 72, 72, 26]">利用先</text>
-    <text id="product_label_0" x="312" y="184" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[312, 162, 132, 24]">プロダクト用</text>
-    <text id="business_label_0" x="312" y="464" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[312, 442, 110, 24]">業務分析用</text>
-    <text id="product_source_name_0" x="152" y="279" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[80, 255, 144, 26]">業務システム</text>
-    <text id="product_source_role_0" x="152" y="311" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[97, 289, 110, 24]">提供データ</text>
-    <text id="product_ingest_name_0" x="400" y="279" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[352, 255, 96, 26]">取り込み</text>
-    <text id="product_ingest_role_0" x="400" y="311" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[345, 289, 110, 24]">受領・転送</text>
+    <text id="sources_label_0" x="64" y="96" font-size="24" font-weight="600" text-anchor="start" style="fill:#202124" data-text-box="[64, 72, 158.39999999999998, 26]">Data sources</text>
+    <text id="platform_label_0" x="296" y="96" font-size="24" font-weight="600" text-anchor="start" style="fill:#202124" data-text-box="[296, 72, 369.6000000000002, 26]">Purpose-based data platforms</text>
+    <text id="destinations_label_0" x="1024" y="96" font-size="24" font-weight="600" text-anchor="start" style="fill:#202124" data-text-box="[1024, 72, 158.39999999999998, 26]">Destinations</text>
+    <text id="product_label_0" x="312" y="184" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[312, 162, 145.19999999999996, 24]">For products</text>
+    <text id="business_label_0" x="312" y="464" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[312, 442, 266.20000000000005, 24]">For business analytics</text>
+    <text id="product_source_name_0" x="152" y="264" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[99.2, 240, 105.6, 26]">Business</text>
+    <text id="product_source_name_1" x="152" y="294" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[105.80000000000001, 270, 92.39999999999999, 26]">systems</text>
+    <text id="product_source_role_0" x="152" y="326" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[85.45000000000002, 304, 133.09999999999997, 24]">Served data</text>
+    <text id="product_ingest_name_0" x="400" y="265" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[340.6, 241, 118.79999999999998, 26]">Ingestion</text>
+    <text id="product_ingest_role_0" x="400" y="297" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[333.45000000000005, 275, 133.09999999999997, 24]">Receive and</text>
+    <text id="product_ingest_role_1" x="400" y="325" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[351.6, 303, 96.79999999999998, 24]">transfer</text>
     <text id="product_raw_name_0" x="624" y="279" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[604.2, 255, 39.6, 26]">Raw</text>
-    <text id="product_raw_role_0" x="624" y="311" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[558, 289, 132, 24]">未加工データ</text>
-    <text id="product_mart_name_0" x="848" y="279" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[821.6, 255, 52.800000000000004, 26]">Mart</text>
-    <text id="product_mart_role_0" x="848" y="311" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[804, 289, 88, 24]">公開指標</text>
-    <text id="product_consumer_name_0" x="1120" y="279" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1048, 255, 144, 26]">内製サービス</text>
-    <text id="product_consumer_role_0" x="1120" y="311" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1054, 289, 132, 24]">顧客向け機能</text>
-    <text id="business_source_name_0" x="152" y="559" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[80, 535, 144, 26]">業務システム</text>
-    <text id="business_source_role_0" x="152" y="591" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[97, 569, 110, 24]">提供データ</text>
-    <text id="business_ingest_name_0" x="400" y="559" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[352, 535, 96, 26]">取り込み</text>
-    <text id="business_ingest_role_0" x="400" y="591" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[345, 569, 110, 24]">受領・転送</text>
+    <text id="product_raw_role_0" x="624" y="311" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[575.6, 289, 96.79999999999998, 24]">Raw data</text>
+    <text id="product_mart_name_0" x="848" y="265" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[821.6, 241, 52.800000000000004, 26]">Mart</text>
+    <text id="product_mart_role_0" x="848" y="297" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[793.55, 275, 108.89999999999998, 24]">Published</text>
+    <text id="product_mart_role_1" x="848" y="325" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[805.65, 303, 84.69999999999999, 24]">metrics</text>
+    <text id="product_consumer_name_0" x="1120" y="250" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1067.2, 226, 105.6, 26]">In-house</text>
+    <text id="product_consumer_name_1" x="1120" y="280" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1073.8, 256, 92.39999999999999, 26]">service</text>
+    <text id="product_consumer_role_0" x="1120" y="312" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1071.6, 290, 96.79999999999998, 24]">Customer</text>
+    <text id="product_consumer_role_1" x="1120" y="340" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1071.6, 318, 96.79999999999998, 24]">features</text>
+    <text id="business_source_name_0" x="152" y="544" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[99.2, 520, 105.6, 26]">Business</text>
+    <text id="business_source_name_1" x="152" y="574" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[105.80000000000001, 550, 92.39999999999999, 26]">systems</text>
+    <text id="business_source_role_0" x="152" y="606" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[85.45000000000002, 584, 133.09999999999997, 24]">Served data</text>
+    <text id="business_ingest_name_0" x="400" y="545" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[340.6, 521, 118.79999999999998, 26]">Ingestion</text>
+    <text id="business_ingest_role_0" x="400" y="577" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[333.45000000000005, 555, 133.09999999999997, 24]">Receive and</text>
+    <text id="business_ingest_role_1" x="400" y="605" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[351.6, 583, 96.79999999999998, 24]">transfer</text>
     <text id="business_raw_name_0" x="624" y="559" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[604.2, 535, 39.6, 26]">Raw</text>
-    <text id="business_raw_role_0" x="624" y="591" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[558, 569, 132, 24]">未加工データ</text>
-    <text id="business_mart_name_0" x="848" y="559" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[821.6, 535, 52.800000000000004, 26]">Mart</text>
-    <text id="business_mart_role_0" x="848" y="591" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[804, 569, 88, 24]">公開指標</text>
-    <text id="business_consumer_name_0" x="1120" y="559" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1070.8, 535, 98.39999999999999, 26]">BI・分析</text>
-    <text id="business_consumer_role_0" x="1120" y="591" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1076, 569, 88, 24]">社内分析</text>
+    <text id="business_raw_role_0" x="624" y="591" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[575.6, 569, 96.79999999999998, 24]">Raw data</text>
+    <text id="business_mart_name_0" x="848" y="545" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[821.6, 521, 52.800000000000004, 26]">Mart</text>
+    <text id="business_mart_role_0" x="848" y="577" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[793.55, 555, 108.89999999999998, 24]">Published</text>
+    <text id="business_mart_role_1" x="848" y="605" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[805.65, 583, 84.69999999999999, 24]">metrics</text>
+    <text id="business_consumer_name_0" x="1120" y="530" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1080.4, 506, 79.19999999999999, 26]">BI and</text>
+    <text id="business_consumer_name_1" x="1120" y="560" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1060.6, 536, 118.79999999999998, 26]">analytics</text>
+    <text id="business_consumer_role_0" x="1120" y="592" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1071.6, 570, 96.79999999999998, 24]">Internal</text>
+    <text id="business_consumer_role_1" x="1120" y="620" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1065.55, 598, 108.89999999999998, 24]">analytics</text>
   </g>
 </svg>

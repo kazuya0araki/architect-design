@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "id": "platform-context",
-  "title": "データ基盤の全体像",
-  "purpose": "データ基盤の全体像を説明する架空の提案",
+  "title": "Data platform overview",
+  "purpose": "A fictional proposal explaining the data platform overview",
   "status": "proposal",
   "canvas": [
     1280,
@@ -16,7 +16,7 @@
   "regions": [
     {
       "id": "scope",
-      "label": "対象：データ基盤",
+      "label": "Scope: data platform",
       "kind": "functional",
       "geometry": [
         480,
@@ -29,8 +29,8 @@
   "nodes": [
     {
       "id": "source",
-      "name": "業務システム",
-      "role": "データを提供",
+      "name": "Business systems",
+      "role": "Provides data",
       "geometry": [
         80,
         216,
@@ -41,8 +41,8 @@
     },
     {
       "id": "platform",
-      "name": "データ基盤",
-      "role": "収集・加工・提供",
+      "name": "Data platform",
+      "role": "Collects, transforms and serves",
       "geometry": [
         512,
         216,
@@ -53,8 +53,8 @@
     },
     {
       "id": "consumer",
-      "name": "利用者・業務アプリ",
-      "role": "データを活用",
+      "name": "Users and business apps",
+      "role": "Uses data",
       "geometry": [
         944,
         216,

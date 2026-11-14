@@ -3,8 +3,8 @@
   "nodes": [
     {
       "id": "file",
-      "name": "受領ファイル",
-      "role": "CSV等の入力",
+      "name": "Files",
+      "role": "CSV inputs",
       "geometry": [
         0,
         64,
@@ -15,8 +15,8 @@
     },
     {
       "id": "receipt",
-      "name": "受領処理",
-      "role": "内容と形式を確認",
+      "name": "Receipt",
+      "role": "Checks format",
       "geometry": [
         288,
         64,
@@ -27,8 +27,8 @@
     },
     {
       "id": "storage",
-      "name": "受領ストレージ",
-      "role": "受領データを保存",
+      "name": "Storage",
+      "role": "Stores data",
       "geometry": [
         576,
         64,

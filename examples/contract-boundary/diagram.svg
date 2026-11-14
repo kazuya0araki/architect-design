@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-labelledby="title description" data-schema-version="2">
-  <title id="title">提供インターフェースと責任境界（架空の提案）</title>
-  <desc id="description">提供インターフェースと責任境界（架空の提案） </desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" lang="en" xml:lang="en" role="img" aria-labelledby="title description" data-schema-version="2">
+  <title id="title">Serving interface and responsibility boundary (fictional proposal)</title>
+  <desc id="description">Serving interface and responsibility boundary (fictional proposal) </desc>
   <metadata id="model_metadata">{"id": "contract-boundary", "status": "proposal", "source": null, "omitted": [], "view_level": "pipeline", "diagram_type": "data_flow"}</metadata>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
     </marker>
   </defs>
-  <style>text{font-family:Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif;fill:#202124}</style>
+  <style>text{font-family:Helvetica Neue,Arial,Noto Sans,sans-serif;fill:#202124}</style>
   <rect width="1280" height="800" fill="#FFFFFF" />
   <g id="regions">
     <rect id="provider" data-region-kind="team" data-parent="" data-geometry="[48, 112, 480, 432]" x="48" y="112" width="480" height="432" fill="#FFFFFF" stroke="#AEB8C4" stroke-width="1" rx="4" stroke-dasharray="6 4" />
@@ -36,48 +36,52 @@
   </g>
   <g id="nodes">
     <g id="source" data-kind="node" data-region="provider" data-stage="" data-geometry="[80, 288, 176, 112]" data-basis="proposal">
-      <title>業務DB / 提供側で管理</title>
+      <title>Business DB / Managed by provider</title>
       <rect x="80" y="288" width="176" height="112" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="interface" data-kind="node" data-region="contract" data-stage="" data-geometry="[328, 288, 160, 112]" data-basis="proposal">
-      <title>公開データ / スキーマ・品質</title>
+      <title>Public data / Schema and quality</title>
       <rect x="328" y="288" width="160" height="112" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="raw" data-kind="node" data-region="warehouse" data-stage="" data-geometry="[592, 288, 144, 112]" data-basis="proposal">
-      <title>Raw / 契約から受領</title>
+      <title>Raw / Receive from contract</title>
       <path d="M592 300C592 284 736 284 736 300V388C736 404 592 404 592 388Z M592 300C592 316 736 316 736 300" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
     </g>
     <g id="mart" data-kind="node" data-region="warehouse" data-stage="" data-geometry="[784, 288, 144, 112]" data-basis="proposal">
-      <title>Mart / 指標データ</title>
+      <title>Mart / Metric data</title>
       <path d="M784 300C784 284 928 284 928 300V388C928 404 784 404 784 388Z M784 300C784 316 928 316 928 300" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" />
     </g>
     <g id="bi" data-kind="node" data-region="consumer" data-stage="" data-geometry="[1040, 288, 160, 112]" data-basis="proposal">
-      <title>BI / 業務で活用</title>
+      <title>BI / Used in business</title>
       <rect x="1040" y="288" width="160" height="112" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="checks" data-kind="node" data-region="quality" data-stage="" data-geometry="[816, 664, 384, 56]" data-basis="proposal">
-      <title>契約の検証 / 品質条件を確認</title>
+      <title>Contract validation / Checks quality conditions</title>
       <rect x="816" y="664" width="384" height="56" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
   </g>
   <g id="labels">
-    <text id="provider_label_0" x="64" y="144" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 122, 132, 24]">提供側チーム</text>
-    <text id="consumer_label_0" x="568" y="144" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[568, 122, 132, 24]">分析側チーム</text>
-    <text id="quality_label_0" x="568" y="632" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[568, 610, 212.29999999999995, 24]">横断機能 / 品質検証</text>
-    <text id="contract_label_0" x="320" y="248" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[320, 226, 110, 24]">データ契約</text>
-    <text id="warehouse_label_0" x="584" y="248" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[584, 226, 154, 24]">論理データ基盤</text>
-    <text id="source_name_0" x="168" y="339" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[130.8, 315, 74.39999999999999, 26]">業務DB</text>
-    <text id="source_role_0" x="168" y="371" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[102, 349, 132, 24]">提供側で管理</text>
-    <text id="interface_name_0" x="408" y="325" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[348, 301, 120, 26]">公開データ</text>
-    <text id="interface_role_0" x="408" y="357" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[364, 335, 88, 24]">スキーマ</text>
-    <text id="interface_role_1" x="408" y="385" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[386, 363, 44, 24]">品質</text>
-    <text id="raw_name_0" x="664" y="339" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[644.2, 315, 39.6, 26]">Raw</text>
-    <text id="raw_role_0" x="664" y="371" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[609, 349, 110, 24]">契約データ</text>
-    <text id="mart_name_0" x="856" y="339" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[829.6, 315, 52.800000000000004, 26]">Mart</text>
-    <text id="mart_role_0" x="856" y="371" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[801, 349, 110, 24]">指標データ</text>
-    <text id="bi_name_0" x="1120" y="339" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1106.8, 315, 26.400000000000002, 26]">BI</text>
-    <text id="bi_role_0" x="1120" y="371" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1065, 349, 110, 24]">業務で活用</text>
-    <text id="checks_name_0" x="1008" y="687" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[948, 663, 120, 26]">契約の検証</text>
-    <text id="checks_role_0" x="1008" y="719" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[931, 697, 154, 24]">品質条件を確認</text>
+    <text id="provider_label_0" x="64" y="144" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 122, 157.29999999999995, 24]">Provider team</text>
+    <text id="consumer_label_0" x="568" y="144" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[568, 122, 169.39999999999998, 24]">Analytics team</text>
+    <text id="quality_label_0" x="568" y="632" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[568, 610, 411.4000000000002, 24]">Cross-cutting / Quality validation</text>
+    <text id="contract_label_0" x="320" y="248" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[320, 226, 157.29999999999995, 24]">Data contract</text>
+    <text id="warehouse_label_0" x="584" y="248" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[584, 226, 254.10000000000005, 24]">Logical data platform</text>
+    <text id="source_name_0" x="168" y="325" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[95.4, 301, 145.2, 26]">Business DB</text>
+    <text id="source_role_0" x="168" y="357" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[107.5, 335, 120.99999999999999, 24]">Managed by</text>
+    <text id="source_role_1" x="168" y="385" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[119.60000000000001, 363, 96.79999999999998, 24]">provider</text>
+    <text id="interface_name_0" x="408" y="323" font-size="20" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[347.5, 303, 120.99999999999997, 22]">Public data</text>
+    <text id="interface_role_0" x="408" y="351" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[371.7, 329, 72.6, 24]">Schema</text>
+    <text id="interface_role_1" x="408" y="379" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[365.65, 357, 84.69999999999999, 24]">Quality</text>
+    <text id="raw_name_0" x="664" y="325" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[644.2, 301, 39.6, 26]">Raw</text>
+    <text id="raw_role_0" x="664" y="357" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[615.6, 335, 96.79999999999998, 24]">Contract</text>
+    <text id="raw_role_1" x="664" y="385" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[639.8, 363, 48.400000000000006, 24]">data</text>
+    <text id="mart_name_0" x="856" y="325" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[829.6, 301, 52.800000000000004, 26]">Mart</text>
+    <text id="mart_role_0" x="856" y="357" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[819.7, 335, 72.6, 24]">Metric</text>
+    <text id="mart_role_1" x="856" y="385" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[831.8, 363, 48.400000000000006, 24]">data</text>
+    <text id="bi_name_0" x="1120" y="325" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1106.8, 301, 26.400000000000002, 26]">BI</text>
+    <text id="bi_role_0" x="1120" y="357" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1077.65, 335, 84.69999999999999, 24]">Used in</text>
+    <text id="bi_role_1" x="1120" y="385" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1071.6, 363, 96.79999999999998, 24]">business</text>
+    <text id="checks_name_0" x="1008" y="687" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[882.6, 663, 250.8, 26]">Contract validation</text>
+    <text id="checks_role_0" x="1008" y="719" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[856.75, 697, 302.5000000000001, 24]">Checks quality conditions</text>
   </g>
 </svg>

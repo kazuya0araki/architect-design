@@ -8,4 +8,4 @@
 
 製品が決まっている場合は、作成・改訂・公開前に[公式アイコンの更新手順](../governance/icon-updates.md)を実施する。規則の全文を作業ファイルへ複製せず、必要なページを参照する。
 
-SVGを生成する場合はサンプルのv2 JSONを編集し、`cargo run --release -- render path/to/model.json --output path/to/diagram.svg`を実行する。`cargo run --release -- validate-diagrams`で構造・配置を点検し、ブラウザでも確認する。
+SVGを生成する場合はサンプルのv2 JSONを編集し、`cargo run --release -- render path/to/model.json --all-locales`を実行する（文言は英語を基準とし、日本語は`locales/ja_jp.json`。詳細は[ローカライズ](../guides/localization.md)）。`cargo run --release -- validate-diagrams`で構造・配置を点検し、ブラウザでも確認する。

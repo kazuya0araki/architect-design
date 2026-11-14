@@ -1,12 +1,12 @@
 # 再利用部品の組み合わせ
 
-![再利用部品の組み合わせ](diagram.svg)
+![再利用部品の組み合わせ](diagram.ja_jp.svg)
 
 状態：架空の提案・作図見本。実企業の稼働構成ではない。
 
 目的・対象範囲：ファイル受領、Raw・Mart、BI・表計算・人を部品JSONから展開する。見本間は接続していない。
 
-編集元：[model.json](model.json)。出力：[diagram.svg](diagram.svg)。`cargo run --release -- examples`で上書き再生成する。
+編集元：[model.json](model.json)（英語基準）・[日本語文言](locales/ja_jp.json)。出力：[日本語](diagram.ja_jp.svg)・[英語](diagram.svg)。`cargo run --release -- examples --all-locales`で上書き再生成する。
 
 凡例：内部の実線はデータ移動。接続のない部品間に連携はない。
 

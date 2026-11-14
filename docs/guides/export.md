@@ -18,7 +18,7 @@ SVGは図形・線・文字をベクターとして保持するため、出力�
 - エクスポート後に、日本語の欠落、文字切れ、線の交差、背景、余白を実際の画像で確認する。
 - draw.ioを編集元として使った場合は、PNG・SVGへの書き出し後も`.drawio`を保存する。v2のSVG専用生成ではモデルJSONとSVGを編集元とする。
 
-v2の共有SVG部品はSVGのみを再生成する。draw.io・Mermaidの既存ファイルは保存版であり、現行SVGと同期する指定がある場合だけ更新する。SVGのみの成果物へdraw.ioの追加を必須にしない。
+v2の共有部品はSVGを常に生成し、モデルの`exports`（`mermaid`・`drawio`）に宣言した形式も同じモデル・翻訳ファイルから生成する（`cargo run --release -- render model.json --format svg,mermaid,drawio`）。出力はSVGと同じ言語サフィックスを持ち（`diagram.ja_jp.drawio`等）、ID・接続・所属・アイコン・座標はSVGと一致する。Mermaidは自動配置のため座標を持たない。生成したdraw.ioを手で編集した場合は再生成で上書きされるため、編集後はモデルへ反映するか、そのファイルを編集元として分離する。SVGのみの成果物へdraw.ioの追加を必須にしない。
 
 ## draw.io例
 
@@ -28,7 +28,7 @@ v2の共有SVG部品はSVGのみを再生成する。draw.io・Mermaidの既存�
 
 公開用のトンマナは[Google Cloudの構成例](../../examples/google-cloud-analytics/README.md)を参照する。公式アイコンを埋め込んだSVGと、元素材・取得記録を`assets/icons/`に保存している。
 
-[業務分析基盤.svg](../../examples/analytics-platform/diagram.svg)は1760×1080の`viewBox`を持つ編集可能なソース。ブラウザで直接表示できる。外部画像、外部CSS、`foreignObject`は使わず、ノードと接続にはIDを付けている。日本語フォントにはNoto Sans JP、ヒラギノ角ゴ、游ゴシックなどを指定し、描画環境にも対応フォントを用意する。
+[業務分析基盤.svg](../../examples/analytics-platform/diagram.ja_jp.svg)（[英語版](../../examples/analytics-platform/diagram.svg)あり）は1760×1080の`viewBox`を持つ編集可能なソース。ブラウザで直接表示できる。外部画像、外部CSS、`foreignObject`は使わず、ノードと接続にはIDを付けている。日本語フォントにはNoto Sans JP、ヒラギノ角ゴ、游ゴシックなどを指定し、描画環境にも対応フォントを用意する。
 
 PNG・JPEGを出力する際はSVGを対応レンダラーで描画する。2倍サイズの場合は3520×2160とし、JPEGは白背景で出力する。実際の変換ツールはまだリポジトリに同梱していない。
 

@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="544" viewBox="0 0 1280 544" role="img" aria-labelledby="title description" data-schema-version="2">
-  <title id="title">データ基盤の全体像</title>
-  <desc id="description">データ基盤の全体像を説明する架空の提案 </desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="544" viewBox="0 0 1280 544" lang="en" xml:lang="en" role="img" aria-labelledby="title description" data-schema-version="2">
+  <title id="title">Data platform overview</title>
+  <desc id="description">A fictional proposal explaining the data platform overview </desc>
   <metadata id="model_metadata">{"id": "platform-context", "status": "proposal", "source": null, "omitted": [], "view_level": "context", "diagram_type": "context"}</metadata>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0 0L10 5L0 10Z" fill="#5F6368" />
     </marker>
   </defs>
-  <style>text{font-family:Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif;fill:#202124}</style>
+  <style>text{font-family:Helvetica Neue,Arial,Noto Sans,sans-serif;fill:#202124}</style>
   <rect width="1280" height="544" fill="#FFFFFF" />
   <g id="regions">
     <rect id="scope" data-region-kind="functional" data-parent="" data-geometry="[480, 128, 320, 304]" x="480" y="128" width="320" height="304" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="4" />
@@ -23,25 +23,28 @@
   </g>
   <g id="nodes">
     <g id="source" data-kind="node" data-region="" data-stage="" data-geometry="[80, 216, 256, 128]" data-basis="proposal">
-      <title>業務システム / データを提供</title>
+      <title>Business systems / Provides data</title>
       <rect x="80" y="216" width="256" height="128" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="platform" data-kind="node" data-region="" data-stage="" data-geometry="[512, 216, 256, 128]" data-basis="proposal">
-      <title>データ基盤 / 収集・加工・提供</title>
+      <title>Data platform / Collects, transforms and serves</title>
       <rect x="512" y="216" width="256" height="128" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
     <g id="consumer" data-kind="node" data-region="" data-stage="" data-geometry="[944, 216, 256, 128]" data-basis="proposal">
-      <title>利用者・業務アプリ / データを活用</title>
+      <title>Users and business apps / Uses data</title>
       <rect x="944" y="216" width="256" height="128" fill="#FFFFFF" stroke="#D0D6DD" stroke-width="1" rx="3" />
     </g>
   </g>
   <g id="labels">
-    <text id="scope_label_0" x="496" y="160" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[496, 138, 176, 24]">対象：データ基盤</text>
-    <text id="source_name_0" x="208" y="275" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[136, 251, 144, 26]">業務システム</text>
-    <text id="source_role_0" x="208" y="307" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[142, 285, 132, 24]">データを提供</text>
-    <text id="platform_name_0" x="640" y="275" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[580, 251, 120, 26]">データ基盤</text>
-    <text id="platform_role_0" x="640" y="307" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[552, 285, 176, 24]">収集・加工・提供</text>
-    <text id="consumer_name_0" x="1072" y="275" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[964, 251, 216, 26]">利用者・業務アプリ</text>
-    <text id="consumer_role_0" x="1072" y="307" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1006, 285, 132, 24]">データを活用</text>
+    <text id="scope_label_0" x="496" y="160" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[496, 138, 242.00000000000003, 24]">Scope: data platform</text>
+    <text id="source_name_0" x="208" y="275" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[102.4, 251, 211.2, 26]">Business systems</text>
+    <text id="source_role_0" x="208" y="307" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[129.35000000000002, 285, 157.29999999999995, 24]">Provides data</text>
+    <text id="platform_name_0" x="640" y="247" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[554.2, 223, 171.59999999999997, 26]">Data platform</text>
+    <text id="platform_role_0" x="640" y="279" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[585.55, 257, 108.89999999999998, 24]">Collects,</text>
+    <text id="platform_role_1" x="640" y="307" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[555.3, 285, 169.39999999999998, 24]">transforms and</text>
+    <text id="platform_role_2" x="640" y="335" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[603.7, 313, 72.6, 24]">serves</text>
+    <text id="consumer_name_0" x="1072" y="260" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[953.2, 236, 237.60000000000002, 26]">Users and business</text>
+    <text id="consumer_name_1" x="1072" y="290" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1045.6, 266, 52.800000000000004, 26]">apps</text>
+    <text id="consumer_role_0" x="1072" y="322" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1017.55, 300, 108.89999999999998, 24]">Uses data</text>
   </g>
 </svg>

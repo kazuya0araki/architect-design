@@ -58,13 +58,13 @@ fn escape_attr(s: &str) -> String {
     escape_text(s).replace('"', "&quot;").replace('\r', "&#13;").replace('\n', "&#10;").replace('\t', "&#09;")
 }
 
-fn write(e: &Element, depth: usize, root: bool, out: &mut String) {
+fn write(e: &Element, depth: usize, root_ns: Option<&str>, out: &mut String) {
     let pad = "  ".repeat(depth);
     out.push_str(&pad);
     out.push('<');
     out.push_str(&e.tag);
-    if root {
-        out.push_str(&format!(" xmlns=\"{SVG_NS}\""));
+    if let Some(ns) = root_ns {
+        out.push_str(&format!(" xmlns=\"{ns}\""));
     }
     for (k, v) in &e.attrs {
         out.push_str(&format!(" {k}=\"{}\"", escape_attr(v)));
@@ -75,7 +75,7 @@ fn write(e: &Element, depth: usize, root: bool, out: &mut String) {
         (_, false) => {
             out.push_str(">\n");
             for c in &e.children {
-                write(c, depth + 1, false, out);
+                write(c, depth + 1, None, out);
                 out.push('\n');
             }
             out.push_str(&pad);
@@ -86,7 +86,14 @@ fn write(e: &Element, depth: usize, root: bool, out: &mut String) {
 
 pub fn to_string(root: &Element) -> String {
     let mut out = String::from("<?xml version='1.0' encoding='utf-8'?>\n");
-    write(root, 0, true, &mut out);
+    write(root, 0, Some(SVG_NS), &mut out);
+    out
+}
+
+/// Serialise a document without a default namespace (draw.io `mxfile`).
+pub fn to_string_plain(root: &Element) -> String {
+    let mut out = String::from("<?xml version='1.0' encoding='utf-8'?>\n");
+    write(root, 0, None, &mut out);
     out
 }
 

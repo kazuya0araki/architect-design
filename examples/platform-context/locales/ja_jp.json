@@ -1,0 +1,24 @@
+{
+  "locale": "ja-JP",
+  "title": "データ基盤の全体像",
+  "purpose": "データ基盤の全体像を説明する架空の提案",
+  "regions": {
+    "scope": {
+      "label": "対象：データ基盤"
+    }
+  },
+  "nodes": {
+    "source": {
+      "name": "業務システム",
+      "role": "データを提供"
+    },
+    "platform": {
+      "name": "データ基盤",
+      "role": "収集・加工・提供"
+    },
+    "consumer": {
+      "name": "利用者・業務アプリ",
+      "role": "データを活用"
+    }
+  }
+}

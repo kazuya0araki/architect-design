@@ -21,7 +21,7 @@ fn repeated_instances_have_distinct_ids_and_valid_paths() {
     validate(&resolve(&model).unwrap(), &tokens(&root).unwrap()).unwrap();
     assert_eq!(fragment, before);
     assert_eq!(first["ports"]["output"], "first_storage");
-    assert_eq!(first["nodes"][0]["name"], "受領ファイル");
+    assert_eq!(first["nodes"][0]["name"], "Files");
     assert_eq!(first["nodes"][0]["display_name"], "売上CSV");
     assert!(second["nodes"][0].get("display_name").is_none());
     assert_eq!(first["connections"][0]["points"][0], json!([256, 176]));
