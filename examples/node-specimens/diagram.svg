@@ -44,16 +44,16 @@
     <text id="long_label_0" x="640" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[640, 74, 264, 24]">長い名前は幅・高さで調整</text>
     <text id="horizontal_label_0" x="64" y="384" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 362, 264, 24]">横並び（アイコン未指定）</text>
     <text id="product_label_0" x="640" y="384" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[640, 362, 154, 24]">製品内の論理層</text>
-    <text id="plain_name_0" x="200.0" y="195.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[152.0, 171.0, 96, 26]">集計処理</text>
-    <text id="plain_role_0" x="200.0" y="227.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[145.0, 205.0, 110, 24]">指標を作成</text>
-    <text id="long_name_name_0" x="928.0" y="188.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[808.0, 164.0, 240, 26]">部門横断の売上実績を</text>
-    <text id="long_name_name_1" x="928.0" y="218.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[796.0, 194.0, 264, 26]">業務指標へ変換する処理</text>
-    <text id="long_name_role_0" x="928.0" y="250.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[796.0, 228.0, 264, 24]">長文でも文字サイズを維持</text>
+    <text id="plain_name_0" x="200" y="195" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[152, 171, 96, 26]">集計処理</text>
+    <text id="plain_role_0" x="200" y="227" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[145, 205, 110, 24]">指標を作成</text>
+    <text id="long_name_name_0" x="928" y="188" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[808, 164, 240, 26]">部門横断の売上実績を</text>
+    <text id="long_name_name_1" x="928" y="218" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[796, 194, 264, 26]">業務指標へ変換する処理</text>
+    <text id="long_name_role_0" x="928" y="250" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[796, 228, 264, 24]">長文でも文字サイズを維持</text>
     <text id="horizontal_name_name_0" x="80" y="480" font-size="24" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[80, 456, 120, 26]">ジョブ管理</text>
     <text id="horizontal_name_role_0" x="80" y="512" font-size="22" font-weight="400" text-anchor="start" style="fill:#5F6368" data-text-box="[80, 490, 220, 24]">加工処理の実行を制御</text>
-    <text id="raw_name_0" x="776.0" y="523.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[756.2, 499.0, 39.6, 26]">Raw</text>
-    <text id="raw_role_0" x="776.0" y="555.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[721.0, 533.0, 110, 24]">受領データ</text>
-    <text id="mart_name_0" x="1080.0" y="523.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1053.6, 499.0, 52.800000000000004, 26]">Mart</text>
-    <text id="mart_role_0" x="1080.0" y="555.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1036.0, 533.0, 88, 24]">業務指標</text>
+    <text id="raw_name_0" x="776" y="523" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[756.2, 499, 39.6, 26]">Raw</text>
+    <text id="raw_role_0" x="776" y="555" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[721, 533, 110, 24]">受領データ</text>
+    <text id="mart_name_0" x="1080" y="523" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1053.6, 499, 52.800000000000004, 26]">Mart</text>
+    <text id="mart_role_0" x="1080" y="555" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1036, 533, 88, 24]">業務指標</text>
   </g>
 </svg>

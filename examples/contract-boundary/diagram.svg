@@ -66,18 +66,18 @@
     <text id="quality_label_0" x="568" y="632" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[568, 610, 212.29999999999995, 24]">横断機能 / 品質検証</text>
     <text id="contract_label_0" x="320" y="248" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[320, 226, 110, 24]">データ契約</text>
     <text id="warehouse_label_0" x="584" y="248" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[584, 226, 154, 24]">論理データ基盤</text>
-    <text id="source_name_0" x="168.0" y="339.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[130.8, 315.0, 74.39999999999999, 26]">業務DB</text>
-    <text id="source_role_0" x="168.0" y="371.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[102.0, 349.0, 132, 24]">提供側で管理</text>
-    <text id="interface_name_0" x="408.0" y="325.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[348.0, 301.0, 120, 26]">公開データ</text>
-    <text id="interface_role_0" x="408.0" y="357.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[364.0, 335.0, 88, 24]">スキーマ</text>
-    <text id="interface_role_1" x="408.0" y="385.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[386.0, 363.0, 44, 24]">品質</text>
-    <text id="raw_name_0" x="664.0" y="339.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[644.2, 315.0, 39.6, 26]">Raw</text>
-    <text id="raw_role_0" x="664.0" y="371.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[609.0, 349.0, 110, 24]">契約データ</text>
-    <text id="mart_name_0" x="856.0" y="339.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[829.6, 315.0, 52.800000000000004, 26]">Mart</text>
-    <text id="mart_role_0" x="856.0" y="371.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[801.0, 349.0, 110, 24]">指標データ</text>
-    <text id="bi_name_0" x="1120.0" y="339.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1106.8, 315.0, 26.400000000000002, 26]">BI</text>
-    <text id="bi_role_0" x="1120.0" y="371.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1065.0, 349.0, 110, 24]">業務で活用</text>
-    <text id="checks_name_0" x="1008.0" y="687.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[948.0, 663.0, 120, 26]">契約の検証</text>
-    <text id="checks_role_0" x="1008.0" y="719.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[931.0, 697.0, 154, 24]">品質条件を確認</text>
+    <text id="source_name_0" x="168" y="339" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[130.8, 315, 74.39999999999999, 26]">業務DB</text>
+    <text id="source_role_0" x="168" y="371" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[102, 349, 132, 24]">提供側で管理</text>
+    <text id="interface_name_0" x="408" y="325" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[348, 301, 120, 26]">公開データ</text>
+    <text id="interface_role_0" x="408" y="357" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[364, 335, 88, 24]">スキーマ</text>
+    <text id="interface_role_1" x="408" y="385" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[386, 363, 44, 24]">品質</text>
+    <text id="raw_name_0" x="664" y="339" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[644.2, 315, 39.6, 26]">Raw</text>
+    <text id="raw_role_0" x="664" y="371" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[609, 349, 110, 24]">契約データ</text>
+    <text id="mart_name_0" x="856" y="339" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[829.6, 315, 52.800000000000004, 26]">Mart</text>
+    <text id="mart_role_0" x="856" y="371" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[801, 349, 110, 24]">指標データ</text>
+    <text id="bi_name_0" x="1120" y="339" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1106.8, 315, 26.400000000000002, 26]">BI</text>
+    <text id="bi_role_0" x="1120" y="371" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1065, 349, 110, 24]">業務で活用</text>
+    <text id="checks_name_0" x="1008" y="687" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[948, 663, 120, 26]">契約の検証</text>
+    <text id="checks_role_0" x="1008" y="719" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[931, 697, 154, 24]">品質条件を確認</text>
   </g>
 </svg>

@@ -6,7 +6,7 @@
 
 目的・対象範囲：業務システムから基盤を経由して利用者・業務アプリへ届く範囲だけを示す。
 
-編集元：[model.json](model.json)。出力：[diagram.svg](diagram.svg)。`python3 examples/render.py`で上書き再生成する。
+編集元：[model.json](model.json)。出力：[diagram.svg](diagram.svg)。`cargo run --release -- examples`で上書き再生成する。
 
 凡例：実線はデータの提供。枠は作図の対象。
 

@@ -6,4 +6,4 @@
 - [Raw・Mart](raw-mart.json)
 - [BI・表計算・人](consumers.json)
 
-[ビルダー](../build_catalog.py)がこれらを読み込み、[組み合わせ見本](../component-catalog/README.md)のJSONを生成する。各部品には内部の接続だけを含め、部品間の接続は自動追加しない。
+[ビルダー](../../src/catalog.rs)がこれらを読み込み、[組み合わせ見本](../component-catalog/README.md)のJSONを生成する。各部品には内部の接続だけを含め、部品間の接続は自動追加しない。

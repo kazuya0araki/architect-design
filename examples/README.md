@@ -28,12 +28,12 @@
 ## 再生成と検証
 
 ```sh
-python3 examples/render.py
-python3 scripts/validate_diagrams.py
-python3 scripts/validate_assets.py
+cargo run --release -- examples
+cargo run --release -- validate-diagrams
+cargo run --release -- validate-assets
 ```
 
-`model.json`は[SVGモデル v2](../docs/guides/input-model.md)、`diagram.svg`は単体表示できる編集可能な図。[render.py](render.py)は[共有描画部品](../scripts/diagram.py)を呼び出す。座標を持つ部品の組み合わせであり、自動配置エンジンではない。ネットワークアクセスは行わない。
+`model.json`は[SVGモデル v2](../docs/guides/input-model.md)、`diagram.svg`は単体表示できる編集可能な図。`cargo run --release -- examples`は[部品の組み立て](../src/catalog.rs)と[共有描画部品](../src/render.rs)を呼び出す。座標を持つ部品の組み合わせであり、自動配置エンジンではない。ネットワークアクセスは行わない。
 
 現行版の再生成対象はSVGのみ。最初の2例に残るdraw.io・Mermaidは移行前の保存版であり、現行SVGと配置・ラベルを同期していない。旧形式を更新する指示があるまで再生成しない。構成の正本はv2 JSONとそのSVG。
 

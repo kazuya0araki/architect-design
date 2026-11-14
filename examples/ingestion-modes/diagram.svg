@@ -77,26 +77,26 @@
     <text id="batch_lane_label_0" x="64" y="96" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 74, 66, 24]">バッチ</text>
     <text id="streaming_lane_label_0" x="64" y="320" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 298, 154, 24]">ストリーミング</text>
     <text id="cdc_lane_label_0" x="64" y="544" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[64, 522, 36.300000000000004, 24]">CDC</text>
-    <rect x="338.0" y="144" width="140" height="28" fill="#FFFFFF" />
-    <text id="batch_ingest_label_0" x="408.0" y="168" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[342.0, 146, 132, 24]">まとめて取得</text>
-    <rect x="846.0" y="144" width="52" height="28" fill="#FFFFFF" />
-    <text id="batch_save_label_0" x="872.0" y="168" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[850.0, 146, 44, 24]">保存</text>
-    <rect x="327.0" y="368" width="162" height="28" fill="#FFFFFF" />
-    <text id="streaming_ingest_label_0" x="408.0" y="392" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[331.0, 370, 154, 24]">イベントを転送</text>
-    <rect x="846.0" y="368" width="52" height="28" fill="#FFFFFF" />
-    <text id="streaming_save_label_0" x="872.0" y="392" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[850.0, 370, 44, 24]">保存</text>
-    <rect x="349.0" y="592" width="118" height="28" fill="#FFFFFF" />
-    <text id="cdc_ingest_label_0" x="408.0" y="616" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[353.0, 594, 110, 24]">変更を転送</text>
-    <rect x="846.0" y="592" width="52" height="28" fill="#FFFFFF" />
-    <text id="cdc_save_label_0" x="872.0" y="616" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[850.0, 594, 44, 24]">保存</text>
-    <text id="batch_source_name_0" x="176.0" y="193.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[104.0, 169.0, 144, 26]">業務ファイル</text>
-    <text id="batch_process_name_0" x="640.0" y="193.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[568.0, 169.0, 144, 26]">一括取り込み</text>
-    <text id="batch_target_name_0" x="1104.0" y="193.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1020.0, 169.0, 168, 26]">分析ストレージ</text>
-    <text id="streaming_source_name_0" x="176.0" y="417.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[92.0, 393.0, 168, 26]">イベント発生元</text>
-    <text id="streaming_process_name_0" x="640.0" y="417.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[568.0, 393.0, 144, 26]">イベント処理</text>
-    <text id="streaming_target_name_0" x="1104.0" y="417.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1020.0, 393.0, 168, 26]">分析ストレージ</text>
-    <text id="cdc_source_name_0" x="176.0" y="641.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[138.8, 617.0, 74.39999999999999, 26]">業務DB</text>
-    <text id="cdc_process_name_0" x="640.0" y="641.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[592.0, 617.0, 96, 26]">変更取得</text>
-    <text id="cdc_target_name_0" x="1104.0" y="641.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1020.0, 617.0, 168, 26]">分析ストレージ</text>
+    <rect x="338" y="144" width="140" height="28" fill="#FFFFFF" />
+    <text id="batch_ingest_label_0" x="408" y="168" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[342, 146, 132, 24]">まとめて取得</text>
+    <rect x="846" y="144" width="52" height="28" fill="#FFFFFF" />
+    <text id="batch_save_label_0" x="872" y="168" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[850, 146, 44, 24]">保存</text>
+    <rect x="327" y="368" width="162" height="28" fill="#FFFFFF" />
+    <text id="streaming_ingest_label_0" x="408" y="392" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[331, 370, 154, 24]">イベントを転送</text>
+    <rect x="846" y="368" width="52" height="28" fill="#FFFFFF" />
+    <text id="streaming_save_label_0" x="872" y="392" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[850, 370, 44, 24]">保存</text>
+    <rect x="349" y="592" width="118" height="28" fill="#FFFFFF" />
+    <text id="cdc_ingest_label_0" x="408" y="616" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[353, 594, 110, 24]">変更を転送</text>
+    <rect x="846" y="592" width="52" height="28" fill="#FFFFFF" />
+    <text id="cdc_save_label_0" x="872" y="616" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[850, 594, 44, 24]">保存</text>
+    <text id="batch_source_name_0" x="176" y="193" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[104, 169, 144, 26]">業務ファイル</text>
+    <text id="batch_process_name_0" x="640" y="193" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[568, 169, 144, 26]">一括取り込み</text>
+    <text id="batch_target_name_0" x="1104" y="193" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1020, 169, 168, 26]">分析ストレージ</text>
+    <text id="streaming_source_name_0" x="176" y="417" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[92, 393, 168, 26]">イベント発生元</text>
+    <text id="streaming_process_name_0" x="640" y="417" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[568, 393, 144, 26]">イベント処理</text>
+    <text id="streaming_target_name_0" x="1104" y="417" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1020, 393, 168, 26]">分析ストレージ</text>
+    <text id="cdc_source_name_0" x="176" y="641" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[138.8, 617, 74.39999999999999, 26]">業務DB</text>
+    <text id="cdc_process_name_0" x="640" y="641" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[592, 617, 96, 26]">変更取得</text>
+    <text id="cdc_target_name_0" x="1104" y="641" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1020, 617, 168, 26]">分析ストレージ</text>
   </g>
 </svg>

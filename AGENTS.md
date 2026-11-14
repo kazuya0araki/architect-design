@@ -18,7 +18,7 @@
 | 再利用部品を選ぶ | `docs/components/specimens.md`、`docs/patterns/reusable-fragments.md` |
 | 入力と構成を整理する | `docs/guides/input-model.md`、`docs/patterns/README.md` |
 | 接続元・接続先を定義する | `docs/components/source.md`、`docs/components/destination.md`、`docs/guides/input-model.md` |
-| 描画する | `docs/foundations/`、`docs/components/`（領域・横断機能を含む）、`docs/guides/generation.md`。v2の共有部品は`scripts/diagram.py` |
+| 描画する | `docs/foundations/`、`docs/components/`（領域・横断機能を含む）、`docs/guides/generation.md`。v2の共有部品は`src/render.rs`、`src/model.rs`（実行は`cargo run --release -- <コマンド>`） |
 | レビューする | `docs/guides/review.md`と対象の部品・パターン |
 | 画像へ出力する | `docs/guides/export.md` |
 | 公式素材を取得・更新する | `docs/governance/icon-updates.md` |

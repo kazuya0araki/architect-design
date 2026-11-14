@@ -6,7 +6,7 @@
 
 目的・対象範囲：標準、長い名前、アイコンなし、横並び、製品内の入れ子を比較する。
 
-編集元：[model.json](model.json)。出力：[diagram.svg](diagram.svg)。`python3 examples/render.py`で上書き再生成する。
+編集元：[model.json](model.json)。出力：[diagram.svg](diagram.svg)。`cargo run --release -- examples`で上書き再生成する。
 
 凡例：線なし。製品領域は論理層を内包する。
 

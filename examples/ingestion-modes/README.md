@@ -6,7 +6,7 @@
 
 目的・対象範囲：バッチ・ストリーミング・CDCを独立した並行レーンで示す。
 
-編集元：[model.json](model.json)。出力：[diagram.svg](diagram.svg)。`python3 examples/render.py`で上書き再生成する。
+編集元：[model.json](model.json)。出力：[diagram.svg](diagram.svg)。`cargo run --release -- examples`で上書き再生成する。
 
 凡例：実線は転送。方式はラベルと領域名で区別する。
 

@@ -6,7 +6,7 @@
 
 目的・対象範囲：同じプロジェクトに属しても、ワーカー・接続口とマネージド保存先の配置は異なることを示す。
 
-編集元：[model.json](model.json)。出力：[diagram.svg](diagram.svg)。`python3 examples/render.py`で上書き再生成する。
+編集元：[model.json](model.json)。出力：[diagram.svg](diagram.svg)。`cargo run --release -- examples`で上書き再生成する。
 
 凡例：点線枠は提案上のネットワーク範囲、実線はデータ経路。
 

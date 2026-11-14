@@ -119,30 +119,30 @@
     <text id="operations_label_0" x="296" y="928" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[296, 906, 212.29999999999995, 24]">横断機能 / 実行管理</text>
     <text id="ownership_label_0" x="312" y="176" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[312, 154, 198, 24]">分析基盤の機能範囲</text>
     <text id="warehouse_label_0" x="752" y="264" font-size="22" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[752, 242, 198, 24]">分析用データストア</text>
-    <text id="source_system_name_0" x="152.0" y="283.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[80.0, 259.0, 144, 26]">基幹システム</text>
-    <text id="source_system_role_0" x="152.0" y="315.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[97.0, 293.0, 110, 24]">業務データ</text>
-    <text id="source_file_name_0" x="152.0" y="539.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[108.2, 515.0, 87.6, 26]">売上CSV</text>
-    <text id="source_file_role_0" x="152.0" y="571.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[86.0, 549.0, 132, 24]">提供元未確認</text>
-    <text id="ingest_name_0" x="384.0" y="411.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[324.0, 387.0, 120, 26]">データ転送</text>
-    <text id="ingest_role_0" x="384.0" y="443.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[329.0, 421.0, 110, 24]">データ転送</text>
-    <text id="objects_name_0" x="592.0" y="396.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[520.0, 372.0, 144, 26]">受領ストレー</text>
-    <text id="objects_name_1" x="592.0" y="426.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[580.0, 402.0, 24, 26]">ジ</text>
-    <text id="objects_role_0" x="592.0" y="458.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[526.0, 436.0, 132, 24]">受領ファイル</text>
-    <text id="raw_name_0" x="848.0" y="403.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[828.2, 379.0, 39.6, 26]">Raw</text>
-    <text id="raw_role_0" x="848.0" y="435.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[793.0, 413.0, 110, 24]">受領データ</text>
-    <text id="mart_name_0" x="1112.0" y="403.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1085.6, 379.0, 52.800000000000004, 26]">Mart</text>
-    <text id="mart_role_0" x="1112.0" y="435.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1068.0, 413.0, 88, 24]">業務指標</text>
-    <text id="bi_name_0" x="1496.0" y="191.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1446.8, 167.0, 98.39999999999999, 26]">BIツール</text>
-    <text id="bi_role_0" x="1496.0" y="223.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1430.0, 201.0, 132, 24]">指標の可視化</text>
-    <text id="excel_name_0" x="1496.0" y="327.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1417.4, 303.0, 157.2, 26]">表計算ツールA</text>
-    <text id="excel_role_0" x="1496.0" y="359.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1452.0, 337.0, 88, 24]">集計分析</text>
-    <text id="sheets_name_0" x="1496.0" y="463.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1417.4, 439.0, 157.2, 26]">表計算ツールB</text>
-    <text id="sheets_role_0" x="1496.0" y="495.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1452.0, 473.0, 88, 24]">業務共有</text>
-    <text id="product_name_0" x="1496.0" y="599.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1412.0, 575.0, 168, 26]">内製プロダクト</text>
-    <text id="product_role_0" x="1496.0" y="631.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1364.0, 609.0, 264, 24]">プロダクトへのデータ提供</text>
+    <text id="source_system_name_0" x="152" y="283" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[80, 259, 144, 26]">基幹システム</text>
+    <text id="source_system_role_0" x="152" y="315" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[97, 293, 110, 24]">業務データ</text>
+    <text id="source_file_name_0" x="152" y="539" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[108.2, 515, 87.6, 26]">売上CSV</text>
+    <text id="source_file_role_0" x="152" y="571" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[86, 549, 132, 24]">提供元未確認</text>
+    <text id="ingest_name_0" x="384" y="411" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[324, 387, 120, 26]">データ転送</text>
+    <text id="ingest_role_0" x="384" y="443" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[329, 421, 110, 24]">データ転送</text>
+    <text id="objects_name_0" x="592" y="396" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[520, 372, 144, 26]">受領ストレー</text>
+    <text id="objects_name_1" x="592" y="426" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[580, 402, 24, 26]">ジ</text>
+    <text id="objects_role_0" x="592" y="458" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[526, 436, 132, 24]">受領ファイル</text>
+    <text id="raw_name_0" x="848" y="403" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[828.2, 379, 39.6, 26]">Raw</text>
+    <text id="raw_role_0" x="848" y="435" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[793, 413, 110, 24]">受領データ</text>
+    <text id="mart_name_0" x="1112" y="403" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1085.6, 379, 52.800000000000004, 26]">Mart</text>
+    <text id="mart_role_0" x="1112" y="435" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1068, 413, 88, 24]">業務指標</text>
+    <text id="bi_name_0" x="1496" y="191" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1446.8, 167, 98.39999999999999, 26]">BIツール</text>
+    <text id="bi_role_0" x="1496" y="223" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1430, 201, 132, 24]">指標の可視化</text>
+    <text id="excel_name_0" x="1496" y="327" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1417.4, 303, 157.2, 26]">表計算ツールA</text>
+    <text id="excel_role_0" x="1496" y="359" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1452, 337, 88, 24]">集計分析</text>
+    <text id="sheets_name_0" x="1496" y="463" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1417.4, 439, 157.2, 26]">表計算ツールB</text>
+    <text id="sheets_role_0" x="1496" y="495" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1452, 473, 88, 24]">業務共有</text>
+    <text id="product_name_0" x="1496" y="599" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[1412, 575, 168, 26]">内製プロダクト</text>
+    <text id="product_role_0" x="1496" y="631" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[1364, 609, 264, 24]">プロダクトへのデータ提供</text>
     <text id="analyst_name_0" x="1372" y="712" font-size="24" font-weight="400" text-anchor="start" style="fill:#202124" data-text-box="[1372, 688, 120, 26]">アナリスト</text>
     <text id="analyst_role_0" x="1372" y="744" font-size="22" font-weight="400" text-anchor="start" style="fill:#5F6368" data-text-box="[1372, 722, 154, 24]">アドホック分析</text>
-    <text id="jobs_name_0" x="800.0" y="979.0" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[740.0, 955.0, 120, 26]">ジョブ管理</text>
-    <text id="jobs_role_0" x="800.0" y="1011.0" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[723.0, 989.0, 154, 24]">加工実行の制御</text>
+    <text id="jobs_name_0" x="800" y="979" font-size="24" font-weight="400" text-anchor="middle" style="fill:#202124" data-text-box="[740, 955, 120, 26]">ジョブ管理</text>
+    <text id="jobs_role_0" x="800" y="1011" font-size="22" font-weight="400" text-anchor="middle" style="fill:#5F6368" data-text-box="[723, 989, 154, 24]">加工実行の制御</text>
   </g>
 </svg>
